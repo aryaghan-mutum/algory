@@ -1,8 +1,8 @@
 class Mul {
 
-    sqrMul(a: number) {
+    static async sqrMul(a: number) {
         return a * a;
     }
 }
 
-export default new Mul();
+export {Mul}

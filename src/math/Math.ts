@@ -80,7 +80,7 @@ export const pow = (base: number, n: number): number => isZero(n) ? 1 : base + p
  *
  * @param n
  */
-export const reciprocal = (n: number): boolean | string => isZero(n) ? 'reciprocal of 0 is undefined' : true
+export const reciprocal = (n: number): number | string => isZero(n) ? 'reciprocal of 0 is undefined' : 1 / n
 
 /**
  *
