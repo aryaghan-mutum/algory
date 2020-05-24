@@ -24,4 +24,5 @@ yarn-error.log*
 *.iws
 *.iml
 *.ipr
-/out/
+/out/node_modules
+
