@@ -1,0 +1,26 @@
+{
+  "name": "algory",
+  "version": "1.0.0",
+  "description": "a library composed of algorithms and data structures for JavaScript, TypeScript and Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aryaghan-mutum/algory.git"
+  },
+  "author": "Anurag Muthyam <anu.drumcoder@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aryaghan-mutum/algory/issues"
+  },
+  "homepage": "https://github.com/aryaghan-mutum/algory#readme",
+  "devDependencies": {
+    "typescript": "^3.9.3"
+  },
+  "dependencies": {
+    "tslint": "^6.1.2",
+    "typedoc": "^0.17.7"
+  }
+}
