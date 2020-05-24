@@ -9,3 +9,8 @@ src
 #intellij
 .idea
 algory.iml
+
+src
+tsconfig.json
+tslint.json
+.prettierrc
