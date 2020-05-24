@@ -5,12 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build" : "tsc"
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aryaghan-mutum/algory.git"
   },
+  "keywords": [],
   "author": "Anurag Muthyam <anu.drumcoder@gmail.com>",
   "license": "ISC",
   "bugs": {
@@ -18,11 +21,11 @@
   },
   "homepage": "https://github.com/aryaghan-mutum/algory#readme",
   "devDependencies": {
+    "prettier": "^2.0.5",
     "ts-node": "^8.10.1",
+    "tslint": "^6.1.2",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.9.3"
   },
-  "dependencies": {
-    "tslint": "^6.1.2",
-    "typedoc": "^0.17.7"
-  }
+  "dependencies": {}
 }
