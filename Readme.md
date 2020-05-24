@@ -2,4 +2,7 @@
 
 ###### Commands
 `npm run build`
-`npm test`
+`npm test
+
+###### Author
+`Anurag Muthyam`

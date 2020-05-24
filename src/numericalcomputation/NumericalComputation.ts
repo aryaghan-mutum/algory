@@ -12,12 +12,6 @@ export const cube = (n: number): number => square(n) * n
 
 /**
  *
- * @param n
- */
-export const double = (n: number): number => n + 2
-
-/**
- *
  * @param x
  * @param y
  */
@@ -29,6 +23,18 @@ export const sumOfSquares = (x: number, y: number): number => square(x) + square
  * @param y
  */
 export const sumOfCubes = (x: number, y: number): number => cube(x) + cube(y)
+
+/**
+ *
+ * @param n
+ */
+export const double = (n: number): number => n * 2
+
+/**
+ *
+ * @param n
+ */
+export const triple = (n: number): number => n * 3
 
 /**
  *
