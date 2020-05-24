@@ -1,28 +1,18 @@
-/**
- *
- * @param n
- */
-export const square = (n: number): number => n * n
-
-/**
- *
- * @param n
- */
-export const cube = (n: number): number => square(n) * n
+const k = require('../geometry/2DGeometry')
 
 /**
  *
  * @param x
  * @param y
  */
-export const sumOfSquares = (x: number, y: number): number => square(x) + square(y)
+export const sumOfSquares = (x: number, y: number): number => k.square(x) + k.square(y)
 
 /**
  *
  * @param x
  * @param y
  */
-export const sumOfCubes = (x: number, y: number): number => cube(x) + cube(y)
+export const sumOfCubes = (x: number, y: number): number => k.cube(x) + k.cube(y)
 
 /**
  *

@@ -29,7 +29,9 @@
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.9.3"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@types/node": "^14.0.5"
+  },
   "files": [
     "lib/**/*"
   ]

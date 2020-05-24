@@ -1,4 +1,4 @@
-const numer = require('../../../../src/numericalcomputation/NumericalComputation')
+const numer = require('../../../src/numericalcomputation/NumericalComputation')
 
 describe('Numerical Computation', () => {
 
