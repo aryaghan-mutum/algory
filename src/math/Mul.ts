@@ -5,4 +5,4 @@ class Mul {
     }
 }
 
-export {Mul}
+export default new Mul
