@@ -27,9 +27,7 @@
   },
   "homepage": "https://github.com/aryaghan-mutum/algory#readme",
   "devDependencies": {
-    "@types/jest": "^25.2.3",
     "prettier": "^2.0.5",
-    "ts-jest": "^26.0.0",
     "ts-node": "^8.10.1",
     "tslint": "^6.1.2",
     "tslint-config-prettier": "^1.18.0",
