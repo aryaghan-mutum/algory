@@ -2,8 +2,8 @@
   "name": "algory",
   "version": "1.0.3",
   "description": "a library composed of algorithms and data structures for JavaScript, TypeScript and Node.js",
-  "main": "index.js",
-  "types": "lib/index.d.ts",
+  "main": "lib/index.js",
+  "types": "lib",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc"
