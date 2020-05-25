@@ -22,46 +22,68 @@
  *   Software.
  */
 
-class NumericalComputationPredicates {
+import numer from '../numericalcomputation/NumericalComputation'
+import {AbstractNumericalComputation} from './AbstractNumericalComputation';
+
+class NumericalComputationPredicates extends AbstractNumericalComputation {
 
     constructor() {
+        super()
     }
-    /**
-     *
-     * @param n
-     */
-    public isZero = (n: number): boolean => (n == 0) ? true : false
 
     /**
      *
      * @param n
      */
-    public isGreaterThanZero = (n: number): boolean => (n > 0) ? true : false
+    public isZero = (n: number): boolean => {
+        this.numberTypeViolationError(n)
+        return (n == 0) ? true : false
+    }
 
     /**
      *
      * @param n
      */
-    public isGreaterThanAndEqualToZero = (n: number): boolean => (n >= 0) ? true : false
+    public isGreaterThanZero = (n: number): boolean => {
+        this.numberTypeViolationError(n)
+        return (n > 0) ? true : false
+    }
 
     /**
      *
      * @param n
      */
-    public isLesserThanZero = (n: number): boolean => (n < 0) ? true : false
+    public isGreaterThanAndEqualToZero = (n: number): boolean => {
+        this.numberTypeViolationError(n)
+        return (n >= 0) ? true : false
+    }
 
     /**
      *
      * @param n
      */
-    public isLesserThanAndEqualToZero = (n: number): boolean => (n <= 0) ? true : false
+    public isLesserThanZero = (n: number): boolean => {
+        this.numberTypeViolationError(n)
+        return (n < 0) ? true : false
+    }
+
+    /**
+     *
+     * @param n
+     */
+    public isLesserThanAndEqualToZero = (n: number): boolean => {
+        this.numberTypeViolationError(n)
+        return (n <= 0) ? true : false
+    }
 
     /**
      *
      * @param x
      * @param y
      */
-    public lesserThan = (x: number, y: number): boolean => x < y
+    public lesserThan = (x: number, y: number): boolean => {
+        return x < y
+    }
 
     /**
      *
@@ -83,25 +105,37 @@ class NumericalComputationPredicates {
      *
      * @param n
      */
-    public isNegative = (n: number): boolean => this.isLesserThanZero(n)
+    public isNegative = (n: number): boolean => {
+        this.numberTypeViolationError(n)
+        return this.isLesserThanZero(n)
+    }
 
     /**
      *
      * @param n
      */
-    public isPositive = (n: number): boolean => this.isGreaterThanAndEqualToZero(n)
+    public isPositive = (n: number): boolean => {
+        this.numberTypeViolationError(n)
+        return this.isGreaterThanAndEqualToZero(n)
+    }
 
     /**
      *
      * @param n
      */
-    public isEven = (n: number): boolean => n % 2 == 0 ? true : false
+    public isEven = (n: number): boolean => {
+        this.numberTypeViolationError(n)
+        return numer.abs(n) % 2 == 0 ? true : false
+    }
 
     /**
      *
      * @param n
      */
-    public isOdd = (n: number): boolean => !this.isEven(n)
+    public isOdd = (n: number): boolean => {
+        this.numberTypeViolationError(n)
+        return numer.abs(n) % 2 !== 0 ? true : false
+    }
 
 
 }

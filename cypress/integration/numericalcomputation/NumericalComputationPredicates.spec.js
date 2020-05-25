@@ -24,7 +24,7 @@ describe('Numerical Computation Predicates', () => {
         expect(numerPred.isEven(4)).to.be.true
         expect(numerPred.isEven(5)).to.be.false
         expect(numerPred.isEven(0)).to.be.true
-        expect(numerPred.isEven(-4)).to.be.false
+        expect(numerPred.isEven(-4)).to.be.true
         expect(numerPred.isEven(-5)).to.be.false
     })
 
@@ -33,7 +33,7 @@ describe('Numerical Computation Predicates', () => {
         expect(numerPred.isOdd(5)).to.be.true
         expect(numerPred.isOdd(0)).to.be.false
         expect(numerPred.isOdd(-4)).to.be.false
-        expect(numerPred.isOdd(-5)).to.be.false
+        expect(numerPred.isOdd(-5)).to.be.true
     })
 })
 
