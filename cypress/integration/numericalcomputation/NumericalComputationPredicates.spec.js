@@ -20,5 +20,20 @@ describe('Numerical Computation Predicates', () => {
         expect(numerPred.isZero(-100)).to.be.false
     })
 
+    specify('test isEven', () => {
+        expect(numerPred.isEven(4)).to.be.true
+        expect(numerPred.isEven(5)).to.be.false
+        expect(numerPred.isEven(0)).to.be.true
+        expect(numerPred.isEven(-4)).to.be.false
+        expect(numerPred.isEven(-5)).to.be.false
+    })
+
+    specify('test isOdd', () => {
+        expect(numerPred.isOdd(4)).to.be.false
+        expect(numerPred.isOdd(5)).to.be.true
+        expect(numerPred.isOdd(0)).to.be.false
+        expect(numerPred.isOdd(-4)).to.be.false
+        expect(numerPred.isOdd(-5)).to.be.false
+    })
 })
 

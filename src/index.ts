@@ -1,8 +1,9 @@
-export * from './geometry/Geometry'
+// Geometry
+export {default as Geometry} from './geometry/Geometry'
 
 // Numerical Computation
-export * from './numericalcomputation/NumericalComputation'
-export * from './numericalcomputation/NumericalComputationPredicates'
+export {default as Numer} from './numericalcomputation/NumericalComputation'
+export {default as NumerPred} from './numericalcomputation/NumericalComputationPredicates'
 
 //Shapes
 export {default as Circle} from './shapes/Circle'

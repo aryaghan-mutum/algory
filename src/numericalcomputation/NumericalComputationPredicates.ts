@@ -91,6 +91,19 @@ class NumericalComputationPredicates {
      */
     public isPositive = (n: number): boolean => this.isGreaterThanAndEqualToZero(n)
 
+    /**
+     *
+     * @param n
+     */
+    public isEven = (n: number): boolean => n % 2 == 0 ? true : false
+
+    /**
+     *
+     * @param n
+     */
+    public isOdd = (n: number): boolean => !this.isEven(n)
+
+
 }
 
 export default new NumericalComputationPredicates()
