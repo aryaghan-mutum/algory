@@ -2,7 +2,11 @@
  *
  * @param length
  */
-export const squareArea = (length: number): number => length * length
+var squareArea = (length: number): number => {
+    return length * length
+}
+
+
 
 /**
  *
@@ -10,6 +14,8 @@ export const squareArea = (length: number): number => length * length
  */
 export const squarePerimeter = (length: number): number => 4 * length
 
+
+export default squareArea;
 
 
 
