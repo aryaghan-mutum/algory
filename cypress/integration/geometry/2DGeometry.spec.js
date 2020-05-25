@@ -1,19 +1,5 @@
 const geometry2d = require('../../../src/geometry/2DGeometry')
 
-describe('2D Geometry - Circle', () => {
-    specify('test circle area', () => {
-        expect(geometry2d.circleArea(2)).to.be.equal(12.566370614359172)
-        expect(geometry2d.circleArea(-2)).to.be.equal(12.566370614359172)
-        expect(geometry2d.circleArea(-3)).to.be.equal(28.274333882308138)
-    })
-
-    specify('test circle area and perimeter', () => {
-        expect(geometry2d.circleInfo(3)).to.eql([28.274333882308138, 18.84955592153876])
-        expect(geometry2d.circleInfo(3)[0]).to.be.equal(28.274333882308138)
-        expect(geometry2d.circleInfo(3)[1]).to.be.equal(18.84955592153876)
-    })
-})
-
 describe('2D Geometry - Square', () => {
     specify('test square', () => {
         expect(geometry2d.square(2)).to.be.equal(4)

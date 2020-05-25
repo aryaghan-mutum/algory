@@ -1,20 +1,4 @@
-/**
- *
- * @param rad
- */
-export const circleArea = (rad: number): number => Math.PI * rad * rad
-
-/**
- *
- * @param rad
- */
-export const circlePerimeter = (rad: number): number => 2 * Math.PI * rad
-
-/**
- *
- * @param rad
- */
-export const circleInfo = (rad: number): Array<number> => [circleArea(rad), circlePerimeter(rad)]
+const k = require('../config/Constants')
 
 /**
  *

@@ -44,5 +44,5 @@ describe('Numerical Computation', () => {
         expect(numer.add1(-7.125)).to.be.equal(-6.125)
     })
 
-
 })
+
