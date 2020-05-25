@@ -6,9 +6,7 @@ import rectangle from '../../../src/shapes/Rectangle'
 describe('Shape - Square', () => {
     specify('test square', () => {
 
-        debugger
         const x = circle.area(3)
-        debugger
 
     })
 

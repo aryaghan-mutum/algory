@@ -1,4 +1,4 @@
-const numer = require('../../../src/numericalcomputation/NumericalComputation')
+import numer from '../../../src/numericalcomputation/NumericalComputation'
 
 describe('Numerical Computation', () => {
 

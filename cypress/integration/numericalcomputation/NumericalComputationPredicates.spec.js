@@ -1,4 +1,4 @@
-const numerPred = require('../../../src/numericalcomputation/NumericalComputationPredicates')
+import numerPred from '../../../src/numericalcomputation/NumericalComputationPredicates'
 
 describe('Numerical Computation Predicates', () => {
 

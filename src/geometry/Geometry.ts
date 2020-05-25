@@ -22,75 +22,36 @@
  *   Software.
  */
 
-class NumericalComputationPredicates {
+class Geometry {
 
-    constructor() {
+    public constructor() {
     }
-    /**
-     *
-     * @param n
-     */
-    public isZero = (n: number): boolean => (n == 0) ? true : false
 
     /**
      *
      * @param n
      */
-    public isGreaterThanZero = (n: number): boolean => (n > 0) ? true : false
+    public square = (n: number): number => n * n
+
+    /**
+     *
+     * @param lst
+     */
+    public squareList = (lst: Array<number>): Array<number> => lst.map(n => this.square(n))
 
     /**
      *
      * @param n
      */
-    public isGreaterThanAndEqualToZero = (n: number): boolean => (n >= 0) ? true : false
+    public cube = (n: number): number => this.square(n) * n
 
     /**
      *
-     * @param n
+     * @param lst
      */
-    public isLesserThanZero = (n: number): boolean => (n < 0) ? true : false
-
-    /**
-     *
-     * @param n
-     */
-    public isLesserThanAndEqualToZero = (n: number): boolean => (n <= 0) ? true : false
-
-    /**
-     *
-     * @param x
-     * @param y
-     */
-    public lesserThan = (x: number, y: number): boolean => x < y
-
-    /**
-     *
-     * @param x
-     * @param y
-     * @param z
-     */
-    public isSumLesser = (x: number, y: number, z: number): boolean => (x + y) < z
-
-    /**
-     *
-     * @param x
-     * @param y
-     * @param z
-     */
-    public isSumGreater = (x: number, y: number, z: number): boolean => (x + y) > z
-
-    /**
-     *
-     * @param n
-     */
-    public isNegative = (n: number): boolean => this.isLesserThanZero(n)
-
-    /**
-     *
-     * @param n
-     */
-    public isPositive = (n: number): boolean => this.isGreaterThanAndEqualToZero(n)
+    public cubeList = (lst: Array<number>): Array<number> => lst.map(n => this.cube(n))
 
 }
 
-export default new NumericalComputationPredicates()
+export default new Geometry()
+

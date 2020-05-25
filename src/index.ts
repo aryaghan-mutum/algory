@@ -1,4 +1,6 @@
-export * from './geometry/2DGeometry'
+export * from './geometry/Geometry'
+
+// Numerical Computation
 export * from './numericalcomputation/NumericalComputation'
 export * from './numericalcomputation/NumericalComputationPredicates'
 
