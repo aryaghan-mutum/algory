@@ -22,7 +22,7 @@
  *   Software.
  */
 
-class Circle implements Shape {
+class Circle {
 
     constructor() {
     }
