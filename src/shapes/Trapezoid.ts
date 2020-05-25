@@ -1,13 +1,11 @@
-const k = require('../config/Constants')
-
 /**
- *
+ * Get trapezoid area
  * @param rad
  */
 export const trapezoidArea = (baseX: number, baseY: number, height: number): number => ((baseX + baseY) * height) / 2
 
 /**
- *
+ * Get trapezoid perimeter
  * @param baseX
  * @param baseY
  * @param sideX

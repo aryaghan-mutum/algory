@@ -1,21 +1,14 @@
 /**
- *
- * @param length
+ * Get square area
+ * @param length (side of a square)
  */
-var squareArea = (length: number): number => {
-    return length * length
-}
-
+const squareArea = (length: number): number => length * length
 
 
 /**
- *
- * @param length
+ * Get square perimeter
+ * @param length (side of a square)
  */
 export const squarePerimeter = (length: number): number => 4 * length
-
-
-export default squareArea;
-
 
 

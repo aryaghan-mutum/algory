@@ -1,19 +1,18 @@
-const k = require('../config/Constants')
 
 /**
- *
- * @param rad
+ * Get circle area
+ * @param circle radius
  */
-export const circleArea = (rad: number): number => k.PI * rad * rad
+export const circleArea = (rad: number): number => Math.PI * rad * rad
 
 /**
- *
- * @param rad
+ * Get circle perimeter
+ * @param circle radius
  */
-export const circlePerimeter = (rad: number): number => 2 * k.PI * rad
+export const circlePerimeter = (rad: number): number => 2 * Math.PI * rad
 
 /**
- *
- * @param rad
+ * Get circle area and permiter in an array
+ * @param circle radius
  */
 export const circleInfo = (rad: number): Array<number> => [circleArea(rad), circlePerimeter(rad)]
