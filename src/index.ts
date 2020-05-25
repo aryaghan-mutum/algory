@@ -3,11 +3,11 @@ export * from './numericalcomputation/NumericalComputation'
 export * from './numericalcomputation/NumericalComputationPredicates'
 
 //Shapes
-export * from './shapes/Circle'
-export * from './shapes/Rectangle'
-export * from './shapes/Square'
-export * from './shapes/Trapezoid'
-export * from './shapes/Triangle'
+export {default as Circle} from './shapes/Circle'
+export {default as Rectangle} from './shapes/Rectangle'
+export {default as Square} from './shapes/Square'
+export {default as Trapezoid} from './shapes/Trapezoid'
+export {default as Triangle} from './shapes/Triangle'
 
 
 
