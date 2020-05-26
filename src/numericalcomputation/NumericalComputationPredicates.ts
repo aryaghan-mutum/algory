@@ -22,8 +22,8 @@
  *   Software.
  */
 
-import numer from '../numericalcomputation/NumericalComputation'
-import {AbstractNumericalComputation} from './AbstractNumericalComputation';
+const numer = require('../numericalcomputation/NumericalComputation')
+import {AbstractNumericalComputation} from './AbstractNumericalComputation'
 
 class NumericalComputationPredicates extends AbstractNumericalComputation {
 

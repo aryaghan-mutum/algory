@@ -2,7 +2,7 @@
 export {default as Geometry} from './geometry/Geometry'
 
 // Numerical Computation
-export {default as Numer} from './numericalcomputation/NumericalComputation'
+export * from './numericalcomputation/NumericalComputation'
 export {default as NumerPred} from './numericalcomputation/NumericalComputationPredicates'
 
 //Shapes

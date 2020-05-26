@@ -25,111 +25,115 @@
 import numerPred from '../numericalcomputation/NumericalComputationPredicates'
 import geometry from '../geometry/Geometry'
 
-class NumericalComputation {
+let curry = require('curry');
 
-    public constructor() {
+/**
+ *
+ * @param x
+ * @param y
+ */
+export const sumOfSquares = curry((x: number, y: number): number => {
+    return geometry.square(x) + geometry.square(y)
+})
+
+/**
+ *
+ * @param x
+ * @param y
+ */
+export const sumOfCubes = curry((x: number, y: number): number => {
+    return geometry.cube(x) + geometry.cube(y)
+})
+
+/**
+ *
+ * @param n
+ */
+export const double = curry((n: number): number => {
+    return n * 2
+})
+
+/**
+ *
+ * @param n
+ */
+export const triple = curry((n: number): number => {
+    return n * 3
+})
+
+/**
+ *
+ * @param n
+ */
+export const add1 = curry((n: number): number => {
+    return n + 1
+})
+
+/**
+ *
+ * @param n
+ */
+export const sub1 = curry((n: number): number => {
+    return n - 1
+})
+
+/**
+ *
+ * @param a
+ * @param b
+ */
+export const min = curry((a: number, b: number): number => {
+    return a < b ? a : b
+})
+
+/**
+ *
+ * @param a
+ * @param b
+ */
+export const max = curry((a: number, b: number): number => {
+    return a > b ? a : b
+})
+
+/**
+ *
+ * @param base
+ * @param n
+ */
+export const pow = curry((base: number, n: number): number => {
+    return numerPred.isZero(n) ? 1 : base + pow(base, n - 1)
+})
+
+/**
+ *
+ * @param n
+ */
+export const reciprocal = curry((n: number): number | string => {
+    return numerPred.isZero(n) ? 'reciprocal of 0 is undefined' : 1 / n
+})
+
+/**
+ *
+ * @param n
+ */
+export const abs = curry((n: number): number => {
+    return numerPred.isGreaterThanAndEqualToZero(n) ? n : -(n)
+})
+
+/**
+ *
+ * @param n
+ * @param m
+ */
+export const combination = curry((n: number, m: number): number => {
+    if (numerPred.isZero(m) || (m == n)) {
+        return 1
+    } else {
+        return combination(sub1(n), m) + combination(sub1(n), sub1(m))
     }
-
-    /**
-     *
-     * @param x
-     * @param y
-     */
-    public sumOfSquares = (x: number, y: number): number => geometry.square(x) + geometry.square(y)
-
-    /**
-     *
-     * @param x
-     * @param y
-     */
-    public sumOfCubes = (x: number, y: number): number => geometry.cube(x) + geometry.cube(y)
-
-    /**
-     *
-     * @param n
-     */
-    public double = (n: number): number => n * 2
-
-    /**
-     *
-     * @param n
-     */
-    public triple = (n: number): number => n * 3
-
-    /**
-     *
-     * @param n
-     */
-    public add1 = (n: number): number => n + 1
-
-    /**
-     *
-     * @param n
-     */
-    public sub1 = (n: number): number => n - 1
+})
 
 
-    /**
-     *
-     * @param n
-     */
-    public inc1 = (n: number): number => this.add1(n)
-
-    /**
-     *
-     * @param n
-     */
-    public dec1 = (n: number): number => this.sub1(n)
-
-    /**
-     *
-     * @param a
-     * @param b
-     */
-    public min = (a: number, b: number): number => a < b ? a : b
-
-    /**
-     *
-     * @param a
-     * @param b
-     */
-    public max = (a: number, b: number): number => a > b ? a : b
-
-    /**
-     *
-     * @param base
-     * @param n
-     */
-    public pow = (base: number, n: number): number => numerPred.isZero(n) ? 1 : base + this.pow(base, n - 1)
-
-    /**
-     *
-     * @param n
-     */
-    public reciprocal = (n: number): number | string => numerPred.isZero(n) ? 'reciprocal of 0 is undefined' : 1 / n
-
-    /**
-     *
-     * @param n
-     */
-    public abs = (n: number): number => numerPred.isGreaterThanAndEqualToZero(n) ? n : -(n)
-
-    /**
-     *
-     * @param n
-     * @param m
-     */
-    public combination = (n: number, m: number): number => {
-        if (numerPred.isZero(m) || (m == n)) {
-            return 1
-        } else {
-            return this.combination(this.sub1(n), m) + this.combination(this.sub1(n), this.sub1(m))
-        }
-    }
-
-}
-
-export default new NumericalComputation()
 
 
 

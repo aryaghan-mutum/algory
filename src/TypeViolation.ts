@@ -1,4 +1,6 @@
+
 export abstract class TypeViolation {
+
 
     /**
      *
@@ -6,7 +8,13 @@ export abstract class TypeViolation {
      */
     protected numberTypeViolationError(n: number): void {
         if (typeof (n) !== "number") {
-            throw new Error(`"${n}" is not a number`)
+            throw new TypeError(`Invalid Type! "${n}" is a ${typeof(n)}. Expected type: number`)
+        }
+    }
+
+    protected stringTypeViolationError(s: string): void {
+        if (typeof (s) !== "number") {
+            throw new TypeError(`Invalid Type! "${s}" is not a number. Expected type: string`)
         }
     }
 
