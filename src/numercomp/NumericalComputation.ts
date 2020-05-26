@@ -24,6 +24,7 @@
 
 const numerPred = require('.//NumericalComputationPredicates')
 const geometry = require('../geometry/Geometry')
+const err = require('../TypeViolation')
 const curry = require('curry')
 
 /**
@@ -49,6 +50,7 @@ export const sumOfCubes = curry((x: number, y: number): number => {
  * @param n
  */
 export const double = curry((n: number): number => {
+    err.numberTypeViolationError(n)
     return n * 2
 })
 
@@ -57,6 +59,7 @@ export const double = curry((n: number): number => {
  * @param n
  */
 export const triple = curry((n: number): number => {
+    err.numberTypeViolationError(n)
     return n * 3
 })
 
@@ -65,6 +68,7 @@ export const triple = curry((n: number): number => {
  * @param n
  */
 export const add1 = curry((n: number): number => {
+    err.numberTypeViolationError(n)
     return n + 1
 })
 
@@ -73,6 +77,7 @@ export const add1 = curry((n: number): number => {
  * @param n
  */
 export const sub1 = curry((n: number): number => {
+    err.numberTypeViolationError(n)
     return n - 1
 })
 
@@ -108,6 +113,7 @@ export const max = curry((a: number, b: number): number => {
  * @param n
  */
 export const reciprocal = curry((n: number): number | string => {
+    err.numberTypeViolationError(n)
     return numerPred.isZero(n) ? 'reciprocal of 0 is undefined' : 1 / n
 })
 
@@ -116,6 +122,7 @@ export const reciprocal = curry((n: number): number | string => {
  * @param n
  */
 export const abs = curry((n: number): number => {
+    err.numberTypeViolationError(n)
     return numerPred.isPositive(n) ? n : -(n)
 })
 

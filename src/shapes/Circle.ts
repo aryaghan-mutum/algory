@@ -22,6 +22,7 @@
  *   Software.
  */
 
+const err = require('../TypeViolation')
 const curry = require('curry')
 
 /**
@@ -29,6 +30,7 @@ const curry = require('curry')
  * @param circle radius
  */
 export const circleArea = curry((rad: number): number => {
+    err.numberTypeViolationError(rad)
     return Math.PI * rad * rad
 })
 
@@ -37,6 +39,7 @@ export const circleArea = curry((rad: number): number => {
  * @param circle radius
  */
 export const circleCircum = curry((rad: number): number => {
+    err.numberTypeViolationError(rad)
     return 2 * Math.PI * rad
 })
 

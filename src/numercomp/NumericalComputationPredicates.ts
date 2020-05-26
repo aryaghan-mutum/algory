@@ -22,7 +22,7 @@
  *   Software.
  */
 
-const numer = require('.//NumericalComputation')
+const numer = require('./NumericalComputation')
 const curry = require('curry')
 const err = require('../TypeViolation')
 

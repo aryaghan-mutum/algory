@@ -23,12 +23,14 @@
  */
 
 const curry = require('curry')
+const err = require('../TypeViolation')
 
 /**
  * Get square area
  * @param length (side of a square)
  */
 export const squareArea = curry((length: number): number => {
+    err.numberTypeViolationError(length)
     return length * length
 })
 
@@ -37,5 +39,6 @@ export const squareArea = curry((length: number): number => {
  * @param length (side of a square)
  */
 export const squarePerimeter = curry((length: number): number => {
+    err.numberTypeViolationError(length)
     return 4 * length
 })
