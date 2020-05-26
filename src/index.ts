@@ -4,6 +4,7 @@ export * from './geometry/Geometry'
 // Numerical Computation
 export * from './numercomp/NumericalComputation'
 export * from './numercomp/NumericalComputationPredicates'
+// export * from './numercomp/Factorial'
 
 //Shapes
 export * from './shapes/Circle'

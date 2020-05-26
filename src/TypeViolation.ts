@@ -2,8 +2,20 @@
  *
  * @param n
  */
+import {BigNumber} from "big-integer";
+
 export const numberTypeViolationError = (n: number): void => {
     if (typeof (n) !== "number") {
+        throw new TypeError(`Invalid Type! "${n}" is a ${typeof (n)}. Expected type: number`)
+    }
+}
+
+/**
+ *
+ * @param n
+ */
+export const bigIntTypeViolationError = (n: BigNumber): void => {
+    if (typeof (n) !== "bigint") {
         throw new TypeError(`Invalid Type! "${n}" is a ${typeof (n)}. Expected type: number`)
     }
 }

@@ -12,6 +12,17 @@ describe('Numerical Computation Predicates', () => {
         expect(z(2)).to.be.false
     })
 
+    specify('test isOne', () => {
+        expect(numerPred.isOne(1)).to.be.true
+        expect(numerPred.isOne(100)).to.be.false
+        expect(numerPred.isOne(-100)).to.be.false
+        expect(numerPred.isOne()()()(1)).to.be.true
+
+        let z = numerPred.isOne()()
+        expect(z(2)).to.be.false
+    })
+
+
     specify('test isNegative', () => {
         expect(numerPred.isNegative(-1)).to.be.true
         expect(numerPred.isNegative(1)).to.be.false

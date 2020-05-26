@@ -32,8 +32,18 @@ const err = require('../TypeViolation')
  */
 export const isZero = curry((n: number): boolean => {
     err.numberTypeViolationError(n)
-    return (n == 0) ? true : false
+    return (n ==- 0) ? true : false
 })
+
+/**
+ *
+ * @param n
+ */
+export const isOne = curry((n: number): boolean => {
+    err.numberTypeViolationError(n)
+    return (n === 1) ? true : false
+})
+
 
 /**
  *
