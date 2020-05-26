@@ -22,27 +22,26 @@
  *   Software.
  */
 
-class Trapezoid {
+const curry = require('curry')
 
-    /**
-     * Get trapezoid area
-     * @param baseX
-     * @param baseY
-     * @param height
-     */
-    public trapezoidArea = (baseX: number, baseY: number, height: number): number => ((baseX + baseY) * height) / 2
+/**
+ * Get trapezoid area
+ * @param baseX
+ * @param baseY
+ * @param height
+ */
+export const trapezoidArea = curry((baseX: number, baseY: number, height: number): number => {
+    return ((baseX + baseY) * height) / 2
+})
 
-    /**
-     * Get trapezoid perimeter
-     * @param baseX
-     * @param baseY
-     * @param sideX
-     * @param sideY
-     */
-    public trapezoidPerimeter = (baseX: number, baseY: number, sideX: number, sideY: number): number => baseX + baseY + sideX + sideY
-
-}
-
-export default new Trapezoid()
-
+/**
+ * Get trapezoid perimeter
+ * @param baseX
+ * @param baseY
+ * @param sideX
+ * @param sideY
+ */
+export const trapezoidPerimeter = curry((baseX: number, baseY: number, sideX: number, sideY: number): number => {
+    return baseX + baseY + sideX + sideY
+})
 

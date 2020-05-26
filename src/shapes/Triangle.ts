@@ -22,23 +22,23 @@
  *   Software.
  */
 
-class Triangle {
+const curry = require('curry')
 
-    /**
-     * Get triangle area
-     * @param base
-     * @param height
-     */
-    public triangleArea = (base: number, height: number): number => 0.5 * base * height
+/**
+ * Get triangle area
+ * @param base
+ * @param height
+ */
+export const triangleArea = curry((base: number, height: number): number => {
+    return 0.5 * base * height
+})
 
-    /**
-     * Get triangle perimeter
-     * @param sideX
-     * @param sideY
-     * @param base
-     */
-    public trianglePerimeter = (sideX: number, sideY: number, base: number): number => sideX + sideY + base
-}
-
-export default new Triangle()
-
+/**
+ * Get triangle perimeter
+ * @param sideX
+ * @param sideY
+ * @param base
+ */
+export const trianglePerimeter = curry((sideX: number, sideY: number, base: number): number => {
+    return sideX + sideY + base
+})

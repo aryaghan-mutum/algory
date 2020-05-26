@@ -1,4 +1,4 @@
-import numerPred from '../../../src/numericalcomputation/NumericalComputationPredicates'
+import numerPred from '../../../src/numercomp/NumericalComputationPredicates'
 
 describe('Numerical Computation Predicates', () => {
 

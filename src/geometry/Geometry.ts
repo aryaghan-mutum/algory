@@ -22,36 +22,38 @@
  *   Software.
  */
 
-class Geometry {
+const curry = require('curry')
 
-    public constructor() {
-    }
+/**
+ *
+ * @param n
+ */
+export const square = curry((n: number): number => {
+    return n * n
+})
 
-    /**
-     *
-     * @param n
-     */
-    public square = (n: number): number => n * n
+/**
+ *
+ * @param lst
+ */
+export const squareList = curry((arr: Array<number>): Array<number> => {
+    return arr.map(n => square(n))
+})
 
-    /**
-     *
-     * @param lst
-     */
-    public squareList = (lst: Array<number>): Array<number> => lst.map(n => this.square(n))
+/**
+ *
+ * @param n
+ */
+export const cube = curry((n: number): number => {
+    return square(n) * n
+})
 
-    /**
-     *
-     * @param n
-     */
-    public cube = (n: number): number => this.square(n) * n
+/**
+ *
+ * @param lst
+ */
+export const cubeList = curry((arr: Array<number>): Array<number> => {
+    return arr.map(n => cube(n))
+})
 
-    /**
-     *
-     * @param lst
-     */
-    public cubeList = (lst: Array<number>): Array<number> => lst.map(n => this.cube(n))
-
-}
-
-export default new Geometry()
 

@@ -22,10 +22,9 @@
  *   Software.
  */
 
-import numerPred from '../numericalcomputation/NumericalComputationPredicates'
-import geometry from '../geometry/Geometry'
-
-let curry = require('curry');
+const numerPred = require('.//NumericalComputationPredicates')
+const geometry = require('../geometry/Geometry')
+const curry = require('curry')
 
 /**
  *
@@ -96,13 +95,13 @@ export const max = curry((a: number, b: number): number => {
 })
 
 /**
- *
+ * //TODO
  * @param base
  * @param n
  */
-export const pow = curry((base: number, n: number): number => {
-    return numerPred.isZero(n) ? 1 : base + pow(base, n - 1)
-})
+// export const pow = curry((base: number, n: number): number => {
+//     return numerPred.isZero(n) ? 1 : base + pow(base, n - 1)
+// })
 
 /**
  *

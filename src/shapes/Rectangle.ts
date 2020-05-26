@@ -22,27 +22,22 @@
  *   Software.
  */
 
-class Rectangle {
+const curry = require('curry')
 
-    constructor() {
-    }
+/**
+ * Get rectangle area
+ * @param length
+ * @param width
+ */
+export const rectangleArea = curry((length: number, width: number): number => {
+    return length * width
+})
 
-    /**
-     * Get rectangle area
-     * @param length
-     * @param width
-     */
-    public area = (length: number, width: number): number => length * width
-
-    /**
-     * Get rectangle Perimeter
-     * @param length
-     * @param width
-     */
-    public perimeter = (length: number, width: number): number => 2 * (length + width)
-
-}
-
-export default new Rectangle()
-
-
+/**
+ * Get rectangle Perimeter
+ * @param length
+ * @param width
+ */
+export const rectanglePerimeter = curry((length: number, width: number): number => {
+    return 2 * (length + width)
+})

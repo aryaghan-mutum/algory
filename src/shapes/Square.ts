@@ -22,20 +22,20 @@
  *   Software.
  */
 
-class Square {
+const curry = require('curry')
 
-    /**
-     * Get square area
-     * @param length (side of a square)
-     */
-    public area = (length: number): number => length * length
+/**
+ * Get square area
+ * @param length (side of a square)
+ */
+export const squareArea = curry((length: number): number => {
+    return length * length
+})
 
-    /**
-     * Get square perimeter
-     * @param length (side of a square)
-     */
-    public perimeter = (length: number): number => 4 * length
-
-}
-
-export default new Square()
+/**
+ * Get square perimeter
+ * @param length (side of a square)
+ */
+export const squarePerimeter = curry((length: number): number => {
+    return 4 * length
+})

@@ -13,8 +13,8 @@ sqr.perimeter(3)`
 
 - TS all imports 
 `import * as A from 'algory'
-A.Circle.area(3)
-A.Rectangle.perimeter(2,3)`
+A.sumOfCubes(2, 3))
+A.sumOfCubes(2)`
 
 - JS
 `const {Circle, Square} = require('algory')

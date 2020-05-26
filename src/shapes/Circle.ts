@@ -22,34 +22,30 @@
  *   Software.
  */
 
-class Circle {
+const curry = require('curry')
 
-    constructor() {
-    }
+/**
+ * Get circle area
+ * @param circle radius
+ */
+export const circleArea = curry((rad: number): number => {
+    return Math.PI * rad * rad
+})
 
-    /**
-     * Get circle area
-     * @param circle radius
-     */
-    public area = (rad: number): number => Math.PI * rad * rad
+/**
+ * Get circle circumference
+ * @param circle radius
+ */
+export const circleCircum = curry((rad: number): number => {
+    return 2 * Math.PI * rad
+})
 
-    /**
-     * Get circle perimeter
-     * @param circle radius
-     */
-    public perimeter = (rad: number): number => 2 * Math.PI * rad
-
-    /**
-     * Get circle area and permiter in an array
-     * @param circle radius
-     */
-    public circleInfo = (rad: number): Array<number> => [this.area(rad), this.perimeter(rad)]
-
-}
-
-export default new Circle();
-
-
-
+/**
+ * Get circle area and circumference in an array
+ * @param circle radius
+ */
+export const circleInfo = curry((rad: number): Array<number> => {
+    return [circleArea(rad), circleCircum(rad)]
+})
 
 
