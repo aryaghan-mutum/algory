@@ -22,7 +22,7 @@
  *   Software.
  */
 import {isOne, isZero} from './NumericalComputationPredicates'
-import {sub1} from './NumericalComputation'
+import {add1, sub1, sub2} from './NumericalComputation'
 
 const err = require('../TypeViolation')
 const curry = require('curry')
@@ -31,49 +31,40 @@ const curry = require('curry')
  *
  * @param n
  */
-const factorial = curry((n: number): number => {
-    if (isZero(n) || isOne(n))
+export const fibRec = curry((n: number): number => {
+    err.numberTypeViolationError(n)
+
+    if (n < 0)
+        throw new Error("Fibonacci for negative numbers do not exist")
+    else if (isZero(n))
+        return 0
+    else if (isOne(n))
         return 1
-    else if (n < 0)
-        throw new Error("Factorial for negative numbers do not exist")
-    else
-        return n * factorial(sub1(n))
+    else {
+        return fibRec(sub1(n)) + fibRec(sub2(n))
+    }
 })
 
 /**
  *
  * @param n
  */
-export const factorialRec = curry((n: number): number => {
+export const fibIter = curry((n: number): number => {
     err.numberTypeViolationError(n)
 
-    if (n < 0) throw new Error("Factorial for negative numbers do not exist")
-
-    const fact = (product: number, counter: number): number => {
-        if (counter > n) {
-            return product
-        } else {
-            return fact((product * counter), (counter + 1))
-        }
-    }
-    return fact(1, 1)
-})
-
-/**
- *
- * @param n
- */
-export const factorialIter = curry((n: number): number => {
-    err.numberTypeViolationError(n)
-
-    if (isZero(n) || isOne(n))
+    if (n < 0)
+        throw new Error("Fibonacci for negative numbers do not exist")
+    else if (isZero(n))
+        return 0
+    else if (isOne(n))
         return 1
-    else if (n < 0)
-        throw new Error("Factorial for negative numbers do not exist")
 
-    for (let i = n - 1; i >= 1; i--) {
-        n *= i
+    let x = 0
+    let y = 1
+    for(let i = 0; i < n; i++) {
+        y = y + x
+        x = y - x
     }
-    return n
+    return x
 })
 

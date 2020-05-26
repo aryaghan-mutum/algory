@@ -1,4 +1,4 @@
-import geometry from '../../../src/geometry/Geometry'
+const geometry = require('../../../src/geometry/Geometry')
 
 describe('2D Geometry - Square', () => {
     specify('test square', () => {

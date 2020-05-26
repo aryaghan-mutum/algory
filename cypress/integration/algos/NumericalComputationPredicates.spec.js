@@ -1,4 +1,4 @@
-const numerPred = require('../../../src/numercomp/NumericalComputationPredicates')
+const numerPred = require('../../../src/algos/NumericalComputationPredicates')
 
 describe('Numerical Computation Predicates', () => {
 

@@ -2,9 +2,9 @@
 export * from './geometry/Geometry'
 
 // Numerical Computation
-export * from './numercomp/NumericalComputation'
-export * from './numercomp/NumericalComputationPredicates'
-// export * from './numercomp/Factorial'
+export * from './algos/Factorial'
+export * from './algos/NumericalComputation'
+export * from './algos/NumericalComputationPredicates'
 
 //Shapes
 export * from './shapes/Circle'

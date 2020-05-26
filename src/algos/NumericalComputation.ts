@@ -83,6 +83,15 @@ export const sub1 = curry((n: number): number => {
 
 /**
  *
+ * @param n
+ */
+export const sub2 = curry((n: number): number => {
+    err.numberTypeViolationError(n)
+    return n - 2
+})
+
+/**
+ *
  * @param a
  * @param b
  */
