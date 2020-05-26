@@ -39,27 +39,18 @@ export const isZero = curry((n: number): boolean => {
  *
  * @param n
  */
-export const isGreaterThanZero = curry((n: number): boolean => {
-    err.numberTypeViolationError(n)
-    return (n > 0) ? true : false
-})
-
-/**
- *
- * @param n
- */
-export const isGreaterThanAndEqualToZero = curry((n: number): boolean => {
-    err.numberTypeViolationError(n)
-    return (n >= 0) ? true : false
-})
-
-/**
- *
- * @param n
- */
-export const isLesserThanZero = curry((n: number): boolean => {
+export const isNegative = curry((n: number): boolean => {
     err.numberTypeViolationError(n)
     return (n < 0) ? true : false
+})
+
+/**
+ *
+ * @param n
+ */
+export const isPositive = curry((n: number): boolean => {
+    err.numberTypeViolationError(n)
+    return (n >= 0) ? true : false
 })
 
 /**
@@ -72,12 +63,21 @@ export const isLesserThanAndEqualToZero = curry((n: number): boolean => {
 })
 
 /**
- *
+ * Analogous to the symbol "<"
  * @param x
  * @param y
  */
 export const lesserThan = curry((x: number, y: number): boolean => {
     return x < y
+})
+
+/**
+ * Analogous to the symbol ">"
+ * @param x
+ * @param y
+ */
+export const greaterThan = curry((x: number, y: number): boolean => {
+    return x > y
 })
 
 /**
@@ -98,24 +98,6 @@ export const isSumLesser = curry((x: number, y: number, z: number): boolean => {
  */
 export const isSumGreater = curry((x: number, y: number, z: number): boolean => {
     return (x + y) > z
-})
-
-/**
- *
- * @param n
- */
-export const isNegative = curry((n: number): boolean => {
-    err.numberTypeViolationError(n)
-    return numer.isLesserThanZero(n)
-})
-
-/**
- *
- * @param n
- */
-export const isPositive = curry((n: number): boolean => {
-    err.numberTypeViolationError(n)
-    return numer.isGreaterThanAndEqualToZero(n)
 })
 
 /**

@@ -116,21 +116,21 @@ export const reciprocal = curry((n: number): number | string => {
  * @param n
  */
 export const abs = curry((n: number): number => {
-    return numerPred.isGreaterThanAndEqualToZero(n) ? n : -(n)
+    return numerPred.isPositive(n) ? n : -(n)
 })
 
 /**
- *
+ * //TODO
  * @param n
  * @param m
  */
-export const combination = curry((n: number, m: number): number => {
-    if (numerPred.isZero(m) || (m == n)) {
-        return 1
-    } else {
-        return combination(sub1(n), m) + combination(sub1(n), sub1(m))
-    }
-})
+// export const combination = curry((n: number, m: number): number => {
+//     if (numerPred.isZero(m) || (m == n)) {
+//         return 1
+//     } else {
+//         return combination(sub1(n), m) + combination(sub1(n), sub1(m))
+//     }
+// })
 
 
 
