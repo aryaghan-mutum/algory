@@ -12,6 +12,7 @@ const err = require('../TypeViolation')
 
 /**
  * Returns area of a square
+ * F(s) => (* s s)
  */
 export const squareArea = curry(
     /**
@@ -25,6 +26,7 @@ export const squareArea = curry(
 
 /**
  * Returns square perimeter
+ * F(s) => (* 4 s)
  */
 export const squarePerimeter = curry(
     /**

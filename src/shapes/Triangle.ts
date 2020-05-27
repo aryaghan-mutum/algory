@@ -10,6 +10,7 @@ const curry = require('curry')
 
 /**
  * Returns area of a triangle
+ * F(b, h) => (* 1/2 b h)
  */
 export const triangleArea = curry(
     /**
@@ -22,6 +23,7 @@ export const triangleArea = curry(
 
 /**
  * Get triangle perimeter
+ * F(s1, s2, b) => (+ s1 s2 b)
  */
 export const trianglePerimeter = curry(
     /**

@@ -1,7 +1,7 @@
 /**
  * Algory
  *
- * Copyright (c) Anuragn Muthyam
+ * Copyright (c) Anurag Muthyam
  * https://github.com/aryaghan-mutum
  *
  * (MIT License)
@@ -28,6 +28,7 @@ const curry = require('curry')
 
 /**
  * Returns a prime number if the number is prime, false otherwise
+ * F?(n) => t or f
  */
 export const isPrime = curry(
     /**
@@ -54,6 +55,7 @@ export const isPrime = curry(
 
 /**
  * Optimized prime checker procedure which returns a prime number if the number is prime, false otherwise
+ * F?(n) => t or f
  */
 export const isPrimeOptimized = curry(
     /**

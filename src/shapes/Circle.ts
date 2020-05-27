@@ -5,11 +5,14 @@
  * https://github.com/aryaghan-mutum
  */
 
+import {square} from '../algos/NumericalComputation'
+
 const err = require('../TypeViolation')
 const curry = require('curry')
 
 /**
  * Returns area of a circle
+ * F(r) => pi * r * r
  */
 export const circleArea = curry(
     /**
@@ -17,11 +20,12 @@ export const circleArea = curry(
      */
     (rad: number): number => {
         err.numberTypeViolationError(rad)
-        return Math.PI * rad * rad
+        return Math.PI * square(rad)
     })
 
 /**
  * Returns circumference of a circle
+ * F(r) => (* 2 pi r)
  */
 export const circleCircum = curry(
     /**
@@ -34,6 +38,7 @@ export const circleCircum = curry(
 
 /**
  * Returns an array containing the circle area in the 0th index and the circumference in the 1st index
+ * F(r) => [area, circum]
  */
 export const circleInfo = curry(
     /**

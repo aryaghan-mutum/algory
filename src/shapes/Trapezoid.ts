@@ -9,6 +9,7 @@ const curry = require('curry')
 
 /**
  * Returns area of a trapezoid
+ * F(b1, b2, h) => (/ (* (+ b1 b2) h) 2)
  */
 export const trapezoidArea = curry(
     /**
@@ -22,6 +23,7 @@ export const trapezoidArea = curry(
 
 /**
  * Returns perimeter of a trapezoid
+ * F(b1, b2, s1, s2) => (+ b1 b2 s1 s2)
  */
 export const trapezoidPerimeter = curry(
     /**

@@ -10,6 +10,7 @@ const curry = require('curry')
 
 /**
  * Returns area of a rectangle
+ * F(l, w) => (* l w)
  */
 export const rectangleArea = curry(
     /**
@@ -22,6 +23,7 @@ export const rectangleArea = curry(
 
 /**
  * Returns perimeter of a rectangle
+ * F(l, w) => (* 2 (+ l w))
  */
 export const rectanglePerimeter = curry(
     /**
