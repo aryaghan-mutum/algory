@@ -23,97 +23,127 @@
  */
 
 const numerPred = require('.//NumericalComputationPredicates')
-const geometry = require('../geometry/Geometry')
 const err = require('../TypeViolation')
 const curry = require('curry')
 
 /**
  *
+ * @param n
+ */
+export const square = curry(
+    (n: number): number => {
+        err.numberTypeViolationError(n)
+        return n * n
+    })
+
+/**
+ *
+ * @param n
+ */
+export const cube = curry(
+    (n: number): number => {
+        err.numberTypeViolationError(n)
+        return square(n) * n
+    })
+
+
+/**
+ *
  * @param x
  * @param y
  */
-export const sumOfSquares = curry((x: number, y: number): number => {
-    return geometry.square(x) + geometry.square(y)
-})
+export const sumOfSquares = curry(
+    (x: number, y: number): number => {
+        return square(x) + square(y)
+    })
 
 /**
  *
  * @param x
  * @param y
  */
-export const sumOfCubes = curry((x: number, y: number): number => {
-    return geometry.cube(x) + geometry.cube(y)
-})
+export const sumOfCubes = curry(
+    (x: number, y: number): number => {
+        return cube(x) + cube(y)
+    })
 
 /**
  *
  * @param n
  */
-export const double = curry((n: number): number => {
-    err.numberTypeViolationError(n)
-    return n * 2
-})
+export const double = curry(
+    (n: number): number => {
+        err.numberTypeViolationError(n)
+        return n * 2
+    })
 
 /**
  *
  * @param n
  */
-export const triple = curry((n: number): number => {
-    err.numberTypeViolationError(n)
-    return n * 3
-})
+export const triple = curry(
+    (n: number): number => {
+        err.numberTypeViolationError(n)
+        return n * 3
+    })
 
 /**
  *
  * @param n
  */
-export const add1 = curry((n: number): number => {
-    err.numberTypeViolationError(n)
-    return n + 1
-})
+export const add1 = curry(
+    (n: number): number => {
+        err.numberTypeViolationError(n)
+        return n + 1
+    })
 
 /**
  *
  * @param n
  */
-export const sub1 = curry((n: number): number => {
-    err.numberTypeViolationError(n)
-    return n - 1
-})
+export const sub1 = curry(
+    (n: number): number => {
+        err.numberTypeViolationError(n)
+        return n - 1
+    })
 
 /**
  *
  * @param n
  */
-export const sub2 = curry((n: number): number => {
-    err.numberTypeViolationError(n)
-    return n - 2
-})
+export const sub2 = curry(
+    (n: number): number => {
+        err.numberTypeViolationError(n)
+        return n - 2
+    })
 
 /**
  *
  * @param a
  * @param b
  */
-export const min = curry((a: number, b: number): number => {
-    return a < b ? a : b
-})
+export const min = curry(
+    (a: number, b: number): number => {
+        return a < b ? a : b
+    })
 
 /**
  *
  * @param a
  * @param b
  */
-export const max = curry((a: number, b: number): number => {
-    return a > b ? a : b
-})
+export const max = curry(
+    (a: number, b: number): number => {
+        return a > b ? a : b
+    })
 
 /**
  * //TODO
  * @param base
  * @param n
  */
-// export const pow = curry((base: number, n: number): number => {
+// export const pow = curry(
+// (base: number, n: number): number => {
 //     return numerPred.isZero(n) ? 1 : base + pow(base, n - 1)
 // })
 
@@ -121,26 +151,29 @@ export const max = curry((a: number, b: number): number => {
  *
  * @param n
  */
-export const reciprocal = curry((n: number): number | string => {
-    err.numberTypeViolationError(n)
-    return numerPred.isZero(n) ? 'reciprocal of 0 is undefined' : 1 / n
-})
+export const reciprocal = curry(
+    (n: number): number | string => {
+        err.numberTypeViolationError(n)
+        return numerPred.isZero(n) ? 'reciprocal of 0 is undefined' : 1 / n
+    })
 
 /**
  *
  * @param n
  */
-export const abs = curry((n: number): number => {
-    err.numberTypeViolationError(n)
-    return numerPred.isPositive(n) ? n : -(n)
-})
+export const abs = curry(
+    (n: number): number => {
+        err.numberTypeViolationError(n)
+        return numerPred.isPositive(n) ? n : -(n)
+    })
 
 /**
  * //TODO
  * @param n
  * @param m
  */
-// export const combination = curry((n: number, m: number): number => {
+// export const combination = curry(
+// (n: number, m: number): number => {
 //     if (numerPred.isZero(m) || (m == n)) {
 //         return 1
 //     } else {

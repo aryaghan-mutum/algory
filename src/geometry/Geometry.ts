@@ -21,16 +21,8 @@
  *   out of or in connection with the Software or the use or other dealings in the
  *   Software.
  */
-
+import {cube, square} from '../algos/NumericalComputation'
 const curry = require('curry')
-
-/**
- *
- * @param n
- */
-export const square = curry((n: number): number => {
-    return n * n
-})
 
 /**
  *
@@ -38,14 +30,6 @@ export const square = curry((n: number): number => {
  */
 export const squareList = curry((arr: Array<number>): Array<number> => {
     return arr.map(n => square(n))
-})
-
-/**
- *
- * @param n
- */
-export const cube = curry((n: number): number => {
-    return square(n) * n
 })
 
 /**
