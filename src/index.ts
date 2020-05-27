@@ -2,7 +2,9 @@
 export * from './geometry/Geometry'
 
 // Numerical Computation
+export * from './algos/primes/PrimePredicates'
 export * from './algos/Factorial'
+export * from './algos/Fibonacci'
 export * from './algos/NumericalComputation'
 export * from './algos/NumericalComputationPredicates'
 
