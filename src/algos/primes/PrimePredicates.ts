@@ -21,30 +21,57 @@
  *   out of or in connection with the Software or the use or other dealings in the
  *   Software.
  */
-import {cube, square} from '../algos/NumericalComputation'
+import {isZero} from '../NumericalComputationPredicates'
+import {add1, square} from '../NumericalComputation'
 
 const curry = require('curry')
 
 /**
- *
+ * Returns a prime number if the number is prime, false otherwise
  */
-export const squareList = curry(
+export const isPrime = curry(
     /**
-     * @param arr
+     * @param n: an input number
      */
-    (arr: Array<number>): Array<number> => {
-        return arr.map(n => square(n))
+    (n: number): boolean => {
+        /**
+         *
+         * @param n
+         * @param count
+         */
+        const primeIter = (n: number, count: number): boolean => {
+            if (n < 2)
+                return false
+            else if (n === count)
+                return true
+            else if (isZero(n % count))
+                return false
+            else
+                return primeIter(n, add1(count))
+        }
+        return primeIter(n, 2)
     })
 
 /**
- *
+ * Optimized prime checker procedure which returns a prime number if the number is prime, false otherwise
  */
-export const cubeList = curry(
+export const isPrimeOptimized = curry(
     /**
-     * @param arr
+     * @param n: an input number
      */
-    (arr: Array<number>): Array<number> => {
-        return arr.map(n => cube(n))
-    })
+    (n: number): boolean => (n < 2) ? false : optimizedPrimeIter(n, 2))
 
-
+/**
+ *
+ * @param n: an input number
+ */
+const optimizedPrimeIter = (n: number, count: number): boolean => {
+    if (n === count)
+        return true
+    else if (isZero(n % count))
+        return false
+    else if (n < square(count))
+        return true
+    else
+        return optimizedPrimeIter(n, add1(count))
+}

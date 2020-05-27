@@ -1,44 +1,34 @@
 /**
  * Algory
  *
- * Copyright (c) Anuragn Muthyam
+ * Copyright (c) Anurag Muthyam
  * https://github.com/aryaghan-mutum
  *
- * (MIT License)
- * Permission is hereby granted, free of charge, to any person obtaining a copy of
- * this software and associated documentation files (the "Software"), to deal in
- * the Software without restriction, including without limitation the rights to
- * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
- * the Software, and to permit persons to whom the Software is furnished to do so,
- * subject to the following conditions:
- * - The above copyright notice and this permission notice shall be included in
- *   all copies or substantial portions of the Software.
- * - The Software is provided "as is", without warranty of any kind, express or
- *   implied, including but not limited to the warranties of merchantability,
- *   fitness for a particular purpose and noninfringement. In no event shall the
- *   authors or copyright holders be liable for any claim, damages or other
- *   liability, whether in an action of contract, tort or otherwise, arising from,
- *   out of or in connection with the Software or the use or other dealings in the
- *   Software.
  */
 
 const curry = require('curry')
 
 /**
- * Get triangle area
- * @param base
- * @param height
+ * Returns area of a triangle
  */
-export const triangleArea = curry((base: number, height: number): number => {
-    return 0.5 * base * height
-})
+export const triangleArea = curry(
+    /**
+     * @param base: base length of a triangle
+     * @param height: height length of a triangle
+     */
+    (base: number, height: number): number => {
+        return 0.5 * base * height
+    })
 
 /**
  * Get triangle perimeter
- * @param sideX
- * @param sideY
- * @param base
  */
-export const trianglePerimeter = curry((sideX: number, sideY: number, base: number): number => {
-    return sideX + sideY + base
-})
+export const trianglePerimeter = curry(
+    /**
+     * @param sideX: one side of a triangle
+     * @param sideY: second side of a triangle
+     * @param base: base length of a triangle
+     */
+    (sideX: number, sideY: number, base: number): number => {
+        return sideX + sideY + base
+    })

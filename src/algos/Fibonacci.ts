@@ -40,7 +40,7 @@ const err = require('../TypeViolation')
 const curry = require('curry')
 
 /**
- * Get a Fibonacci number of a specific index using Recursive approach
+ * Returns a Fibonacci number of a specific index using Recursive approach
  * F(< n 0) = invalid
  * F(0)   = 0
  * F(1)   = 1
@@ -65,7 +65,7 @@ export const fibRec = curry(
     })
 
 /**
- * Get a Fibonacci number of a specific index using Iterative approach
+ * Returns a Fibonacci number of a specific index using Iterative approach
  *
  * Iterative process for F(8):
  * >(fib-i 1 1 8)
@@ -106,7 +106,7 @@ export const fibIter = curry(
     })
 
 /**
- * Get a Fibonacci number of a specific index using Imperative/Sequential approach
+ * Returns a Fibonacci number of a specific index using Imperative/Sequential approach
  */
 export const fibImper = curry(
     /**
@@ -128,7 +128,7 @@ export const fibImper = curry(
     })
 
 /**
- * Get a Fibonacci number of a specific index using Logarithmic approach
+ * Returns a Fibonacci number of a specific index using Logarithmic approach
  * Logarithmic process for F(8):
  * >(fib-log 1 0 0 1 8)
  * >(fib-log 1 0 1 1 4)
@@ -137,9 +137,10 @@ export const fibImper = curry(
  * >(fib-log 34 21 13 21 0)
  */
 export const fibLogarithmic = curry(
-    (n: number) => {
-        return fibLogHelper(1, 0, 0, 1, n)
-    })
+    /**
+     * @param n: an input number
+     */
+    (n: number) => fibLogHelper(1, 0, 0, 1, n))
 
 /**
  * Helper function for fibLogarithmic(n) which returns a Fibonacci number in O(log(n)) time

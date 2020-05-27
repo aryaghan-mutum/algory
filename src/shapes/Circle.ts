@@ -1,54 +1,46 @@
 /**
  * Algory
  *
- * Copyright (c) Anuragn Muthyam
+ * Copyright (c) Anurag Muthyam
  * https://github.com/aryaghan-mutum
- *
- * (MIT License)
- * Permission is hereby granted, free of charge, to any person obtaining a copy of
- * this software and associated documentation files (the "Software"), to deal in
- * the Software without restriction, including without limitation the rights to
- * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
- * the Software, and to permit persons to whom the Software is furnished to do so,
- * subject to the following conditions:
- * - The above copyright notice and this permission notice shall be included in
- *   all copies or substantial portions of the Software.
- * - The Software is provided "as is", without warranty of any kind, express or
- *   implied, including but not limited to the warranties of merchantability,
- *   fitness for a particular purpose and noninfringement. In no event shall the
- *   authors or copyright holders be liable for any claim, damages or other
- *   liability, whether in an action of contract, tort or otherwise, arising from,
- *   out of or in connection with the Software or the use or other dealings in the
- *   Software.
  */
 
 const err = require('../TypeViolation')
 const curry = require('curry')
 
 /**
- * Get circle area
- * @param circle radius
+ * Returns area of a circle
  */
-export const circleArea = curry((rad: number): number => {
-    err.numberTypeViolationError(rad)
-    return Math.PI * rad * rad
-})
+export const circleArea = curry(
+    /**
+     * @param rad: circle radius
+     */
+    (rad: number): number => {
+        err.numberTypeViolationError(rad)
+        return Math.PI * rad * rad
+    })
 
 /**
- * Get circle circumference
- * @param circle radius
+ * Returns circumference of a circle
  */
-export const circleCircum = curry((rad: number): number => {
-    err.numberTypeViolationError(rad)
-    return 2 * Math.PI * rad
-})
+export const circleCircum = curry(
+    /**
+     * @param rad: circle radius
+     */
+    (rad: number): number => {
+        err.numberTypeViolationError(rad)
+        return 2 * Math.PI * rad
+    })
 
 /**
- * Get circle area and circumference in an array
- * @param circle radius
+ * Returns an array containing the circle area in the 0th index and the circumference in the 1st index
  */
-export const circleInfo = curry((rad: number): Array<number> => {
-    return [circleArea(rad), circleCircum(rad)]
-})
+export const circleInfo = curry(
+    /**
+     * @param rad: circle radius
+     */
+    (rad: number): Array<number> => {
+        return [circleArea(rad), circleCircum(rad)]
+    })
 
 

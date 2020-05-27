@@ -28,54 +28,61 @@ const err = require('../TypeViolation')
 const curry = require('curry')
 
 /**
- *
- * @param n
+ * Returns a Factorial number of a specific index using Recursive process
  */
-const factorial = curry((n: number): number => {
-    if (isZero(n) || isOne(n))
-        return 1
-    else if (n < 0)
-        throw new Error("Factorial for negative numbers do not exist")
-    else
-        return n * factorial(sub1(n))
-})
+const factorial = curry(
+    /**
+     * @param n: a factorial index
+     */
+    (n: number): number => {
+        if (isZero(n) || isOne(n))
+            return 1
+        else if (n < 0)
+            throw new Error("Factorial for negative numbers do not exist")
+        else
+            return n * factorial(sub1(n))
+    })
 
 /**
- *
- * @param n
+ * Returns a Factorial number of a specific index using Recursive process
  */
-export const factorialRec = curry((n: number): number => {
-    err.numberTypeViolationError(n)
+export const factorialRec = curry(
+    /**
+     * @param n: a factorial index
+     */
+    (n: number): number => {
+        err.numberTypeViolationError(n)
 
-    debugger
+        if (n < 0) throw new Error("Factorial for negative numbers do not exist")
 
-    if (n < 0) throw new Error("Factorial for negative numbers do not exist")
-
-    const fact = (product: number, counter: number): number => {
-        if (counter > n) {
-            return product
-        } else {
-            return fact((product * counter), (counter + 1))
+        const fact = (product: number, counter: number): number => {
+            if (counter > n) {
+                return product
+            } else {
+                return fact((product * counter), (counter + 1))
+            }
         }
-    }
-    return fact(1, 1)
-})
+        return fact(1, 1)
+    })
 
 /**
- *
- * @param n
+ * Returns a Factorial number of a specific index using Iterative process
  */
-export const factorialIter = curry((n: number): number => {
-    err.numberTypeViolationError(n)
+export const factorialIter = curry(
+    /**
+     * @param n: a factorial index
+     */
+    (n: number): number => {
+        err.numberTypeViolationError(n)
 
-    if (isZero(n) || isOne(n))
-        return 1
-    else if (n < 0)
-        throw new Error("Factorial for negative numbers do not exist")
+        if (isZero(n) || isOne(n))
+            return 1
+        else if (n < 0)
+            throw new Error("Factorial for negative numbers do not exist")
 
-    for (let i = n - 1; i >= 1; i--) {
-        n *= i
-    }
-    return n
-})
+        for (let i = n - 1; i >= 1; i--) {
+            n *= i
+        }
+        return n
+    })
 
