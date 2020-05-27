@@ -1,7 +1,7 @@
 {
   "name": "algory",
-  "version": "1.4.2",
-  "description": "a library composed of algorithms and data structures for JavaScript, TypeScript and Node.js",
+  "version": "1.4.3",
+  "description": "a general purpose library composed of algorithms and data structures for JavaScript, TypeScript and Node.js",
   "main": "lib/index.js",
   "types": "lib",
   "scripts": {
