@@ -18,12 +18,14 @@ describe('Factorial', () => {
         expect(fib.fibImper(0)).to.be.equal(0)
         expect(fib.fibImper(1)).to.be.equal(1)
         expect(fib.fibImper(10)).to.be.equal(55)
+        expect(fib.fibImper()(100)).to.be.equal(354224848179262000000)
     })
 
     specify('test Fibonacci Logarithmic Process', () => {
         expect(fib.fibLogarithmic(0)).to.be.equal(0)
         expect(fib.fibLogarithmic(1)).to.be.equal(1)
         expect(fib.fibLogarithmic(10)).to.be.equal(55)
+        expect(fib.fibLogarithmic()(100)).to.be.equal(354224848179261900000)
     })
 })
 
