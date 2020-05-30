@@ -22,7 +22,7 @@ export const sqr = curry(
 
 /**
  * A list of Squared numbers
- * F([a,b,c ... n]) = ((sqr a) (sqr b) (sqr c) ... sqr(n))
+ * F([a,b,c ... n]) = [(sqr a) (sqr b) (sqr c) ... sqr(n)]
  */
 export const sqrLst = curry(
     /**
@@ -30,7 +30,7 @@ export const sqrLst = curry(
      * @return {Array<number>} - A list of Squared numbers
      */
     (arr: Array<number>): Array<number> => {
-        return arr.map((n: number) => n * n)
+        return arr.map((n: number) => sqr(n))
     })
 
 

@@ -22,7 +22,7 @@ export const double = curry(
 
 /**
  * Double each numbers in a list
- * F(n) => (* n 2) or F(n) => (+ n n)
+ * F([a,b,c ... n]) = [(double a) (double b) (double c) ... double(n)]
  */
 export const doubleLst = curry(
     /**
@@ -30,5 +30,5 @@ export const doubleLst = curry(
      * @return {Array<number>} - A list of doubled numbers
      */
     (arr: Array<number>): Array<number> => {
-        return arr.map((n: number) => n * 2)
+        return arr.map((n: number) => double(n))
     })

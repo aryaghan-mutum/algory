@@ -127,19 +127,6 @@ export const max = curry(
 // })
 
 /**
- * Reciprocal/Inverse a number
- * F(n) => (/ 1 n)
- */
-export const reciprocal = curry(
-    /**
-     * @param n
-     */
-    (n: number): number | string => {
-        err.numberTypeViolationError(n)
-        return numerPred.isZero(n) ? 'reciprocal of 0 is undefined' : 1 / n
-    })
-
-/**
  * Get an Absolute/modulus a number
  * F(n) => |n|
  */

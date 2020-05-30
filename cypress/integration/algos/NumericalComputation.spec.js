@@ -65,14 +65,6 @@ describe('Numerical Computation', () => {
         // TODO
     })
 
-    specify('test reciprocal', () => {
-        expect(numer.reciprocal(2)).to.be.equal(0.5)
-        expect(numer.reciprocal(-2)).to.be.equal(-0.5)
-        expect(numer.reciprocal(32.0)).to.be.equal(0.03125)
-        expect(numer.reciprocal(-32.0)).to.be.equal(-0.03125)
-        expect(numer.reciprocal(-32.0)).to.be.equal(-0.03125)
-    })
-
     specify('test abs', () => {
         expect(numer.abs(2)).to.be.equal(2)
         expect(numer.abs(-2)).to.be.equal(2)

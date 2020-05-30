@@ -1,9 +1,14 @@
 // Numerical Computation
 export * from './algos/primes/PrimePredicates'
+export * from './algos/Average'
+export * from './algos/Cube'
+export * from './algos/Double'
 export * from './algos/Factorial'
 export * from './algos/Fibonacci'
+export * from './algos/ListComputation'
 export * from './algos/NumericalComputation'
 export * from './algos/NumericalComputationPredicates'
+export * from './algos/Square'
 
 // Sort
 export * from './ds/sort/BubbleSort'

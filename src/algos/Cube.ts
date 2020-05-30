@@ -24,7 +24,7 @@ export const cube = curry(
 
 /**
  * A list of Squared numbers
- * F([a,b,c ... n]) = ((cube a) (cube b) (cube c) ... cube(n))
+ * F([a,b,c ... n]) = [(cube a) (cube b) (cube c) ... cube(n)]
  */
 export const cubeLst = curry(
     /**
@@ -32,7 +32,7 @@ export const cubeLst = curry(
      * @return {Array<number>} - A list of Cubed numbers
      */
     (arr: Array<number>): Array<number> => {
-        return arr.map((n: number) => n * n * n)
+        return arr.map((n: number) => cube(n))
     })
 
 
