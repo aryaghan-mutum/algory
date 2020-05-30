@@ -1,0 +1,13 @@
+const sort = require('../../../../src/ds/sort/QuickSort')
+
+describe('Quick Sort', () => {
+
+    specify('test Quick Sort', () => {
+        expect(sort.quickSort([-4, -3, -2, -1, 0, 1, 2, 3, 4])).to.be.equal([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+        expect(sort.quickSort([4, 3, 2, 1, 0, -1, -2, -3, -4])).to.be.equal([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+        expect(sort.quickSort([0])).to.be.equal([0])
+        expect(sort.quickSort([])).to.be.equal([])
+    })
+
+})
+
