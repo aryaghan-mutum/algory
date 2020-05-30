@@ -5,7 +5,7 @@
  * https://github.com/aryaghan-mutum
  */
 
-import {sqr} from '../algos/Square'
+import {sqr} from '../algos/NumericalComputation'
 
 const curry = require('curry')
 const err = require('../TypeViolation')

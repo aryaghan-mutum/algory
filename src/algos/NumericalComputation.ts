@@ -1,3 +1,5 @@
+import {isZero} from "./NumericalComputationPredicates";
+
 /**
  * Algory
  *
@@ -5,12 +7,35 @@
  * https://github.com/aryaghan-mutum
  *
  */
-import {sqr} from './Square'
-import {cube} from './Cube'
 
 const numerPred = require('.//NumericalComputationPredicates')
 const err = require('../TypeViolation')
 const curry = require('curry')
+
+/**
+ * Square a number
+ *  F(n) => (* n n)
+ *
+ * @param {number} n - An input number
+ * @return {number} - Squared number
+ */
+export const sqr = curry(
+    (n: number): number => {
+        return n * n
+    })
+
+/**
+ * Cube a number
+ * F(n) => (* n n n)
+ *
+ * @param {number} n - An input number
+ * @return {number} - Cubed number
+ */
+export const cube = curry(
+    (n: number): number => {
+        return sqr(n) * n
+    })
+
 
 /**
  * Square two numbers and sum the returned values
@@ -36,6 +61,18 @@ export const sumOfCubes = curry(
      */
     (x: number, y: number): number => {
         return cube(x) + cube(y)
+    })
+
+/**
+ * Double a number
+ * F(n) => (* n 2) or F(n) => (+ n n)
+ *
+ * @param {number} n - An input number
+ * @return {number} - Doubled number
+ */
+export const double = curry(
+    (n: number): number => {
+        return n * 2
     })
 
 /**
@@ -152,6 +189,34 @@ export const half = curry(
         return n / 2
     })
 
+/**
+ * An Average of two numbers
+ * F(x, y) => (/ x y)
+ *
+ * @param {number} x - An input first argument number
+ * @param {number} y - An input second argument number
+ * @return {number} - The average of two numbers
+ */
+export const avg = curry(
+    (x: number, y: number): number => {
+        return x + y / 2
+    })
+
+/**
+ * Reciprocal/Inverse a number
+ * F(n) => (/ 1 n)
+ *
+ * @param {number} n - An input number
+ * @return {number} - Reciprocal number
+ */
+export const reciprocal = curry(
+    (n: number): number => {
+        if (isZero(n)) {
+            throw new Error('Reciprocal/Inverse of 0 is undefined')
+        } else {
+            return 1 / n
+        }
+    })
 
 /**
  * //TODO

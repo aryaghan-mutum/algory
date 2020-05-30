@@ -151,9 +151,6 @@ export const isEven = curry(
  * F?(n) => (!= (% (abs n) 2) 0) ? true : false
  */
 export const isOdd = curry(
-    /**
-     * @param n
-     */
     (n: number): boolean => {
         err.numberTypeViolationError(n)
         return numer.abs(n) % 2 !== 0 ? true : false

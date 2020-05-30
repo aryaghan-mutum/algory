@@ -1,4 +1,4 @@
-const prime = require('../../../src/algos/primes/PrimePredicates')
+const prime = require('../../../../src/algos/primes/PrimePredicates')
 
 describe('Prime Predicates', () => {
 

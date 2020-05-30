@@ -6,20 +6,18 @@
  */
 
 import {isZero} from '../NumericalComputationPredicates'
-import {add1} from '../NumericalComputation'
-import {sqr} from '../Square'
+import {add1, sqr} from '../NumericalComputation'
 
 const curry = require('curry')
 
 /**
  * Returns a prime number if the number is prime, false otherwise
  * F?(n) => t or f
+ *
+ * @param {number} n - An input number
+ * @return {boolean} - A boolean expression true if the number is prime
  */
 export const isPrime = curry(
-    /**
-     * @param {number} n - An input number
-     * @return {boolean} - A boolean expression true if the number is prime
-     */
     (n: number): boolean => {
         /**
          * @param {number} n - An input number
