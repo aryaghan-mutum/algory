@@ -1,7 +1,7 @@
 /**
  * Algory
  *
- * Copyright (c) Anurag Muthyam
+ * Copyright (c) 2020 Anurag Muthyam
  * https://github.com/aryaghan-mutum
  *
  *   *******************************************
@@ -15,15 +15,14 @@
  *   Reference: https://en.wikipedia.org/wiki/Fibonacci_number
  *
  */
-import {isOne, isZero, isNegative} from './NumericalComputationPredicates'
+import {isOne, isZero, isNegative, isEven} from './NumericalComputationPredicates'
 import {sub1, sub2, square, sumOfSquares} from './NumericalComputation'
-import {isEven} from './NumericalComputationPredicates'
 
 const err = require('../TypeViolation')
 const curry = require('curry')
 
 /**
- * Returns a Fibonacci number of a specific index using Recursive approach
+ * Fibonacci: Recursive Procedure with Recursive Process
  * F(< n 0) = invalid
  * F(0)   = 0
  * F(1)   = 1
@@ -31,7 +30,8 @@ const curry = require('curry')
  */
 export const fibRec = curry(
     /**
-     * @param n: Fibonacci index
+     * @param {number} n - Fibonacci index
+     * @return {number} - A Fibonacci number of a specific index using Recursive process
      */
     (n: number): number => {
         err.numberTypeViolationError(n)
@@ -48,7 +48,7 @@ export const fibRec = curry(
     })
 
 /**
- * Returns a Fibonacci number of a specific index using Iterative approach
+ * Fibonacci: Recursive Procedure with Iterative Process
  *
  * Iterative process for F(8):
  * >(fib-i 1 1 8)
@@ -62,7 +62,8 @@ export const fibRec = curry(
  */
 export const fibIter = curry(
     /**
-     * @param n: Fibonacci index
+     * @param {number} n - Fibonacci index
+     * @return {number} - A Fibonacci number of a specific index using Iterative process
      */
     (n: number): number => {
 
@@ -75,9 +76,10 @@ export const fibIter = curry(
 
         /**
          * fibIterHelper returns the fibonacci number of an index
-         * @param acc1: first accumulator to hold a value
-         * @param acc2: second accumulator to hold a value
-         * @param n: Fibonacci index
+         * @param {number} acc1 - First accumulator to hold a value
+         * @param {number} acc2 - Second accumulator to hold a value
+         * @param {number} n - Fibonacci index
+         * @return {number} - A Fibonacci number of a specific index using Iterative process
          */
         const fibIterHelper = (acc1: number,
                                acc2: number,
@@ -89,11 +91,12 @@ export const fibIter = curry(
     })
 
 /**
- * Returns a Fibonacci number of a specific index using Imperative/Sequential approach
+ * Fibonacci: Imperative Procedure
  */
 export const fibImper = curry(
     /**
-     * @param n: Fibonacci index
+     * @param {number} n - Fibonacci index
+     * @return {number} - A Fibonacci number of a specific index using Imperative/Sequential approach
      */
     (n: number): number => {
         err.numberTypeViolationError(n)
@@ -111,7 +114,7 @@ export const fibImper = curry(
     })
 
 /**
- * Returns a Fibonacci number of a specific index using Logarithmic approach
+ * Fibonacci: Recursive Procedure with Logarithmic process
  * Logarithmic process for F(8):
  * >(fib-log 1 0 0 1 8)
  * >(fib-log 1 0 1 1 4)
@@ -121,17 +124,19 @@ export const fibImper = curry(
  */
 export const fibLogarithmic = curry(
     /**
-     * @param n: an input number
+     * @param {number} n - Fibonacci index
+     * @return {number} - A Fibonacci number of a specific index using Logarithmic process
      */
-    (n: number) => fibLogHelper(1, 0, 0, 1, n))
+    (n: number): number => fibLogHelper(1, 0, 0, 1, n))
 
 /**
  * Helper function for fibLogarithmic(n) which returns a Fibonacci number in O(log(n)) time
- * @param a
- * @param b
- * @param p
- * @param q
- * @param counter
+ * @param {number} a
+ * @param {number} b
+ * @param {number} p
+ * @param {number} q
+ * @param {number} counter
+ * @return {number} - A Fibonacci number of a specific index using Logarithmic approach
  */
 const fibLogHelper = (a: number,
                       b: number,

@@ -103,12 +103,14 @@ describe('Numerical Computation', () => {
         expect(numer.abs()(-32.0)).to.be.equal(32.0)
     })
 
-    specify('test abs', () => {
-        expect(numer.abs(2)).to.be.equal(2)
-        expect(numer.abs(-2)).to.be.equal(2)
-        expect(numer.abs(32.0)).to.be.equal(32.0)
-        expect(numer.abs(-32.0)).to.be.equal(32.0)
-        expect(numer.abs()(-32.0)).to.be.equal(32.0)
+    specify('test half', () => {
+        expect(numer.half(4)).to.be.equal(2)
+        expect(numer.half(4.5)).to.be.equal(2.25)
+        expect(numer.half(-1/2)).to.be.equal(-0.5)
+        expect(numer.half(-0.01)).to.be.equal(-0.005)
+        expect(numer.half(0)).to.be.equal(0)
+        expect(numer.half(0.0001)).to.be.equal(0.0005)
+        expect(numer.half()(0.0000001/2)).to.be.equal(5e-8)
     })
 
     specify('test combination', () => {

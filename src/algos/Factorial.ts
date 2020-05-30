@@ -1,7 +1,7 @@
 /**
  * Algory
  *
- * Copyright (c) Anurag Muthyam
+ * Copyright (c) 2020. Anurag Muthyam
  * https://github.com/aryaghan-mutum
  */
 import {isOne, isZero} from './NumericalComputationPredicates'
@@ -11,12 +11,13 @@ const err = require('../TypeViolation')
 const curry = require('curry')
 
 /**
- * Returns a Factorial number of a specific index using Recursive process
+ * Factorial: Recursive Procedure with Recursive Process
  * F(n) => (* n (f (- n 1))
  */
 const factorial = curry(
     /**
-     * @param n: a factorial index
+     * @param {number} n - A factorial index
+     * @return {number} - A Factorial number of a specific index using Recursive process
      */
     (n: number): number => {
         if (isZero(n) || isOne(n))
@@ -28,12 +29,12 @@ const factorial = curry(
     })
 
 /**
- * Returns a Factorial number of a specific index using Recursive process
- * F(n) => (* n (f (- n 1))
+ * Factorial: Recursive Procedure with Iterative Process
  */
-export const factorialRec = curry(
+export const factorialIter = curry(
     /**
-     * @param n: a factorial index
+     * @param {number} n - A factorial index
+     * @return {number} - A Factorial number of a specific index using Recursive process
      */
     (n: number): number => {
         err.numberTypeViolationError(n)
@@ -51,12 +52,13 @@ export const factorialRec = curry(
     })
 
 /**
- * Returns a Factorial number of a specific index using Iterative process
- * F(n) => (* n (f (- n 1))
+ * Factorial: Imperative Procedure with Sequential Process
  */
-export const factorialIter = curry(
+export const factorialImper = curry(
     /**
      * @param n: a factorial index
+     * @param {number} n - A factorial index
+     * @return {number} - A Factorial number of a specific index using Iterative process
      */
     (n: number): number => {
         err.numberTypeViolationError(n)

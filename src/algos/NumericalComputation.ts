@@ -190,6 +190,20 @@ export const abs = curry(
     })
 
 /**
+ *
+ * F(n) => (/ n 2)
+ */
+export const half = curry(
+    /**
+     * @param n
+     * @return
+     */
+    (n: number): number => {
+        return n / 2
+    })
+
+
+/**
  * //TODO
  * @param n
  * @param m
