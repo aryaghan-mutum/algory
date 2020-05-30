@@ -5,7 +5,7 @@
  * https://github.com/aryaghan-mutum
  */
 
-import {square} from '../algos/NumericalComputation'
+import {sqr} from '../algos/Square'
 
 const err = require('../TypeViolation')
 const curry = require('curry')
@@ -20,7 +20,7 @@ export const circleArea = curry(
      */
     (rad: number): number => {
         err.numberTypeViolationError(rad)
-        return Math.PI * square(rad)
+        return Math.PI * sqr(rad)
     })
 
 /**

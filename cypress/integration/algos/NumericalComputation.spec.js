@@ -2,19 +2,6 @@ const numer = require('../../../src/algos/NumericalComputation')
 
 describe('Numerical Computation', () => {
 
-    specify('test square', () => {
-        expect(numer.square(2)).to.be.equal(4)
-        expect(numer.square(0)).to.be.equal(0)
-        expect(numer.square(-2)).to.be.equal(4)
-    })
-
-    specify('test cube', () => {
-        expect(numer.cube(2)).to.be.equal(8)
-        expect(numer.cube(0)).to.be.equal(0)
-        expect(numer.cube(-2)).to.be.equal(-8)
-    })
-
-
     specify('test sumOfSquares', () => {
         expect(numer.sumOfSquares(3, 4)).to.be.equal(25)
         expect(numer.sumOfSquares(0, 0)).to.be.equal(0)
@@ -27,15 +14,6 @@ describe('Numerical Computation', () => {
         expect(numer.sumOfCubes(0, 0)).to.be.equal(0)
         expect(numer.sumOfCubes(-3, -4)).to.be.equal(-91)
         expect(numer.sumOfCubes(-3)(4)).to.be.equal(37)
-    })
-
-    specify('test double', () => {
-        expect(numer.double(5)).to.be.equal(10)
-        expect(numer.double(0)).to.be.equal(0)
-        expect(numer.double(-5)).to.be.equal(-10)
-        expect(numer.double(-3)).to.be.equal(-6)
-        expect(numer.double()(3)).to.be.equal(6)
-        expect(numer.double()()(3.2)).to.be.equal(6.4)
     })
 
     specify('test triple', () => {
@@ -106,7 +84,7 @@ describe('Numerical Computation', () => {
     specify('test half', () => {
         expect(numer.half(4)).to.be.equal(2)
         expect(numer.half(4.5)).to.be.equal(2.25)
-        expect(numer.half(-1/2)).to.be.equal(-0.5)
+        expect(numer.half(-1/2)).to.be.equal(-0.25)
         expect(numer.half(-0.01)).to.be.equal(-0.005)
         expect(numer.half(0)).to.be.equal(0)
         expect(numer.half(0.0001)).to.be.equal(0.0005)

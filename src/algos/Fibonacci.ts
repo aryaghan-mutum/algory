@@ -16,7 +16,8 @@
  *
  */
 import {isOne, isZero, isNegative, isEven} from './NumericalComputationPredicates'
-import {sub1, sub2, square, sumOfSquares} from './NumericalComputation'
+import {sub1, sub2, sumOfSquares} from './NumericalComputation'
+import {sqr} from './Square'
 
 const err = require('../TypeViolation')
 const curry = require('curry')
@@ -152,7 +153,7 @@ const fibLogHelper = (a: number,
             a,
             b,
             sumOfSquares(p, q),
-            (2 * p * q) + square(q),
+            (2 * p * q) + sqr(q),
             counter / 2)
     } else {
         return fibLogHelper(

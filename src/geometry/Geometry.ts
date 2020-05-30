@@ -5,7 +5,8 @@
  * https://github.com/aryaghan-mutum
  */
 
-import {cube, square} from '../algos/NumericalComputation'
+import {cube} from '../algos/Cube'
+import {sqr} from '../algos/Square'
 
 const curry = require('curry')
 
@@ -18,7 +19,7 @@ export const squareList = curry(
      * @param arr: an input array
      */
     (arr: Array<number>): Array<number> => {
-        return arr.map(n => square(n))
+        return arr.map(n => sqr(n))
     })
 
 /**

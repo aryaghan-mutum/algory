@@ -5,7 +5,7 @@
  * https://github.com/aryaghan-mutum
  */
 
-import {square} from '../algos/NumericalComputation'
+import {sqr} from '../algos/Square'
 
 const curry = require('curry')
 const err = require('../TypeViolation')
@@ -21,7 +21,7 @@ export const squareArea = curry(
      */
     (length: number): number => {
         err.numberTypeViolationError(length)
-        return square(length)
+        return sqr(length)
     })
 
 /**

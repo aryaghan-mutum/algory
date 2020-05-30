@@ -6,7 +6,8 @@
  */
 
 import {isZero} from '../NumericalComputationPredicates'
-import {add1, square} from '../NumericalComputation'
+import {add1} from '../NumericalComputation'
+import {sqr} from '../Square'
 
 const curry = require('curry')
 
@@ -58,7 +59,7 @@ const optimizedPrimeIter = (n: number, count: number): boolean => {
         return true
     else if (isZero(n % count))
         return false
-    else if (n < square(count))
+    else if (n < sqr(count))
         return true
     else
         return optimizedPrimeIter(n, add1(count))

@@ -5,36 +5,12 @@
  * https://github.com/aryaghan-mutum
  *
  */
+import {sqr} from './Square'
+import {cube} from './Cube'
 
 const numerPred = require('.//NumericalComputationPredicates')
 const err = require('../TypeViolation')
 const curry = require('curry')
-
-/**
- * Square a number
- *  F(n) => (* n n)
- */
-export const square = curry(
-    /**
-     * @param n
-     */
-    (n: number): number => {
-        err.numberTypeViolationError(n)
-        return n * n
-    })
-
-/**
- * Cube a number
- * F(n) => (* n n n)
- */
-export const cube = curry(
-    /**
-     * @param n
-     */
-    (n: number): number => {
-        err.numberTypeViolationError(n)
-        return square(n) * n
-    })
 
 /**
  * Square two numbers and sum the returned values
@@ -46,7 +22,7 @@ export const sumOfSquares = curry(
      * @param y
      */
     (x: number, y: number): number => {
-        return square(x) + square(y)
+        return sqr(x) + sqr(y)
     })
 
 /**
@@ -60,19 +36,6 @@ export const sumOfCubes = curry(
      */
     (x: number, y: number): number => {
         return cube(x) + cube(y)
-    })
-
-/**
- * Double a number.
- * F(n) => (* n 2) or F(n) => (+ n n)
- */
-export const double = curry(
-    /**
-     * @param n
-     */
-    (n: number): number => {
-        err.numberTypeViolationError(n)
-        return n * 2
     })
 
 /**
