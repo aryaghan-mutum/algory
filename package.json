@@ -31,7 +31,8 @@
   },
   "dependencies": {
     "@types/node": "^14.0.5",
-    "curry": "^1.2.0"
+    "curry": "^1.2.0",
+    "ramda": "^0.27.0"
   },
   "files": [
     "lib/**/*"
