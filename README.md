@@ -21,5 +21,8 @@ A General purpose library composed of algorithms and data structures for `JavaSc
 - `const λ = require('algory')`
 - `λ.sumOfCubes(2, 3))`
 
+###### License 
+- This project is licensed under the terms of the [MIT license](/LICENSE.md).
+
 ###### Contributors
 `Anurag Muthyam`
