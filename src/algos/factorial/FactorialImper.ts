@@ -25,7 +25,7 @@ export const factImper = curry(
         else if (n < 0)
             throw new Error("Factorial for negative numbers do not exist")
 
-        for (let i = n - 1; i >= 1; i--) {
+        for (let i: number = n - 1; i >= 1; i--) {
             n *= i
         }
         return n
