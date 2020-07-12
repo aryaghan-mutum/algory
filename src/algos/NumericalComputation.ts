@@ -229,7 +229,9 @@ export const reciprocal = curry(
     })
 
 /**
- * @remarks //TODO
+ * 
+ * @remarks FIXME:
+ * 
  */
 // export const combination = curry(
 // (n: number, m: number): number => {
