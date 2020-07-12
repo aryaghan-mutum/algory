@@ -21,7 +21,7 @@
   "homepage": "https://github.com/aryaghan-mutum/algory#readme",
   "devDependencies": {
     "chai": "^4.2.0",
-    "cypress": "^4.6.0",
+    "cypress": "^4.9.0",
     "faker": "^4.1.0",
     "mocha": "^7.2.0",
     "prettier": "2.0.5",

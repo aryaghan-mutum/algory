@@ -1,11 +1,10 @@
 # dependencies
 node_modules
-/lib
 docs
 coverage
 
 # production
-/build
+/lib
 
 # misc
 .DS_Store
