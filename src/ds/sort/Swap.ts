@@ -1,16 +1,12 @@
 const curry = require('curry')
 
 /**
- *
- *
+ * @remarks
+ * @param arr 
+ * @param first 
+ * @param second 
  */
 export const swap =
-    /**
-     *
-     * @param arr
-     * @param first
-     * @param second
-     */
     (arr: Array<number>, first: number, second: number): void => {
 
         if (arr === undefined || arr.length == 0) {
