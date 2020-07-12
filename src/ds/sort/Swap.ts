@@ -1,7 +1,7 @@
 const curry = require('curry')
 
 /**
- * @remarks
+ * @remarks Swap
  * @param arr 
  * @param first 
  * @param second 
@@ -13,7 +13,7 @@ export const swap =
             return
         }
 
-        let temp = arr[first]
+        let temp: number = arr[first]
         arr[first] = arr[second]
         arr[second] = temp
     }

@@ -41,7 +41,6 @@ const fibLogHelper = (a: number,
                       counter: number): number => {
 
     if (isZero(counter)) {
-        debugger
         return b
     } else if (isEven(counter)) {
         return fibLogHelper(

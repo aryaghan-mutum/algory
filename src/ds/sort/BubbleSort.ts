@@ -6,6 +6,7 @@
  */
 
 import {swap} from './Swap'
+import { add1 } from '../../algos/NumericalComputation'
 
 const curry = require('curry')
 
@@ -24,13 +25,13 @@ export const bubbleSortImper = curry(
         if (arr === undefined || arr === null) return null
 
         // One by one move boundary of unsorted subarray
-        for (let i = 1; i <= arr.length; i++) {
+        for (let i: number = 1; i <= arr.length; i++) {
 
-            for (let j = 0; j < arr.length - 1; j++) {
+            for (let j: number = 0; j < arr.length - 1; j++) {
 
                 // if the elem in first index is greater than elem in second index the swap
-                if (arr[j] > arr[j + 1]) {
-                    swap(arr, j, j + 1)
+                if (arr[j] > arr[add1(j)]) {
+                    swap(arr, j, add1(j))
                 }
             }
         }

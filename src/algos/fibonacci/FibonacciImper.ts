@@ -24,7 +24,7 @@ export const fibImper = curry(
 
         let x: number = 0
         let y: number = 1
-        for (let i = 0; i < n; i++) {
+        for (let i: number = 0; i < n; i++) {
             y = y + x
             x = y - x
         }
