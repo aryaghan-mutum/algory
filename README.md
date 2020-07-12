@@ -1,28 +1,30 @@
-##### Algory
+# Algory
 
-A General purpose library composed of algorithms and data structures for `JavaScript`, `TypeScript` & `Node.js`
+An Auto-Curried General purpose library composed of algorithms and data structures for `JavaScript`, `TypeScript` and `Node.js`
 
-###### Development
-- `npm run build`
-- `npm test`
-- `npm version 0.0.0`
+###### How to Import libraries 
+Import all the function in TypeScript using `import` keyword:
+``` properties 
+import * as λ from 'algory'
+λ.sumOfCubes(2, 3)
+```
 
-###### Imports
-- Import all in TypeScript using `import`: 
-- `import * as λ from 'algory'`
-- `λ.sumOfCubes(2, 3))`
-- `λ.sumOfCubes(2, 3)`
+Import all functions in TypeScript using `require` keyword:
+```properties
+const λ = require('algory')
+λ.sumOfCubes(2, 3))
+```
 
-- Import all in TypeScript using `require`:
-- `const λ = require('algory')`
-- `λ.sumOfCubes(2, 3))`
-
-- Import all in JavaScript using `require`:
-- `const λ = require('algory')`
-- `λ.sumOfCubes(2, 3))`
+Import all functions in JavaScript using `require` keyword:
+```properties
+const λ = require('algory')
+λ.sumOfCubes(2, 3))
+```
 
 ###### License 
 - This project is licensed under the terms of the [MIT license](/LICENSE.md).
 
 ###### Contributors
-`Anurag Muthyam`
+```properties
+Anurag Muthyam <anu.drumcoder@gmail.com>
+```
