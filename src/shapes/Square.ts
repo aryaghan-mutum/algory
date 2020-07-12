@@ -1,7 +1,7 @@
 /**
  * Algory
  *
- * Copyright (c) Anurag Muthyam
+ * Copyright (c) Anurag Muthyam <anu.drimcoder@gmail.com>
  * https://github.com/aryaghan-mutum
  */
 
@@ -11,13 +11,13 @@ const curry = require('curry')
 const err = require('../TypeViolation')
 
 /**
- * Returns area of a square
+ * @remarks Returns area of a square
  * F(s) => (* s s)
  */
 export const squareArea = curry(
     /**
-     *
      * @param length/side in a square
+     * @returns
      */
     (length: number): number => {
         err.numberTypeViolationError(length)
@@ -25,12 +25,13 @@ export const squareArea = curry(
     })
 
 /**
- * Returns square perimeter
+ * @remarks Returns square perimeter
  * F(s) => (* 4 s)
  */
 export const squarePerimeter = curry(
     /**
-     * @param length/side in a square
+     * @param length - side in a square
+     * @returns
      */
     (length: number): number => {
         err.numberTypeViolationError(length)

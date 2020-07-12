@@ -1,7 +1,7 @@
 /**
  * Algory
  *
- * Copyright (c) 2020. Anurag Muthyam
+ * Copyright (c) 2020. Anurag Muthyam <anu.drumcoder@gmail.com>
  * https://github.com/aryaghan-mutum
  */
 
@@ -10,10 +10,10 @@ const curry = require('curry')
 const err = require('../../TypeViolation')
 
 /**
- * Factorial: Imperative Procedure with Sequential Process
- *
- * @param {number} n - A factorial index
- * @return {number} - A Factorial number of a specific index using Iterative process
+ * @remarks Factorial: Imperative Procedure with Sequential Process
+ * 
+ * @param n - A factorial index
+ * @returns A Factorial number of a specific index using Iterative process
  */
 export const factImper = curry(
     (n: number): number => {
@@ -30,3 +30,5 @@ export const factImper = curry(
         }
         return n
     })
+
+

@@ -1,7 +1,7 @@
 /**
  * Algory
  *
- * Copyright (c) 2020. Anurag Muthyam
+ * Copyright (c) 2020. Anurag Muthyam <anu.drumcoder@gmail.com>
  * https://github.com/aryaghan-mutum
  */
 
@@ -9,10 +9,10 @@ const curry = require('curry')
 const err = require('../../TypeViolation')
 
 /**
- * Factorial: Recursive Procedure with Iterative Process
- *
- * @param {number} n - A factorial index
- * @return {number} - A Factorial number of a specific index using Recursive process
+ * @remarks Factorial: Recursive Procedure with Iterative Process
+ * 
+ * @param n - A factorial index
+ * @returns A Factorial number of a specific index using Recursive process
  */
 export const factIter = curry(
     (n: number): number => {

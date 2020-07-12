@@ -1,7 +1,7 @@
 /**
  * Algory
  *
- * Copyright (c) Anurag Muthyam
+ * Copyright (c) Anurag Muthyam <anu.drumcoder@gmail.com>
  * https://github.com/aryaghan-mutum
  */
 
@@ -10,10 +10,14 @@ import {swap} from './Swap'
 const curry = require('curry')
 
 /**
- * Bubble Sort
+ * @remarks Bubble Sort
  *
  */
 export const bubbleSortImper = curry(
+    /**
+     * @param arr - An unsorted array of numbers
+     * @returns Sorted array of numbers 
+     */
     (arr: Array<number>): Array<number> | null => {
 
         // if the array is null or undefined then return null

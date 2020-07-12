@@ -1,9 +1,9 @@
-import {isZero} from "./NumericalComputationPredicates";
+import { isZero } from "./NumericalComputationPredicates";
 
 /**
  * Algory
  *
- * Copyright (c) Anurag Muthyam
+ * Copyright (c) Anurag Muthyam <anu.drumcoder@gmail.com>
  * https://github.com/aryaghan-mutum
  *
  */
@@ -13,11 +13,11 @@ const err = require('../TypeViolation')
 const curry = require('curry')
 
 /**
- * Square a number
+ * @remarks Square a number
  *  F(n) => (* n n)
  *
- * @param {number} n - An input number
- * @return {number} - Squared number
+ * @param n - An input number
+ * @returns Squared number
  */
 export const sqr = curry(
     (n: number): number => {
@@ -25,50 +25,51 @@ export const sqr = curry(
     })
 
 /**
- * Cube a number
+ * @remarks Cube a number
  * F(n) => (* n n n)
  *
- * @param {number} n - An input number
- * @return {number} - Cubed number
+ * @param n - An input number
+ * @returns Cubed number
  */
 export const cube = curry(
     (n: number): number => {
         return sqr(n) * n
     })
 
-
 /**
- * Square two numbers and sum the returned values
+ * @remarks Square two numbers and sum the returned values
  * F(n) => (+ (square x) (square y))
  */
 export const sumOfSquares = curry(
     /**
      * @param x
      * @param y
+     * @returns - Sum of Squares 
      */
     (x: number, y: number): number => {
         return sqr(x) + sqr(y)
     })
 
 /**
- * Cube two numbers and sum the returned values
+ * @remarks Cube two numbers and sum the returned values
  * F(n) => (+ (cube x) (cube y))
  */
 export const sumOfCubes = curry(
     /**
      * @param x
      * @param y
+     * @returns Sum of Cubes
      */
     (x: number, y: number): number => {
         return cube(x) + cube(y)
     })
 
 /**
- * Double a number
+ * @remarks Double a number
  * F(n) => (* n 2) or F(n) => (+ n n)
  *
- * @param {number} n - An input number
- * @return {number} - Doubled number
+ * @param n - An input number
+ * @returns Doubled number
  */
 export const double = curry(
     (n: number): number => {
@@ -76,12 +77,13 @@ export const double = curry(
     })
 
 /**
- * Triple a number.
+ * @remarks Triple a number.
  * F(n) => (* n 3) or F(n) => (+ n n n)
  */
 export const triple = curry(
     /**
      * @param n
+     * @returns 
      */
     (n: number): number => {
         err.numberTypeViolationError(n)
@@ -89,12 +91,13 @@ export const triple = curry(
     })
 
 /**
- * Add a number
+ * @remarks Add a number
  * F(n) => (+ n 1)
  */
 export const add1 = curry(
     /**
      * @param n
+     * @returns 
      */
     (n: number): number => {
         err.numberTypeViolationError(n)
@@ -102,12 +105,13 @@ export const add1 = curry(
     })
 
 /**
- * Subtract a number
+ * @remarks Subtract a number
  * F(n) => (- n 1)
  */
 export const sub1 = curry(
     /**
      * @param n
+     * @returns 
      */
     (n: number): number => {
         err.numberTypeViolationError(n)
@@ -115,12 +119,13 @@ export const sub1 = curry(
     })
 
 /**
- * Subtract two numbers
+ * @remarks Subtract two numbers
  * F(n) => (- n 2)
  */
 export const sub2 = curry(
     /**
      * @param n
+     * @returns 
      */
     (n: number): number => {
         err.numberTypeViolationError(n)
@@ -128,33 +133,35 @@ export const sub2 = curry(
     })
 
 /**
- * Get the minimum number between two numbers
+ * @remarks Get the minimum number between two numbers
  * F(x, y) => (< a b) ? a : b
  */
 export const min = curry(
     /**
      * @param a
      * @param b
+     * @returns 
      */
     (a: number, b: number): number => {
         return a < b ? a : b
     })
 
 /**
- * Get the maximum number between two numbers
+ * @remarks Get the maximum number between two numbers
  * F(x, y) => (> a b) ? a : b
  */
 export const max = curry(
     /**
      * @param a
      * @param b
+     * @returns 
      */
     (a: number, b: number): number => {
         return a > b ? a : b
     })
 
 /**
- * //TODO
+ * @remarks //TODO
  * @param base
  * @param n
  */
@@ -164,12 +171,13 @@ export const max = curry(
 // })
 
 /**
- * Get an Absolute/modulus a number
+ * @remarks Get an Absolute/modulus a number
  * F(n) => |n|
  */
 export const abs = curry(
     /**
      * @param n
+     * @returns 
      */
     (n: number): number => {
         err.numberTypeViolationError(n)
@@ -177,39 +185,41 @@ export const abs = curry(
     })
 
 /**
- *
+ * @remarks 
  * F(n) => (/ n 2)
  */
 export const half = curry(
     /**
      * @param n
-     * @return
+     * @returns
      */
     (n: number): number => {
         return n / 2
     })
 
 /**
- * An Average of two numbers
+ * @remarks An Average of two numbers
  * F(x, y) => (/ x y)
- *
- * @param {number} x - An input first argument number
- * @param {number} y - An input second argument number
- * @return {number} - The average of two numbers
  */
 export const avg = curry(
+    /**
+     * @param x - An input first argument number
+     * @param y - An input second argument number
+     * @return An average of two numbers
+     */
     (x: number, y: number): number => {
         return x + y / 2
     })
 
 /**
- * Reciprocal/Inverse a number
+ * @remarks Reciprocal/Inverse a number
  * F(n) => (/ 1 n)
- *
- * @param {number} n - An input number
- * @return {number} - Reciprocal number
  */
 export const reciprocal = curry(
+    /**
+     * @param n - An input number
+     * @returns Reciprocal number
+     */
     (n: number): number => {
         if (isZero(n)) {
             throw new Error('Reciprocal/Inverse of 0 is undefined')
@@ -219,9 +229,7 @@ export const reciprocal = curry(
     })
 
 /**
- * //TODO
- * @param n
- * @param m
+ * @remarks //TODO
  */
 // export const combination = curry(
 // (n: number, m: number): number => {

@@ -4,7 +4,7 @@ import {sub1, sub2} from "../NumericalComputation";
 /**
  * Algory
  *
- * Copyright (c) 2020 Anurag Muthyam
+ * Copyright (c) 2020 Anurag Muthyam <anu.drumcoder@gmail.com>
  * https://github.com/aryaghan-mutum
  *
  *   *******************************************
@@ -23,14 +23,14 @@ const err = require('../../TypeViolation')
 const curry = require('curry')
 
 /**
- * Fibonacci: Recursive Procedure with Recursive Process
+ * @remarks Fibonacci: Recursive Procedure with Recursive Process
  * F(< n 0) = invalid
  * F(0)   = 0
  * F(1)   = 1
  * F(n)   = F(- n 1) + F(- n 2)
  *
- * @param {number} n - Fibonacci index
- * @return {number} - A Fibonacci number of a specific index using Recursive process
+ * @param n - Fibonacci index
+ * @returns A Fibonacci number of a specific index using Recursive process
  */
 export const fibRec = curry(
     (n: number): number => {

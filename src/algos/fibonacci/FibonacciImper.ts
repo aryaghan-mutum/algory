@@ -1,7 +1,7 @@
 /**
  * Algory
  *
- * Copyright (c) 2020. Anurag Muthyam
+ * Copyright (c) 2020. Anurag Muthyam <anu.drumcoder@gmail.com>
  * https://github.com/aryaghan-mutum
  */
 
@@ -10,10 +10,10 @@ const err = require('../../TypeViolation')
 const curry = require('curry')
 
 /**
- * Fibonacci: Imperative Procedure
- *
- * @param {number} n - Fibonacci index
- * @return {number} - A Fibonacci number of a specific index using Imperative/Sequential approach
+ * @remarks Fibonacci: Imperative Procedure
+ * 
+ * @param n - Fibonacci index
+ * @returns A Fibonacci number of a specific index using Imperative/Sequential approach
  */
 export const fibImper = curry(
     (n: number): number => {

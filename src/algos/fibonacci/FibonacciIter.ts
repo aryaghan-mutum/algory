@@ -1,7 +1,7 @@
 /**
  * Algory
  *
- * Copyright (c) 2020. Anurag Muthyam
+ * Copyright (c) 2020. Anurag Muthyam <anu.drumcoder@gmail.com>
  * https://github.com/aryaghan-mutum
  */
 
@@ -10,7 +10,7 @@ import {sub1} from '../NumericalComputation'
 const curry = require('curry')
 
 /**
- * Fibonacci: Recursive Procedure with Iterative Process
+ * @remarks Fibonacci: Recursive Procedure with Iterative Process
  *
  * Iterative process for F(8):
  * >(fib-i 1 1 8)
@@ -22,8 +22,8 @@ const curry = require('curry')
  * >(fib-i 13 8 3)
  * >(fib-i 21 13 2)
  *
- * @param {number} n - Fibonacci index
- * @return {number} - A Fibonacci number of a specific index using Iterative process
+ * @param n - Fibonacci index
+ * @returns A Fibonacci number of a specific index using Iterative process
  */
 export const fibIter = curry(
     (n: number): number => {
@@ -36,16 +36,16 @@ export const fibIter = curry(
             return 1
 
         /**
-         * fibIterHelper returns the fibonacci number of an index
-         * @param {number} acc1 - First accumulator to hold a value
-         * @param {number} acc2 - Second accumulator to hold a value
-         * @param {number} n - Fibonacci index
-         * @return {number} - A Fibonacci number of a specific index using Iterative process
+         * @remarks fibIterHelper returns the fibonacci number of an index
+         * @param acc1 - First accumulator to hold a value
+         * @param acc2 - Second accumulator to hold a value
+         * @param num - Fibonacci index
+         * @returns A Fibonacci number of a specific index using Iterative process
          */
         const fibIterHelper = (acc1: number,
                                acc2: number,
-                               n: number): number => {
-            return (n === 2) ? acc1 : fibIterHelper((acc1 + acc2), acc1, sub1(n))
+                               num: number): number => {
+            return (num === 2) ? acc1 : fibIterHelper((acc1 + acc2), acc1, sub1(num))
         }
 
         return fibIterHelper(1, 1, n)

@@ -1,7 +1,7 @@
 /**
  * Algory
  *
- * Copyright (c) 2020. Anurag Muthyam
+ * Copyright (c) 2020. Anurag Muthyam <anu.drumcoder@gmail.com>
  * https://github.com/aryaghan-mutum
  */
 
@@ -10,11 +10,11 @@ import {sub1} from '../NumericalComputation'
 const curry = require('curry')
 
 /**
- * Factorial: Recursive Procedure with Recursive Process
+ * @remarks Factorial: Recursive Procedure with Recursive Process
  * F(n) => (* n (f (- n 1))
  *
- * @param {number} n - A factorial index
- * @return {number} - A Factorial number of a specific index using Recursive process
+ * @param n - A factorial index
+ * @returns A Factorial number of a specific index using Recursive process
  */
 export const factRec = curry(
     (n: number): number => {
