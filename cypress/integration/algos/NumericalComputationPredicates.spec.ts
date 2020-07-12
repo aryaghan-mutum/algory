@@ -1,129 +1,140 @@
 import { expect } from "chai"
-
-const numerPred = require('../../../src/algos/NumericalComputationPredicates')
+import {
+    isZero,
+    isOne,
+    isNegative,
+    isPositive,
+    isLesserThanAndEqualToZero,
+    lesserThan,
+    greaterThan,
+    isSumLesser,
+    isSumGreater,
+    isEven,
+    isOdd
+} from '../../../src/algos/NumericalComputationPredicates'
 
 describe('Numerical Computation Predicates', () => {
 
     specify('test isZero', () => {
-        expect(numerPred.isZero(0)).to.be.true
-        expect(numerPred.isZero(100)).to.be.false
-        expect(numerPred.isZero(-100)).to.be.false
-        expect(numerPred.isZero()()()(0)).to.be.true
+        expect(isZero(0)).to.be.true
+        expect(isZero(100)).to.be.false
+        expect(isZero(-100)).to.be.false
+        expect(isZero()()()(0)).to.be.true
 
-        let z = numerPred.isZero()()
+        let z = isZero()()
         expect(z(2)).to.be.false
     })
 
     specify('test isOne', () => {
-        expect(numerPred.isOne(1)).to.be.true
-        expect(numerPred.isOne(100)).to.be.false
-        expect(numerPred.isOne(-100)).to.be.false
-        expect(numerPred.isOne()()()(1)).to.be.true
+        expect(isOne(1)).to.be.true
+        expect(isOne(100)).to.be.false
+        expect(isOne(-100)).to.be.false
+        expect(isOne()()()(1)).to.be.true
 
-        let z = numerPred.isOne()()
+        let z = isOne()()
         expect(z(2)).to.be.false
     })
 
 
     specify('test isNegative', () => {
-        expect(numerPred.isNegative(-1)).to.be.true
-        expect(numerPred.isNegative(1)).to.be.false
-        expect(numerPred.isNegative(0)).to.be.false
-        expect(numerPred.isNegative()(-1)).to.be.true
+        expect(isNegative(-1)).to.be.true
+        expect(isNegative(1)).to.be.false
+        expect(isNegative(0)).to.be.false
+        expect(isNegative()(-1)).to.be.true
 
-        let n = numerPred.isNegative()()
+        let n = isNegative()()
         expect(n(-0.12)).to.be.true
     })
 
     specify('test isPositive', () => {
-        expect(numerPred.isPositive(-1)).to.be.false
-        expect(numerPred.isPositive(1)).to.be.true
-        expect(numerPred.isPositive(0)).to.be.true
-        expect(numerPred.isPositive()()(-1)).to.be.false
+        expect(isPositive(-1)).to.be.false
+        expect(isPositive(1)).to.be.true
+        expect(isPositive(0)).to.be.true
+        expect(isPositive()()(-1)).to.be.false
 
-        let p = numerPred.isPositive()()
+        let p = isPositive()()
         expect(p(-0.12)).to.be.false
     })
 
     specify('test isLesserThanAndEqualToZero', () => {
-        expect(numerPred.isLesserThanAndEqualToZero(-1)).to.be.true
-        expect(numerPred.isLesserThanAndEqualToZero(1)).to.be.false
-        expect(numerPred.isLesserThanAndEqualToZero(0)).to.be.true
-        expect(numerPred.isLesserThanAndEqualToZero()()()(0)).to.be.true
+        expect(isLesserThanAndEqualToZero(-1)).to.be.true
+        expect(isLesserThanAndEqualToZero(1)).to.be.false
+        expect(isLesserThanAndEqualToZero(0)).to.be.true
+        expect(isLesserThanAndEqualToZero()()()(0)).to.be.true
 
-        let l = numerPred.isLesserThanAndEqualToZero()
+        let l = isLesserThanAndEqualToZero()
         expect(l(-0.12)).to.be.true
     })
 
     specify('test lesserThan', () => {
-        expect(numerPred.lesserThan(2, 3)).to.be.true
-        expect(numerPred.lesserThan(3, 2)).to.be.false
-        expect(numerPred.lesserThan(-3, 2)).to.be.true
-        expect(numerPred.lesserThan(-2, -3)).to.be.false
-        expect(numerPred.lesserThan(-2)(-2)).to.be.false
-        expect(numerPred.lesserThan(2.3)(2.29)).to.be.false
-        let x = numerPred.lesserThan(3)
+        expect(lesserThan(2, 3)).to.be.true
+        expect(lesserThan(3, 2)).to.be.false
+        expect(lesserThan(-3, 2)).to.be.true
+        expect(lesserThan(-2, -3)).to.be.false
+        expect(lesserThan(-2)(-2)).to.be.false
+        expect(lesserThan(2.3)(2.29)).to.be.false
+        let x = lesserThan(3)
         expect(x(-3)).to.be.false
     })
 
     specify('test greaterThan', () => {
-        expect(numerPred.greaterThan(2, 3)).to.be.false
-        expect(numerPred.greaterThan(3, 2)).to.be.true
-        expect(numerPred.greaterThan(-3, 2)).to.be.false
-        expect(numerPred.greaterThan(-2, -3)).to.be.true
-        expect(numerPred.greaterThan(-2)(-2)).to.be.false
-        expect(numerPred.greaterThan(2.3)(2.29)).to.be.true
+        expect(greaterThan(2, 3)).to.be.false
+        expect(greaterThan(3, 2)).to.be.true
+        expect(greaterThan(-3, 2)).to.be.false
+        expect(greaterThan(-2, -3)).to.be.true
+        expect(greaterThan(-2)(-2)).to.be.false
+        expect(greaterThan(2.3)(2.29)).to.be.true
 
-        let x = numerPred.greaterThan(3)
+        let x = greaterThan(3)
         expect(x(-3)).to.be.true
     })
 
     specify('test isSumLesser', () => {
-        expect(numerPred.isSumLesser(2, 3, 5)).to.be.false
-        expect(numerPred.isSumLesser(2, 3, 6)).to.be.true
-        expect(numerPred.isSumLesser(2, 3, 4)).to.be.false
-        expect(numerPred.isSumLesser(-2, 3, 0)).to.be.false
-        expect(numerPred.isSumLesser(2.5, 3.5, 1.2)).to.be.false
+        expect(isSumLesser(2, 3, 5)).to.be.false
+        expect(isSumLesser(2, 3, 6)).to.be.true
+        expect(isSumLesser(2, 3, 4)).to.be.false
+        expect(isSumLesser(-2, 3, 0)).to.be.false
+        expect(isSumLesser(2.5, 3.5, 1.2)).to.be.false
 
-        let sl = numerPred.isSumLesser(2)
+        let sl = isSumLesser(2)
         expect(sl(3)(5)).to.be.false
 
-        let sl2 = numerPred.isSumLesser(2)
+        let sl2 = isSumLesser(2)
         sl2 = sl2(3)
         expect(sl2(6)).to.be.true
     })
 
     specify('test isSumGreater', () => {
-        expect(numerPred.isSumGreater(2, 3, 5)).to.be.false
-        expect(numerPred.isSumGreater(2, 3, 6)).to.be.false
-        expect(numerPred.isSumGreater(2, 3, 4)).to.be.true
-        expect(numerPred.isSumGreater(-2, 3, 0)).to.be.true
-        expect(numerPred.isSumGreater(2.5, 3.5, 1.2)).to.be.true
+        expect(isSumGreater(2, 3, 5)).to.be.false
+        expect(isSumGreater(2, 3, 6)).to.be.false
+        expect(isSumGreater(2, 3, 4)).to.be.true
+        expect(isSumGreater(-2, 3, 0)).to.be.true
+        expect(isSumGreater(2.5, 3.5, 1.2)).to.be.true
 
-        let sg = numerPred.isSumGreater(2)
+        let sg = isSumGreater(2)
         expect(sg(3)(5)).to.be.false
 
-        let sg2 = numerPred.isSumGreater(2)
+        let sg2 = isSumGreater(2)
         sg2 = sg2(3)
         expect(sg2(6)).to.be.false
     })
 
     specify('test isEven', () => {
-        expect(numerPred.isEven(4)).to.be.true
-        expect(numerPred.isEven(5)).to.be.false
-        expect(numerPred.isEven(0)).to.be.true
-        expect(numerPred.isEven(-4)).to.be.true
-        expect(numerPred.isEven(-5)).to.be.false
-        expect(numerPred.isEven()(-5)).to.be.false
+        expect(isEven(4)).to.be.true
+        expect(isEven(5)).to.be.false
+        expect(isEven(0)).to.be.true
+        expect(isEven(-4)).to.be.true
+        expect(isEven(-5)).to.be.false
+        expect(isEven()(-5)).to.be.false
     })
 
     specify('test isOdd', () => {
-        expect(numerPred.isOdd(4)).to.be.false
-        expect(numerPred.isOdd(5)).to.be.true
-        expect(numerPred.isOdd(0)).to.be.false
-        expect(numerPred.isOdd(-4)).to.be.false
-        expect(numerPred.isOdd(-5)).to.be.true
-        expect(numerPred.isOdd()(-5)).to.be.true
+        expect(isOdd(4)).to.be.false
+        expect(isOdd(5)).to.be.true
+        expect(isOdd(0)).to.be.false
+        expect(isOdd(-4)).to.be.false
+        expect(isOdd(-5)).to.be.true
+        expect(isOdd()(-5)).to.be.true
     })
 })
 

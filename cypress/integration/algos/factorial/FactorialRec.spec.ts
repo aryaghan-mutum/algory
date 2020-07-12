@@ -1,14 +1,13 @@
 import { expect } from "chai"
-
-const λ = require('../../../../src/algos/factorial/FactorialRec')
+import { factRec } from '../../../../src/algos/factorial/FactorialRec'
 
 describe('Factorial Recursive Process', () => {
 
     specify('test factRec', () => {
-        expect(λ.factRec(10.32321)).to.be.equal(3628800)
-        expect(λ.factRec(50)).to.be.equal(3.0414093201713376e+64)
-        expect(λ.factRec()(170)).to.be.equal(7.257415615307994e+306)
-        expect(λ.factRec()(200)).to.be.equal(Infinity)
+        expect(factRec(10.32321)).to.be.equal(3628800)
+        expect(factRec(50)).to.be.equal(3.0414093201713376e+64)
+        expect(factRec()(170)).to.be.equal(7.257415615307994e+306)
+        expect(factRec()(200)).to.be.equal(Infinity)
     })
 
 })

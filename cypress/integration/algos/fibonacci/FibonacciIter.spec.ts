@@ -1,13 +1,12 @@
 import { expect } from "chai"
-
-const λ = require('../../../../src/algos/fibonacci/FibonacciIter')
+import { fibIter } from '../../../../src/algos/fibonacci/FibonacciIter'
 
 describe('Fibonacci Iterative Process', () => {
 
     specify('test fibIter', () => {
-        expect(λ.fibIter(0)).to.be.equal(0)
-        expect(λ.fibIter(1)).to.be.equal(1)
-        expect(λ.fibIter(10)).to.be.equal(55)
+        expect(fibIter(0)).to.be.equal(0)
+        expect(fibIter(1)).to.be.equal(1)
+        expect(fibIter(10)).to.be.equal(55)
     })
 
 })

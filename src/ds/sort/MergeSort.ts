@@ -11,6 +11,7 @@ export const mergeSort = (arr: Array<number>): Array<number> => {
 
     // if the elements in array are less than and equal to 1 then return the existing array
     if (arr.length <= 1) return arr
+    debugger
 
     const mid = Math.floor(arr.length / 2);
     const left = arr.slice(0, mid);

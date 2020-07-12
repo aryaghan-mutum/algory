@@ -1,17 +1,16 @@
 import { expect } from "chai"
-
-const sort = require('../../../../src/ds/sort/InsertionSort')
+import { insertionSortImper } from '../../../../src/ds/sort/InsertionSort'
 
 describe('Insertion Sort', () => {
 
     specify('test Insertion Sort', () => {
-        expect(sort.insertionSortImper([-4, -3, -2, -1, 0, 1, 2, 3, 4])).deep.equal([-4, -3, -2, -1, 0, 1, 2, 3, 4])
-        expect(sort.insertionSortImper([4, 3, 2, 1, 0, -1, -2, -3, -4])).deep.equal([-4, -3, -2, -1, 0, 1, 2, 3, 4])
-        expect(sort.insertionSortImper([0])).deep.equal([0])
-        expect(sort.insertionSortImper([])).deep.equal([])
-        expect(sort.insertionSortImper(null)).deep.equal(null)
-        expect(sort.insertionSortImper(null)).deep.equal(null)
-        expect(sort.insertionSortImper(undefined)).deep.equal(null)
+        expect(insertionSortImper([-4, -3, -2, -1, 0, 1, 2, 3, 4])).deep.equal([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+        expect(insertionSortImper([4, 3, 2, 1, 0, -1, -2, -3, -4])).deep.equal([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+        expect(insertionSortImper([0])).deep.equal([0])
+        expect(insertionSortImper([])).deep.equal([])
+        expect(insertionSortImper(null)).deep.equal(null)
+        expect(insertionSortImper(null)).deep.equal(null)
+        expect(insertionSortImper(undefined)).deep.equal(null)
     })
 
 })
