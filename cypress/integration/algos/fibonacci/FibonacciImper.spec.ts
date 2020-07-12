@@ -1,3 +1,5 @@
+import { expect } from "chai"
+
 const λ = require('../../../../src/algos/fibonacci/FibonacciImper')
 
 describe('Fibonacci Imperative Process', () => {

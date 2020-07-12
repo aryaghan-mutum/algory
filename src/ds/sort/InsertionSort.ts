@@ -2,16 +2,10 @@ import { sub1, add1 } from "../../algos/NumericalComputation"
 
 const curry = require('curry')
 
-/**
-
- * TODO:
- * @param arr - An unsorted array of numbers
- * @returns Sorted array of numbers 
-
-    /*
-     * @remarks Insertion Sort
-     *
-     */
+/*
+ * @remarks Insertion Sort
+ *
+ */
 export const InsertionSortImper = curry(
     /**
      * @param arr - An unsorted array of numbers

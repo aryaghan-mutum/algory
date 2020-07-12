@@ -1,3 +1,5 @@
+import { expect } from "chai"
+
 const sort = require('../../../../src/ds/sort/SelectionSort')
 
 describe('Selection Sort', () => {
