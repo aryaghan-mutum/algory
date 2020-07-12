@@ -1,10 +1,19 @@
 
+const curry = require('curry')
 
 /**
- * @param arr - An unsorted array of numbers
- * @returns Sorted array of numbers 
+ * @remarks Insertion Sort
+ *
  */
-export const insertionSort = (arr: Array<number>) : Array<number> => {
+export const insertionSortImper = curry(
 
-    return arr
-}
+    /**
+     * @param arr - An unsorted array of numbers
+     * @returns Sorted array of numbers 
+     */
+    (arr: Array<number>): Array<number> | null => {
+
+        // if the array is null or undefined then return null
+        if (arr === undefined || arr === null) return null
+        return arr
+    })
