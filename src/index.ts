@@ -1,3 +1,14 @@
+// Machine Learning 
+export * from './algos/machinelearning/DecisionTree'
+export * from './algos/machinelearning/KMeans'
+export * from './algos/machinelearning/KNearestNeighbors'
+export * from './algos/machinelearning/LinearRegression'
+export * from './algos/machinelearning/LogisticRegression'
+export * from './algos/machinelearning/NaiveBayes'
+export * from './algos/machinelearning/RandomForest'
+
+
+
 // Factorial
 export * from './algos/factorial/FactorialImper'
 export * from './algos/factorial/FactorialIter'
