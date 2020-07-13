@@ -9,7 +9,6 @@ describe('Insertion Sort', () => {
         expect(insertionSortImper([0])).deep.equal([0])
         expect(insertionSortImper([])).deep.equal([])
         expect(insertionSortImper(null)).deep.equal(null)
-        expect(insertionSortImper(null)).deep.equal(null)
         expect(insertionSortImper(undefined)).deep.equal(null)
     })
 

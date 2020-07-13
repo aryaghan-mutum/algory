@@ -1,4 +1,5 @@
 import { expect } from "chai"
+
 import { mergeSort } from '../../../../src/ds/sort/MergeSort'
 
 describe('Merge Sort', () => {

@@ -4,21 +4,22 @@
  * @param arr - An unsorted array of numbers
  * @returns Sorted array of numbers 
  */
-export const mergeSort = (arr: Array<number>): Array<number> => {
-
-    // if the array is null or undefined then return null
-    //if (arr === undefined || arr === null) return null
+export const mergeSort = (arr: Array<number>): Array<number>=> {
 
     // if the elements in array are less than and equal to 1 then return the existing array
     if (arr.length <= 1) return arr
-    debugger
 
-    const mid = Math.floor(arr.length / 2);
-    const left = arr.slice(0, mid);
-    const right = arr.slice(mid);
+    // divide the array into half
+    const mid = Math.floor(arr.length / 2)
 
-    return []
-   // return merge(mergeSort(left), mergeSort(right));
+    // the left half of an array
+    const left = arr.slice(0, mid)
+
+    // the right half of an array
+    const right = arr.slice(mid, arr.length)
+
+    // call merge recursively for left half and right half of an array
+    return merge(mergeSort(left), mergeSort(right))
 }
 
 /**
@@ -26,19 +27,33 @@ export const mergeSort = (arr: Array<number>): Array<number> => {
  * @param leftArr 
  * @param rightArr 
  */
-// const merge = (leftArr: Array<number>, rightArr: Array<number>) => {
+const merge = (leftArr: Array<number>, rightArr: Array<number>): Array<number> => {
 
-//     let arr: Array<number> = [];
+    const resultArr: Array<number> = []
+    let lIndex = 0;
+    let rIndex = 0;
 
-//     while (leftArr.length && rightArr.length) {
-//         if (leftArr[0] < rightArr[0]) {
-//             arr.push(leftArr.shift());
-//         } else {
-//             arr.push(rightArr.shift());
-//         }
-//     }
-//     return arr.concat(leftArr.slice().concat(rightArr.slice()))
-
-//}
+    while (lIndex + rIndex < leftArr.length + rightArr.length) {
+        const lItem = leftArr[lIndex]
+        const rItem = rightArr[rIndex]
+        if (lItem == null) {
+            resultArr.push(rItem)
+            rIndex++
+        }
+        else if (rItem == null) {
+            resultArr.push(lItem)
+            lIndex++
+        }
+        else if (lItem < rItem) {
+            resultArr.push(lItem)
+            lIndex++
+        }
+        else {
+            resultArr.push(rItem)
+            rIndex++
+        }
+    }
+    return resultArr
+}
 
 

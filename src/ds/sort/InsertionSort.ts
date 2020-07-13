@@ -6,7 +6,7 @@ const curry = require('curry')
  * @remarks Insertion Sort
  *
  */
-export const InsertionSortImper = curry(
+export const insertionSortImper = curry(
     /**
      * @param arr - An unsorted array of numbers
      * @returns Sorted array of numbers 
