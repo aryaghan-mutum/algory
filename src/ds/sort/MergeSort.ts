@@ -14,19 +14,19 @@ const curry = require('curry')
  */
 export const mergeSort = curry(
 
-    (unsortedList: Array<number>): Array<number> => {
+    (arr: Array<number>): Array<number> => {
 
-        const length: number = unsortedList.length
+        const length: number = arr.length
 
         // if the elements in array are less than and equal to 1 then return the existing array
-        if (length <= 1) return unsortedList
+        if (length <= 1) return arr
 
         // divide the array into half
         const mid: number = Math.floor(length / 2)
 
         // the left half, and the right half of an array
-        const leftArray: Array<number> = unsortedList.slice(0, mid)
-        const rightArray: Array<number> = unsortedList.slice(mid, length)
+        const leftArray: Array<number> = arr.slice(0, mid)
+        const rightArray: Array<number> = arr.slice(mid, length)
 
         // call merge recursively for left half and right half of an array
         return merge(mergeSort(leftArray), mergeSort(rightArray))
