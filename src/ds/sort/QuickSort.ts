@@ -5,6 +5,7 @@
  * https://github.com/aryaghan-mutum
  */
 
+import { range } from 'ramda'
 const curry = require('curry')
 
 /**
@@ -27,13 +28,13 @@ export const quickSort = curry(
         const greater: Array<number> = []
         const lesser: Array<number> = []
 
-        for (let i = 1; i < length; i++) {
+        range(1, length).forEach(i => {
             if (arr[i] > pivot) {
                 greater.push(arr[i])
             } else {
                 lesser.push(arr[i])
             }
-        }
+        })
 
         let sortedArr: Array<number> = quickSort(lesser)
         sortedArr.push(pivot)

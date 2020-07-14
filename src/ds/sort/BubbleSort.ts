@@ -5,9 +5,9 @@
  * https://github.com/aryaghan-mutum
  */
 
-import {swap} from './Swap'
+import { swap } from './Swap'
 import { add1 } from '../../algos/NumericalComputation'
-
+import { range } from 'ramda'
 const curry = require('curry')
 
 /**
@@ -16,23 +16,21 @@ const curry = require('curry')
  * @returns Sorted array of numbers 
  */
 export const bubbleSortImper = curry(
-    
+
     (arr: Array<number>): Array<number> | null => {
 
         // if the array is null or undefined then return null
         if (arr === undefined || arr === null) return null
 
         // One by one move boundary of unsorted subarray
-        for (let i: number = 1; i <= arr.length; i++) {
-
-            for (let j: number = 0; j < arr.length - 1; j++) {
-
+        range(1, arr.length).forEach(i => {
+            range(0, arr.length - 1).forEach(j => {
                 // if the elem in first index is greater than elem in second index the swap
                 if (arr[j] > arr[add1(j)]) {
                     swap(arr, j, add1(j))
                 }
-            }
-        }
+            })
+        })
 
         return arr
     })

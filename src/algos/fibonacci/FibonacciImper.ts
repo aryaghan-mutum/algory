@@ -5,7 +5,8 @@
  * https://github.com/aryaghan-mutum
  */
 
-import {isNegative} from '../NumericalComputationPredicates'
+import { isNegative } from '../NumericalComputationPredicates'
+import { range } from 'ramda'
 const err = require('../../TypeViolation')
 const curry = require('curry')
 
@@ -24,9 +25,11 @@ export const fibImper = curry(
 
         let x: number = 0
         let y: number = 1
-        for (let i: number = 0; i < n; i++) {
+
+        range(0, n).forEach(i => {
             y = y + x
             x = y - x
-        }
+        })
+
         return x
     })
