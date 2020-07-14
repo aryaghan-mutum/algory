@@ -11,14 +11,12 @@ import { add1 } from '../../algos/NumericalComputation'
 const curry = require('curry')
 
 /**
- * @remarks Bubble Sort
- *
+ * @remarks - Bubble Sort
+ * @param arr - An unsorted array of numbers
+ * @returns Sorted array of numbers 
  */
 export const bubbleSortImper = curry(
-    /**
-     * @param arr - An unsorted array of numbers
-     * @returns Sorted array of numbers 
-     */
+    
     (arr: Array<number>): Array<number> | null => {
 
         // if the array is null or undefined then return null

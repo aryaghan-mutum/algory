@@ -1,16 +1,21 @@
+/**
+ * Algory
+ *
+ * Copyright (c) Anurag Muthyam <anu.drumcoder@gmail.com>
+ * https://github.com/aryaghan-mutum
+ */
+
 import { sub1, add1 } from "../../algos/NumericalComputation"
 
 const curry = require('curry')
 
-/*
- * @remarks Insertion Sort
- *
+/**
+ * @remarks - Insertion Sort
+ * @param arr - An unsorted array of numbers
+ * @returns Sorted array of numbers 
  */
 export const insertionSortImper = curry(
-    /**
-     * @param arr - An unsorted array of numbers
-     * @returns Sorted array of numbers 
-     */
+  
     (arr: Array<number>): Array<number> | null => {
 
         // if the array is null or undefined then return null
@@ -23,7 +28,7 @@ export const insertionSortImper = curry(
                 arr[add1(j)] = arr[j]
                 j--
             }
-            arr[j + 1] = key
+            arr[add1(j)] = key
         }
 
         return arr

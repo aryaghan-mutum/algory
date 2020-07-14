@@ -1,6 +1,42 @@
+/**
+ * Algory
+ *
+ * Copyright (c) Anurag Muthyam <anu.drumcoder@gmail.com>
+ * https://github.com/aryaghan-mutum
+ */
 
+const curry = require('curry')
 
-export const quickSort = (arr: Array<number>) : Array<number> => {
+/**
+ * For more info: https://en.wikipedia.org/wiki/Quicksort
+ * 
+ * @remarks - Quick Sort
+ * @param arr - An unsorted array of numbers
+ * @returns Sorted array of numbers 
+ */
+export const quickSort = curry(
 
-    return arr
-}
+    (arr: Array<number>): Array<number> => {
+
+        const length: number = arr.length
+
+        // if the elements in array are less than and equal to 1 then return the existing array
+        if (length <= 1) return arr
+
+        const pivot: number = arr[0]
+        const greater: Array<number> = []
+        const lesser: Array<number> = []
+
+        for (let i = 1; i < length; i++) {
+            if (arr[i] > pivot) {
+                greater.push(arr[i])
+            } else {
+                lesser.push(arr[i])
+            }
+        }
+
+        let sortedArr: Array<number> = quickSort(lesser)
+        sortedArr.push(pivot)
+
+        return sortedArr.concat(quickSort(greater))
+    })
