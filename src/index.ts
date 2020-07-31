@@ -14,11 +14,7 @@ export * from './algos/factorial/FactorialImper'
 export * from './algos/factorial/FactorialIter'
 export * from './algos/factorial/FactorialRec'
 
-// Fibonacci
-export * from './algos/fibonacci/FibonacciImper'
-export * from './algos/fibonacci/FibonacciIter'
-export * from './algos/fibonacci/FibonacciLogarithmic'
-export * from './algos/fibonacci/FibonacciRec'
+export * from './algos/Fibonacci'
 
 // Primes
 export * from './algos/primes/PrimePredicates'
