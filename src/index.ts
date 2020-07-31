@@ -10,7 +10,7 @@ export * from './algos/machinelearning/RandomForest'
 
 
 // Factorial
-export * from './algos/factorial/FactorialImper'
+export * from './algos/Factorial'
 export * from './algos/factorial/FactorialIter'
 export * from './algos/factorial/FactorialRec'
 
