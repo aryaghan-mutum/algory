@@ -6,7 +6,7 @@
  *
  */
 
-import {isEven, isOdd} from './NumericalComputationPredicates'
+import {isEven, isOdd} from './MathPredicates'
 const curry = require('curry')
 
 /**

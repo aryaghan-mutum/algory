@@ -6,7 +6,7 @@
  *
  */
 
-import { add1 } from "../NumericalComputation";
+import { add1 } from "../Math";
 
 const curry = require('curry')
 

@@ -5,10 +5,10 @@
  * https://github.com/aryaghan-mutum
  */
 
-import { sub1, sub2, sumOfSquares, sqr } from './NumericalComputation'
-import { isNegative, isZero, isOne, isEven } from './NumericalComputationPredicates'
+import { sub1, sub2, sumOfSquares, sqr } from './Math'
+import { isNegative, isZero, isOne, isEven } from './MathPredicates'
+import { numberTypeViolationError } from './TypeViolation'
 import { range } from 'ramda'
-const err = require('../TypeViolation')
 const curry = require('curry')
 
 /**
@@ -19,7 +19,7 @@ const curry = require('curry')
  */
 export const fibImper = curry(
     (n: number): number => {
-        err.numberTypeViolationError(n)
+        numberTypeViolationError(n)
 
         if (isNegative(n))
             throw new Error("Fibonacci for negative numbers do not exist")
@@ -89,7 +89,7 @@ export const fibIter = curry(
 */
 export const fibRec = curry(
     (n: number): number => {
-        err.numberTypeViolationError(n)
+        numberTypeViolationError(n)
 
         if (isNegative(n))
             throw new Error("Fibonacci for negative numbers do not exist")

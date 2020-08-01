@@ -6,8 +6,8 @@
  *
  */
 
-import {sqr, cube, double, reciprocal, abs} from './NumericalComputation'
-import {isEven, isOdd} from './NumericalComputationPredicates'
+import {sqr, cube, double, reciprocal, abs} from './Math'
+import {isEven, isOdd} from './MathPredicates'
 const curry = require('curry')
 
 /**

@@ -5,11 +5,10 @@
  * https://github.com/aryaghan-mutum
  */
 
-import { isOne, isZero } from './NumericalComputationPredicates'
-import { sub1 } from './NumericalComputation'
-
+import { isOne, isZero } from './MathPredicates'
+import { sub1 } from './Math'
+import { numberTypeViolationError } from './TypeViolation'
 const curry = require('curry')
-const err = require('../TypeViolation')
 
 /**
  * @remarks Factorial: Imperative Procedure with Sequential Process
@@ -20,7 +19,7 @@ const err = require('../TypeViolation')
 export const factImper = curry(
     (n: number): number => {
         n = Math.round(n)
-        err.numberTypeViolationError(n)
+        numberTypeViolationError(n)
 
         if (isZero(n) || isOne(n))
             return 1
@@ -42,7 +41,7 @@ export const factImper = curry(
 export const factIter = curry(
     (n: number): number => {
         n = Math.round(n)
-        err.numberTypeViolationError(n)
+        numberTypeViolationError(n)
 
         if (n < 0) throw new Error("Factorial for negative numbers do not exist")
 

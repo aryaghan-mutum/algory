@@ -3,10 +3,16 @@
  *
  * Copyright (c) Anurag Muthyam <anu.drumcoder@gmail.com>
  * https://github.com/aryaghan-mutum
+ * 
+ * Reference: https://en.wikipedia.org/wiki/Insertion_sort
+ * 
+ * Worst complexity: n^2
+ * Average complexity: n^2
+ * Best complexity: n
+ * Space complexity: 1
  */
 
-import { sub1, add1 } from "../../algos/NumericalComputation"
-
+import { sub1, add1 } from "../../Math"
 import { range } from 'ramda'
 const curry = require('curry')
 

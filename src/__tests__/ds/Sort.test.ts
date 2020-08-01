@@ -1,8 +1,8 @@
-import { bubbleSortImper } from '../../../src/ds/sort/BubbleSort'
-import { insertionSortImper } from '../../../src/ds/sort/InsertionSort'
-import { mergeSort } from '../../../src/ds/sort/MergeSort'
-import { quickSort } from '../../../src/ds/sort/QuickSort'
-import { selectionSortImper } from '../../../src/ds/sort/SelectionSort'
+import { bubbleSortImper } from '../../algos/ds/sort/BubbleSort'
+import { insertionSortImper } from '../../algos/ds/sort/InsertionSort'
+import { mergeSort } from '../../algos/ds/sort/MergeSort'
+import { quickSort } from '../../algos/ds/sort/QuickSort'
+import { selectionSortImper } from '../../algos/ds/sort/SelectionSort'
 
 describe('Bubble Sort', () => {
 

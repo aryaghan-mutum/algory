@@ -1,4 +1,4 @@
-import { factImper, factIter, factRec } from '../../../src/algos/Factorial'
+import { factImper, factIter, factRec } from '../../algos/Factorial'
 
 describe('Factorial Imperative Process', () => {
 

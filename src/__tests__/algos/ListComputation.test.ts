@@ -4,7 +4,7 @@ import {
     doubleLst,
     avgLst,
     reciprocalLst
-} from '../../../src/algos/ListComputation'
+} from '../../algos/ListComputation'
 
 describe('List Computation', () => {
 

@@ -3,11 +3,18 @@
  *
  * Copyright (c) Anurag Muthyam
  * https://github.com/aryaghan-mutum
+ * 
+ * Reference: https://en.wikipedia.org/wiki/Selection_sort
+ * 
+ * Worst complexity: n^2
+ * Average complexity: n^2
+ * Best complexity: n^2
+ * Space complexity: 1
  */
 
-import { swap } from './Swap'
 import { range } from 'ramda'
-import { add1 } from '../../algos/NumericalComputation'
+import { swap } from './Swap'
+import { add1 } from '../../Math'
 
 const curry = require('curry')
 

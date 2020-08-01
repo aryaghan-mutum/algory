@@ -1,5 +1,5 @@
 // Machine Learning 
-export * from './algos/machinelearning/DecisionTree'
+export * from './algos/machinelearning/DecisionTree'  
 export * from './algos/machinelearning/KMeans'
 export * from './algos/machinelearning/KNearestNeighbors'
 export * from './algos/machinelearning/LinearRegression'
@@ -10,28 +10,26 @@ export * from './algos/machinelearning/RandomForest'
 // Numeric Computation
 export * from './algos/Factorial'
 export * from './algos/Fibonacci'
-
-// Primes
-export * from './algos/primes/PrimePredicates'
+export * from './algos/Math'
+export * from './algos/MathPredicates'
 
 export * from './algos/ListComputation'
 export * from './algos/ListComputationPredicates'
-export * from './algos/NumericalComputation'
-export * from './algos/NumericalComputationPredicates'
+
 
 // Sort
-export * from './ds/sort/BubbleSort'
-export * from './ds/sort/InsertionSort'
-export * from './ds/sort/MergeSort'
-export * from './ds/sort/QuickSort'
-export * from './ds/sort/SelectionSort'
+export * from './algos/ds/sort/BubbleSort'
+export * from './algos/ds/sort/InsertionSort'
+export * from './algos/ds/sort/MergeSort'
+export * from './algos/ds/sort/QuickSort'
+export * from './algos/ds/sort/SelectionSort'
 
 //Shapes
-export * from './shapes/Circle'
-export * from './shapes/Rectangle'
-export * from './shapes/Square'
-export * from './shapes/Trapezoid'
-export * from './shapes/Triangle'
+export * from './algos/shapes/Circle'
+export * from './algos/shapes/Rectangle'
+export * from './algos/shapes/Square'
+export * from './algos/shapes/Trapezoid'
+export * from './algos/shapes/Triangle'
 
 
 

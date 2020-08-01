@@ -6,9 +6,9 @@
  *
  */
 
-const numer = require('./NumericalComputation')
+import { abs, sqr, add1 } from './Math'
+import { numberTypeViolationError } from './TypeViolation'
 const curry = require('curry')
-const err = require('../TypeViolation')
 
 /**
  * @remarks Return true if the "n" is 0, false otherwise
@@ -20,7 +20,7 @@ export const isZero = curry(
      * @returns 
      */
     (n: number): boolean => {
-        err.numberTypeViolationError(n)
+        numberTypeViolationError(n)
         return (n === 0) ? true : false
     })
 
@@ -34,7 +34,7 @@ export const isOne = curry(
      * @returns 
      */
     (n: number): boolean => {
-        err.numberTypeViolationError(n)
+        numberTypeViolationError(n)
         return (n === 1) ? true : false
     })
 
@@ -48,7 +48,7 @@ export const isNegative = curry(
      * @returns 
      */
     (n: number): boolean => {
-        err.numberTypeViolationError(n)
+        numberTypeViolationError(n)
         return (n < 0) ? true : false
     })
 
@@ -62,7 +62,7 @@ export const isPositive = curry(
      * @returns 
      */
     (n: number): boolean => {
-        err.numberTypeViolationError(n)
+        numberTypeViolationError(n)
         return (n >= 0) ? true : false
     })
 
@@ -76,7 +76,7 @@ export const isLesserThanAndEqualToZero = curry(
      * @returns 
      */
     (n: number): boolean => {
-        err.numberTypeViolationError(n)
+        numberTypeViolationError(n)
         return (n <= 0) ? true : false
     })
 
@@ -142,6 +142,7 @@ export const isSumGreater = curry(
         return (x + y) > z
     })
 
+
 /**
  * @remarks Return true if the "n" is an even number
  * F?(n) => (= (% (abs n) 2) 0) ? true : false
@@ -152,8 +153,8 @@ export const isEven = curry(
      * @returns 
      */
     (n: number): boolean => {
-        err.numberTypeViolationError(n)
-        return numer.abs(n) % 2 == 0 ? true : false
+        numberTypeViolationError(n)
+        return abs(n) % 2 == 0 ? true : false
     })
 
 /**
@@ -166,7 +167,59 @@ export const isOdd = curry(
      * @remarks
      */
     (n: number): boolean => {
-        err.numberTypeViolationError(n)
-        return numer.abs(n) % 2 !== 0 ? true : false
+        numberTypeViolationError(n)
+        return abs(n) % 2 !== 0 ? true : false
     })
 
+/**
+ * @remarks Returns a prime number if the number is prime, false otherwise
+ * F?(n) => t or f
+ *
+ * @param n - An input number
+ * @returns A boolean expression true if the number is prime
+ */
+export const isPrime = curry(
+    (n: number): boolean => {
+        /**
+         * @param num - An input number
+         * @param count - A counter variable
+         * @returns A boolean expression true if the number is prime
+         */
+        const primeIter = (num: number, count: number): boolean => {
+            if (n < 2)
+                return false
+            else if (n === count)
+                return true
+            else if (isZero(n % count))
+                return false
+            else
+                return primeIter(n, add1(count))
+        }
+        return primeIter(n, 2)
+    })
+
+/**
+ * @remarks Optimized prime checker procedure which returns a prime number if the number is prime, false otherwise
+ * F?(n) => t or f
+ */
+export const isPrimeOptimized = curry(
+    /**
+     * @param n - An input number
+     * @returns A boolean expression true if the number is prime
+     */
+    (n: number): boolean => (n < 2) ? false : optimizedPrimeIter(n, 2))
+
+/**
+ * @param n - An input number
+ * @returns A boolean expression true if the number is prime
+ */
+const optimizedPrimeIter = (n: number, count: number): boolean => {
+    if (n === count)
+        return true
+    else if (isZero(n % count))
+        return false
+    else if (n < sqr(count))
+        return true
+    else
+        return optimizedPrimeIter(n, add1(count))
+}

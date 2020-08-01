@@ -3,6 +3,12 @@
  *
  * Copyright (c) Anurag Muthyam <anu.drumcoder@gmail.com>
  * https://github.com/aryaghan-mutum
+ * 
+ * Reference: https://en.wikipedia.org/wiki/Merge_sort
+ * Worst complexity: n*log(n)
+ * Average complexity: n*log(n)
+ * Best complexity: n*log(n)
+ * Space complexity: n
  */
 
 const curry = require('curry')

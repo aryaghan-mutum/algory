@@ -3,6 +3,12 @@
  *
  * Copyright (c) Anurag Muthyam <anu.drumcoder@gmail.com>
  * https://github.com/aryaghan-mutum
+ * 
+ * Reference: https://en.wikipedia.org/wiki/Quicksort
+ * 
+ * Worst complexity: n^2
+ * Average complexity: n*log(n)
+ * Best complexity: n*log(n)
  */
 
 import { range } from 'ramda'

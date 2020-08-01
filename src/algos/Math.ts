@@ -1,4 +1,4 @@
-import { isZero } from "./NumericalComputationPredicates";
+
 
 /**
  * Algory
@@ -8,8 +8,9 @@ import { isZero } from "./NumericalComputationPredicates";
  *
  */
 
-const numerPred = require('.//NumericalComputationPredicates')
-const err = require('../TypeViolation')
+import { isZero, isPositive } from './MathPredicates'
+import { numberTypeViolationError } from './TypeViolation'
+
 const curry = require('curry')
 
 /**
@@ -86,7 +87,7 @@ export const triple = curry(
      * @returns 
      */
     (n: number): number => {
-        err.numberTypeViolationError(n)
+        numberTypeViolationError(n)
         return n * 3
     })
 
@@ -100,7 +101,7 @@ export const add1 = curry(
      * @returns 
      */
     (n: number): number => {
-        err.numberTypeViolationError(n)
+        numberTypeViolationError(n)
         return n + 1
     })
 
@@ -114,7 +115,7 @@ export const sub1 = curry(
      * @returns 
      */
     (n: number): number => {
-        err.numberTypeViolationError(n)
+        numberTypeViolationError(n)
         return n - 1
     })
 
@@ -128,7 +129,7 @@ export const sub2 = curry(
      * @returns 
      */
     (n: number): number => {
-        err.numberTypeViolationError(n)
+        numberTypeViolationError(n)
         return n - 2
     })
 
@@ -167,7 +168,7 @@ export const max = curry(
  */
 // export const pow = curry(
 // (base: number, n: number): number => {
-//     return numerPred.isZero(n) ? 1 : base + pow(base, n - 1)
+//     return isZero(n) ? 1 : base + pow(base, n - 1)
 // })
 
 /**
@@ -180,8 +181,8 @@ export const abs = curry(
      * @returns 
      */
     (n: number): number => {
-        err.numberTypeViolationError(n)
-        return numerPred.isPositive(n) ? n : -(n)
+        numberTypeViolationError(n)
+        return isPositive(n) ? n : -(n)
     })
 
 /**
@@ -229,13 +230,13 @@ export const reciprocal = curry(
     })
 
 /**
- * 
+ *
  * @remarks FIXME:
- * 
+ *
  */
 // export const combination = curry(
 // (n: number, m: number): number => {
-//     if (numerPred.isZero(m) || (m == n)) {
+//     if (isZero(m) || (m == n)) {
 //         return 1
 //     } else {
 //         return combination(sub1(n), m) + combination(sub1(n), sub1(m))
