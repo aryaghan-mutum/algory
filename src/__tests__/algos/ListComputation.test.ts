@@ -1,4 +1,3 @@
-import { expect } from "chai"
 import {
     sqrLst,
     cubeLst,
@@ -10,32 +9,30 @@ import {
 describe('List Computation', () => {
 
     it('test sqrLst', () => {
-        expect(sqrLst([-3, -2, -1, 0, 1, 2, 3])).deep.equal([9, 4, 1, 0, 1, 4, 9])
-        expect(sqrLst([-3.3])).deep.equal([10.889999999999999])
+        expect(sqrLst([-3, -2, -1, 0, 1, 2, 3])).toEqual(expect.arrayContaining([9, 4, 1, 0, 1, 4, 9]))
+        expect(sqrLst([-3.3])).toEqual(expect.arrayContaining([10.889999999999999]))
     })
 
     it('test cubeLst', () => {
-        expect(cubeLst([-3, -2, -1, 0, 1, 2, 3])).deep.equal([-27, -8, -1, 0, 1, 8, 27])
+        expect(cubeLst([-3, -2, -1, 0, 1, 2, 3])).toEqual(expect.arrayContaining([-27, -8, -1, 0, 1, 8, 27]))
     })
 
     it('test doubleLst', () => {
-        expect(doubleLst([-3, -2, -1, 0, 1, 2, 3])).deep.equal([-6, -4, -2, 0, 2, 4, 6])
+        expect(doubleLst([-3, -2, -1, 0, 1, 2, 3])).toEqual(expect.arrayContaining([-6, -4, -2, 0, 2, 4, 6]))
     })
 
     it('test avgLst', () => {
-        expect(avgLst()()()([0, 1, 2, 3, 4, 5])).deep.equal(2.5)
-        expect(avgLst([0, 1, 2, 3, 4, 5])).deep.equal(2.5)
-        expect(avgLst([0, 1])).deep.equal(0.5)
-        expect(avgLst([0])).deep.equal(0)
-        expect(avgLst([0.00, 1.02, 2.333])).deep.equal(1.1176666666666668)
+        expect(avgLst()()()([0, 1, 2, 3, 4, 5])).toEqual(2.5)
+        expect(avgLst([0, 1, 2, 3, 4, 5])).toEqual(2.5)
+        expect(avgLst([0, 1])).toEqual(0.5)
+        expect(avgLst([0])).toEqual(0)
+        expect(avgLst([0.00, 1.02, 2.333])).toEqual(1.1176666666666668)
     })
 
     it('test reciprocalLst', () => {
-        expect(reciprocalLst([-2, -1, 1, 2])).deep.equal([-0.5, -1, 1, 0.5])
-        expect(reciprocalLst([])).deep.equal([])
-        // FIXME: expect(λ.reciprocalLst([-2, -1, 1, 2])).deep.equal([-0.5, -1, Infinity, 1, 0.5])
+        expect(reciprocalLst([-2, -1, 1, 2])).toEqual(expect.arrayContaining([-0.5, -1, 1, 0.5]))
+        expect(reciprocalLst([])).toEqual(expect.arrayContaining([]))
+        // FIXME: expect(λ.reciprocalLst([-2, -1, 1, 2])).toEqual(expect.arrayContaining([-0.5, -1, Infinity, 1, 0.5])
     })
-
-
 })
 
