@@ -17,7 +17,7 @@ import {
 
 describe('Math', () => {
 
-    it('test square', () => {
+    it('test square', async () => {
         expect(sqr(2)).toEqual(4)
         expect(sqr(0)).toEqual(0)
         expect(sqr(-2)).toEqual(4)
