@@ -6,7 +6,8 @@
   "types": "lib",
   "scripts": {
     "test": "jest",
-    "build": "tsc"
+    "build": "tsc",
+    "watch": "tsc -w"
   },
   "repository": {
     "type": "git",
@@ -20,14 +21,12 @@
   "license": "ISC",
   "homepage": "https://github.com/aryaghan-mutum/algory#readme",
   "devDependencies": {
-    "@types/chai": "^4.2.11",
     "@types/jest": "^26.0.8",
     "@types/mocha": "^8.0.0",
     "@types/node": "^14.0.22",
     "@types/ramda": "^0.27.14",
     "@typescript-eslint/eslint-plugin": "^3.6.0",
     "@typescript-eslint/parser": "^3.6.0",
-    "chai": "^4.2.0",
     "curry": "^1.2.0",
     "eslint": "^7.4.0",
     "eslint-plugin-chai-friendly": "^0.6.0",
