@@ -13,7 +13,6 @@ import {
     half,
     avg,
     reciprocal,
-    getRandom
 } from '../../algos/nc/Math'
 
 describe('Math', () => {
@@ -134,15 +133,5 @@ describe('Math', () => {
     it('test combination', async () => {
         // TODO:
     })
-
-    it('random', () => {
-        debugger
-        const rand = getRandom()
-        console.log("RANDOM.......")
-        console.log(rand)
-        
-
-    })
-
 })
 

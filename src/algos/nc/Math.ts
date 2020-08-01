@@ -244,11 +244,6 @@ export const reciprocal = curry(
 // })
 
 
-export const getRandom = () => {
-    return Math.random();
-}
-
-
 
 
 
