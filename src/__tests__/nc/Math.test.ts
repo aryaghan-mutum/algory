@@ -15,7 +15,7 @@ import {
     reciprocal
 } from '../../algos/nc/Math'
 
-describe('Numerical Computation', () => {
+describe('Numerical Computation', async () => {
 
     it('test square', () => {
         expect(sqr(2)).toEqual(4)
@@ -23,27 +23,27 @@ describe('Numerical Computation', () => {
         expect(sqr(-2)).toEqual(4)
     })
 
-    it('test square', () => {
+    it('test square', async () => {
         expect(cube(2)).toEqual(8)
         expect(cube(0)).toEqual(0)
         expect(cube(-2)).toEqual(-8)
     })
 
-    it('test sumOfSquares', () => {
+    it('test sumOfSquares', async () => {
         expect(sumOfSquares(3, 4)).toEqual(25)
         expect(sumOfSquares(0, 0)).toEqual(0)
         expect(sumOfSquares(-3, -4)).toEqual(25)
         expect(sumOfSquares(-3)(4)).toEqual(25)
     })
 
-    it('test sumOfCubes', () => {
+    it('test sumOfCubes', async () => {
         expect(sumOfCubes(3, 4)).toEqual(91)
         expect(sumOfCubes(0, 0)).toEqual(0)
         expect(sumOfCubes(-3, -4)).toEqual(-91)
         expect(sumOfCubes(-3)(4)).toEqual(37)
     })
 
-    it('test double', () => {
+    it('test double', async () => {
         expect(double(5)).toEqual(10)
         expect(double(0)).toEqual(0)
         expect(double(-5)).toEqual(-10)
@@ -52,7 +52,7 @@ describe('Numerical Computation', () => {
         expect(double()()(3.2)).toEqual(6.4)
     })
 
-    it('test triple', () => {
+    it('test triple', async() => {
         expect(triple(5)).toEqual(15)
         expect(triple(0)).toEqual(0)
         expect(triple(-5)).toEqual(-15)
@@ -62,7 +62,7 @@ describe('Numerical Computation', () => {
         expect(triple()()()(3.2)).toEqual(9.600000000000001)
     })
 
-    it('test add1', () => {
+    it('test add1', async () => {
         expect(add1(7)).toEqual(8)
         expect(add1(-7)).toEqual(-6)
         expect(add1(7.125)).toEqual(8.125)
@@ -70,7 +70,7 @@ describe('Numerical Computation', () => {
         expect(add1()(0)).toEqual(1)
     })
 
-    it('test sub1', () => {
+    it('test sub1', async () => {
         expect(sub1(7)).toEqual(6)
         expect(sub1(-7)).toEqual(-8)
         expect(sub1(7.125)).toEqual(6.125)
@@ -78,7 +78,7 @@ describe('Numerical Computation', () => {
         expect(sub1()(0)).toEqual(-1)
     })
 
-    it('test min', () => {
+    it('test min', async () => {
         expect(min(2, 3)).toEqual(2)
         expect(min(3, 2)).toEqual(2)
         expect(min(2.345, 3.235)).toEqual(2.345)
@@ -87,7 +87,7 @@ describe('Numerical Computation', () => {
         expect(min()(2.345)(-3.235)).toEqual(-3.235)
     })
 
-    it('test max', () => {
+    it('test max', async () => {
         expect(max(2, 3)).toEqual(3)
         expect(max(3, 2)).toEqual(3)
         expect(max(2.345, 3.235)).toEqual(3.235)
@@ -96,11 +96,11 @@ describe('Numerical Computation', () => {
         expect(max(2.345)()(-3.235)).toEqual(2.345)
     })
 
-    it('test pow', () => {
+    it('test pow', async () => {
         // TODO:
     })
 
-    it('test abs', () => {
+    it('test abs', async () => {
         expect(abs(2)).toEqual(2)
         expect(abs(-2)).toEqual(2)
         expect(abs(32.0)).toEqual(32.0)
@@ -108,7 +108,7 @@ describe('Numerical Computation', () => {
         expect(abs()(-32.0)).toEqual(32.0)
     })
 
-    it('test half', () => {
+    it('test half', async () => {
         expect(half(4)).toEqual(2)
         expect(half(4.5)).toEqual(2.25)
         expect(half(-1 / 2)).toEqual(-0.25)
@@ -118,11 +118,11 @@ describe('Numerical Computation', () => {
         // expect(half()(0.0000001 / 2)).toEqual(5e-8)
     })
 
-    it('test avg', () => {
+    it('test avg', async () => {
         expect(avg(10, 5)).toEqual(12.5)
     })
 
-    it('test reciprocal', () => {
+    it('test reciprocal', async () => {
         expect(reciprocal(2)).toEqual(0.5)
         expect(reciprocal(-2)).toEqual(-0.5)
         expect(reciprocal(32.0)).toEqual(0.03125)
@@ -130,7 +130,7 @@ describe('Numerical Computation', () => {
         expect(reciprocal(-32.0)).toEqual(-0.03125)
     })
 
-    it('test combination', () => {
+    it('test combination', async () => {
         // TODO:
     })
 

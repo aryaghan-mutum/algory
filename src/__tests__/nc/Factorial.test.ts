@@ -2,7 +2,7 @@ import { factImper, factIter, factRec } from '../../algos/nc/Factorial'
 
 describe('Factorial Imperative Process', () => {
 
-    it('test factImper', () => {
+    it('test factImper', async () => {
         expect(factImper(0)).toEqual(1)
         expect(factImper(1)).toEqual(1)
         expect(factImper(10)).toEqual(3628800)
@@ -12,14 +12,14 @@ describe('Factorial Imperative Process', () => {
         expect(factImper(10.32321)).toEqual(3628800)
     })
 
-    it('test factorialIter', () => {
+    it('test factorialIter', async () => {
         expect(factIter(10.32321)).toEqual(3628800)
         expect(factIter(50)).toEqual(3.0414093201713376e+64)
         expect(factIter()(170)).toEqual(7.257415615307994e+306)
         expect(factIter()(200)).toEqual(Infinity)
     })
 
-    it('test factRec', () => {
+    it('test factRec', async() => {
         expect(factRec(10.32321)).toEqual(3628800)
         expect(factRec(50)).toEqual(3.0414093201713376e+64)
         expect(factRec()(170)).toEqual(7.257415615307994e+306)
