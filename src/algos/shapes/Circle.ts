@@ -5,7 +5,7 @@
  * https://github.com/aryaghan-mutum
  */
 
-import { sqr } from '../Math'
+import { sqr } from '../nc/Math'
 const err = require('../TypeViolation')
 const curry = require('curry')
 

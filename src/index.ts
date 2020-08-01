@@ -8,13 +8,14 @@ export * from './algos/machinelearning/NaiveBayes'
 export * from './algos/machinelearning/RandomForest'
 
 // Numeric Computation
-export * from './algos/Factorial'
-export * from './algos/Fibonacci'
-export * from './algos/Math'
-export * from './algos/MathPredicates'
+export * from './algos/nc/Factorial'
+export * from './algos/nc/Fibonacci'
+export * from './algos/nc/Math'
+export * from './algos/nc/MathPredicates'
 
-export * from './algos/ListComputation'
-export * from './algos/ListComputationPredicates'
+// List Computation
+export * from './algos/lc/ListComputation'
+export * from './algos/lc/ListComputationPredicates'
 
 
 // Sort

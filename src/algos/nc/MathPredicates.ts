@@ -7,7 +7,7 @@
  */
 
 import { abs, sqr, add1 } from './Math'
-import { numberTypeViolationError } from './TypeViolation'
+import { numberTypeViolationError } from '../TypeViolation'
 const curry = require('curry')
 
 /**

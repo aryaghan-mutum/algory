@@ -7,7 +7,7 @@
 
 import { isOne, isZero } from './MathPredicates'
 import { sub1 } from './Math'
-import { numberTypeViolationError } from './TypeViolation'
+import { numberTypeViolationError } from '../TypeViolation'
 const curry = require('curry')
 
 /**

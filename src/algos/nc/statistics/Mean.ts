@@ -6,8 +6,7 @@
  *
  */
 
-import { add1 } from "../Math";
-
+import { add1 } from '../Math'
 const curry = require('curry')
 
 /**

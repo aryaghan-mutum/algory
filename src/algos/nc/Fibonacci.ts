@@ -7,7 +7,7 @@
 
 import { sub1, sub2, sumOfSquares, sqr } from './Math'
 import { isNegative, isZero, isOne, isEven } from './MathPredicates'
-import { numberTypeViolationError } from './TypeViolation'
+import { numberTypeViolationError } from '../TypeViolation'
 import { range } from 'ramda'
 const curry = require('curry')
 

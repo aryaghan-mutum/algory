@@ -12,7 +12,7 @@
  * Space complexity: 1
  */
 
-import { sub1, add1 } from "../../Math"
+import { sub1, add1 } from '../../nc/Math'
 import { range } from 'ramda'
 const curry = require('curry')
 

@@ -9,7 +9,7 @@
  */
 
 import { isZero, isPositive } from './MathPredicates'
-import { numberTypeViolationError } from './TypeViolation'
+import { numberTypeViolationError } from '../TypeViolation'
 
 const curry = require('curry')
 

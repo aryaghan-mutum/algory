@@ -12,7 +12,7 @@ import {
     isOdd,
     isPrime,
     isPrimeOptimized
-} from '../../algos/MathPredicates'
+} from '../../algos/nc/MathPredicates'
 
 describe('Numerical Computation Predicates', () => {
 

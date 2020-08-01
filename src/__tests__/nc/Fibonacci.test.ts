@@ -1,4 +1,4 @@
-import { fibImper, fibIter, fibRec, fibLogarithmic } from '../../../src/algos/Fibonacci'
+import { fibImper, fibIter, fibRec, fibLogarithmic } from '../../algos/nc/Fibonacci'
 
 describe('Fibonacci Imperative Process', () => {
 
