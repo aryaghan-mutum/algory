@@ -12,10 +12,11 @@ import {
     abs,
     half,
     avg,
-    reciprocal
+    reciprocal,
+    getRandom
 } from '../../algos/nc/Math'
 
-describe('Numerical Computation', async () => {
+describe('Math', () => {
 
     it('test square', () => {
         expect(sqr(2)).toEqual(4)
@@ -132,6 +133,15 @@ describe('Numerical Computation', async () => {
 
     it('test combination', async () => {
         // TODO:
+    })
+
+    it('random', () => {
+        debugger
+        const rand = getRandom()
+        console.log("RANDOM.......")
+        console.log(rand)
+        
+
     })
 
 })
