@@ -18,10 +18,10 @@ const memoize = require('fast-memoize')
  * @returns A Factorial number of a specific index using Iterative process
  */
 export const factImper = curry(memoize(
+   
     (n: number): number => {
         n = Math.round(n)
         numberTypeViolationError(n)
-
         if (isZero(n) || isOne(n))
             return 1
         else if (n < 0)

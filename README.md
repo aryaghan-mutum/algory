@@ -37,6 +37,13 @@ Run a specific test: npm test -- SomeFile.test.ts or jest SomeFile.test.ts or np
 Help: npm test -- --help or jest help
 ```
 
+###### Debug
+```properties
+- Type: node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch
+- Go to chrome browser and type: chrome://inspect/#devices
+- Click Inspect link
+```
+
 ###### License 
 - This project is licensed under the terms of the [MIT license](/LICENSE.md).
 

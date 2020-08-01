@@ -9,7 +9,8 @@
     "testw": "jest --watch",
     "testc": "jest --coverage",
     "build": "tsc",
-    "watch": "tsc -w"
+    "watch": "tsc -w",
+    "debug": "node --debug-brk --inspect ./node_modules/jest/bin/jest -i"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,16 @@
   "bugs": {
     "url": "https://github.com/aryaghan-mutum/algory/issues"
   },
-  "keywords": [],
+  "keywords": [
+    "algorithms",
+    "sorting",
+    "search",
+    "machine-learning",
+    "math",
+    "shapes",
+    "curry",
+    "memoize"
+  ],
   "author": "Anurag Muthyam <anu.drumcoder@gmail.com>",
   "license": "ISC",
   "homepage": "https://github.com/aryaghan-mutum/algory#readme",
@@ -51,5 +61,17 @@
   },
   "files": [
     "lib/**/*"
-  ]
+  ],
+  "jest": {
+    "testMatch": [
+      "**/__tests__/**/*.+(ts|tsx|js)",
+      "**/?(*.)+(spec|test).+(ts|tsx|js)"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ]
+  }
 }
