@@ -6,7 +6,6 @@
  *
  */
 
-const curry = require('curry')
 
 /**
  * @remarks K-Means
