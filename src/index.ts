@@ -17,7 +17,6 @@ export * from './algos/nc/MathPredicates'
 export * from './algos/lc/ListComputation'
 export * from './algos/lc/ListComputationPredicates'
 
-
 // Sort
 export * from './algos/ds/sort/BubbleSort'
 export * from './algos/ds/sort/InsertionSort'
