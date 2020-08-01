@@ -30,6 +30,13 @@ const λ = require('algory')
 λ.sumOfCubes(2, 3))
 ```
 
+###### Tests
+```properties
+Run all tests: npm t or npm test
+Run a specific test: npm test -- SomeFile.test.ts or jest SomeFile.test.ts or npm test -t SomeFile.test.ts
+Help: npm test -- --help or jest help
+```
+
 ###### License 
 - This project is licensed under the terms of the [MIT license](/LICENSE.md).
 
