@@ -10,6 +10,7 @@ import { isNegative, isZero, isOne, isEven } from './MathPredicates'
 import { numberTypeViolationError } from '../TypeViolation'
 import { range } from 'ramda'
 const curry = require('curry')
+const memoize = require('fast-memoize')
 
 /**
  * @remarks Fibonacci: Imperative Procedure
@@ -17,7 +18,7 @@ const curry = require('curry')
  * @param n - Fibonacci index
  * @returns A Fibonacci number of a specific index using Imperative/Sequential approach
  */
-export const fibImper = curry(
+export const fibImper = curry(memoize(
     (n: number): number => {
         numberTypeViolationError(n)
 
@@ -33,7 +34,7 @@ export const fibImper = curry(
         })
 
         return x
-    })
+    }))
 
 /**
 * @remarks Fibonacci: Recursive Procedure with Iterative Process
@@ -51,7 +52,7 @@ export const fibImper = curry(
 * @param n - Fibonacci index
 * @returns A Fibonacci number of a specific index using Iterative process
 */
-export const fibIter = curry(
+export const fibIter = curry(memoize(
     (n: number): number => {
 
         if (isNegative(n))
@@ -75,7 +76,7 @@ export const fibIter = curry(
         }
 
         return fibIterHelper(1, 1, n)
-    })
+    }))
 
 /**
 * @remarks Fibonacci: Recursive Procedure with Recursive Process
@@ -87,7 +88,7 @@ export const fibIter = curry(
 * @param n - Fibonacci index
 * @returns A Fibonacci number of a specific index using Recursive process
 */
-export const fibRec = curry(
+export const fibRec = curry(memoize(
     (n: number): number => {
         numberTypeViolationError(n)
 
@@ -100,7 +101,7 @@ export const fibRec = curry(
         else {
             return fibRec(sub1(n)) + fibRec(sub2(n))
         }
-    })
+    }))
 
 
 /**
@@ -115,8 +116,8 @@ export const fibRec = curry(
  * @param n - Fibonacci index
  * @returns A Fibonacci number of a specific index using Logarithmic process
  */
-export const fibLogarithmic = curry(
-    (n: number): number => fibLogHelper(1, 0, 0, 1, n))
+export const fibLogarithmic = curry(memoize(
+    (n: number): number => fibLogHelper(1, 0, 0, 1, n)))
 
 /**
  * @remarks Helper function for fibLogarithmic(n) which returns a Fibonacci number in O(log(n)) time

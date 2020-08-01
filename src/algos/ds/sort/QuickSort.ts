@@ -13,6 +13,7 @@
 
 import { range } from 'ramda'
 const curry = require('curry')
+const memoize = require('fast-memoize')
 
 /**
  * For more info: https://en.wikipedia.org/wiki/Quicksort
@@ -21,7 +22,7 @@ const curry = require('curry')
  * @param arr - An unsorted array of numbers
  * @returns Sorted array of numbers 
  */
-export const quickSort = curry(
+export const quickSort = curry(memoize(
 
     (arr: Array<number>): Array<number> => {
 
@@ -46,4 +47,4 @@ export const quickSort = curry(
         sortedArr.push(pivot)
 
         return sortedArr.concat(quickSort(greater))
-    })
+    }))

@@ -12,7 +12,7 @@ import {
     abs,
     half,
     avg,
-    reciprocal,
+    reciprocal
 } from '../../algos/nc/Math'
 
 describe('Math', () => {

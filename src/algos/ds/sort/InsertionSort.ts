@@ -15,13 +15,14 @@
 import { sub1, add1 } from '../../nc/Math'
 import { range } from 'ramda'
 const curry = require('curry')
+const memoize = require('fast-memoize')
 
 /**
  * @remarks - Insertion Sort
  * @param arr - An unsorted array of numbers
  * @returns Sorted array of numbers 
  */
-export const insertionSortImper = curry(
+export const insertionSortImper = curry(memoize(
 
     (arr: Array<number>): Array<number> | null => {
 
@@ -40,4 +41,4 @@ export const insertionSortImper = curry(
         })
 
         return arr
-    })
+    }))

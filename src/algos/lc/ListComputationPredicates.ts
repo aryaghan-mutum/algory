@@ -8,6 +8,7 @@
 
 import { isEven, isOdd } from '../nc/MathPredicates'
 const curry = require('curry')
+const memoize = require('fast-memoize')
 
 /**
  * @remarks A List of Even numbers
@@ -16,10 +17,10 @@ const curry = require('curry')
  * @param n - A list of numbers
  * @return A list of even numbers
  */
-export const isEvenLst = curry(
+export const isEvenLst = curry(memoize(
     (arr: Array<number>): Array<boolean> => {
         return arr.map((n: number) => isEven(n))
-    })
+    }))
 
 /**
  * @remarks A List of Odd numbers
@@ -28,7 +29,7 @@ export const isEvenLst = curry(
  * @param n - A list of numbers
  * @return A list of odd numbers
  */
-export const isOddLst = curry(
+export const isOddLst = curry(memoize(
     (arr: Array<number>): Array<boolean> => {
         return arr.map((n: number) => isOdd(n))
-    })
+    }))

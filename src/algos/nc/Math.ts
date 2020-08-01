@@ -10,7 +10,7 @@
 
 import { isZero, isPositive } from './MathPredicates'
 import { numberTypeViolationError } from '../TypeViolation'
-
+const memoize = require('fast-memoize')
 const curry = require('curry')
 
 /**
@@ -20,10 +20,10 @@ const curry = require('curry')
  * @param n - An input number
  * @returns Squared number
  */
-export const sqr = curry(
+export const sqr = curry(memoize(
     (n: number): number => {
         return n * n
-    })
+    }))
 
 /**
  * @remarks Cube a number
@@ -32,10 +32,10 @@ export const sqr = curry(
  * @param n - An input number
  * @returns Cubed number
  */
-export const cube = curry(
+export const cube = curry(memoize(
     (n: number): number => {
         return sqr(n) * n
-    })
+    }))
 
 /**
  * @remarks Square two numbers and sum the returned values
@@ -72,16 +72,16 @@ export const sumOfCubes = curry(
  * @param n - An input number
  * @returns Doubled number
  */
-export const double = curry(
+export const double = curry(memoize(
     (n: number): number => {
         return n * 2
-    })
+    }))
 
 /**
  * @remarks Triple a number.
  * F(n) => (* n 3) or F(n) => (+ n n n)
  */
-export const triple = curry(
+export const triple = curry(memoize(
     /**
      * @param n
      * @returns 
@@ -89,13 +89,13 @@ export const triple = curry(
     (n: number): number => {
         numberTypeViolationError(n)
         return n * 3
-    })
+    }))
 
 /**
  * @remarks Add a number
  * F(n) => (+ n 1)
  */
-export const add1 = curry(
+export const add1 = curry(memoize(
     /**
      * @param n
      * @returns 
@@ -103,13 +103,13 @@ export const add1 = curry(
     (n: number): number => {
         numberTypeViolationError(n)
         return n + 1
-    })
+    }))
 
 /**
  * @remarks Subtract a number
  * F(n) => (- n 1)
  */
-export const sub1 = curry(
+export const sub1 = curry(memoize(
     /**
      * @param n
      * @returns 
@@ -117,13 +117,13 @@ export const sub1 = curry(
     (n: number): number => {
         numberTypeViolationError(n)
         return n - 1
-    })
+    }))
 
 /**
  * @remarks Subtract two numbers
  * F(n) => (- n 2)
  */
-export const sub2 = curry(
+export const sub2 = curry(memoize(
     /**
      * @param n
      * @returns 
@@ -131,7 +131,7 @@ export const sub2 = curry(
     (n: number): number => {
         numberTypeViolationError(n)
         return n - 2
-    })
+    }))
 
 /**
  * @remarks Get the minimum number between two numbers
@@ -175,7 +175,7 @@ export const max = curry(
  * @remarks Get an Absolute/modulus a number
  * F(n) => |n|
  */
-export const abs = curry(
+export const abs = curry(memoize(
     /**
      * @param n
      * @returns 
@@ -183,20 +183,20 @@ export const abs = curry(
     (n: number): number => {
         numberTypeViolationError(n)
         return isPositive(n) ? n : -(n)
-    })
+    }))
 
 /**
  * @remarks 
  * F(n) => (/ n 2)
  */
-export const half = curry(
+export const half = curry(memoize(
     /**
      * @param n
      * @returns
      */
     (n: number): number => {
         return n / 2
-    })
+    }))
 
 /**
  * @remarks An Average of two numbers
@@ -216,7 +216,7 @@ export const avg = curry(
  * @remarks Reciprocal/Inverse a number
  * F(n) => (/ 1 n)
  */
-export const reciprocal = curry(
+export const reciprocal = curry(memoize(
     /**
      * @param n - An input number
      * @returns Reciprocal number
@@ -227,7 +227,7 @@ export const reciprocal = curry(
         } else {
             return 1 / n
         }
-    })
+    }))
 
 /**
  *
@@ -242,6 +242,7 @@ export const reciprocal = curry(
 //         return combination(sub1(n), m) + combination(sub1(n), sub1(m))
 //     }
 // })
+
 
 
 

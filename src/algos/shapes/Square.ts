@@ -9,12 +9,13 @@ import { sqr } from '../nc/Math'
 
 const curry = require('curry')
 const err = require('../TypeViolation')
+const memoize = require('fast-memoize')
 
 /**
  * @remarks Returns area of a square
  * F(s) => (* s s)
  */
-export const squareArea = curry(
+export const squareArea = curry(memoize(
     /**
      * @param length/side in a square
      * @returns
@@ -22,13 +23,13 @@ export const squareArea = curry(
     (length: number): number => {
         err.numberTypeViolationError(length)
         return sqr(length)
-    })
+    }))
 
 /**
  * @remarks Returns square perimeter
  * F(s) => (* 4 s)
  */
-export const squarePerimeter = curry(
+export const squarePerimeter = curry(memoize(
     /**
      * @param length - side in a square
      * @returns
@@ -36,4 +37,4 @@ export const squarePerimeter = curry(
     (length: number): number => {
         err.numberTypeViolationError(length)
         return 4 * length
-    })
+    }))

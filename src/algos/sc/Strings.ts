@@ -6,11 +6,12 @@
  */
 
 const curry = require('curry')
+const memoize = require('fast-memoize')
 
 /**
  * @remarks Capitalize the first letter of the String
  */
-export const toUpperCaseFirstChar = curry(
+export const toUpperCaseFirstChar = curry(memoize(
     /**
      * @param str - An input string
      * @returns A string with the first character capitalized
@@ -18,4 +19,4 @@ export const toUpperCaseFirstChar = curry(
     (str: string): string => {
         if (typeof (str) !== 'string') return ''
         return str.charAt(0).toUpperCase() + str.slice(1)
-    });
+    }))

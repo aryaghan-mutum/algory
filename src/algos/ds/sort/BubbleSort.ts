@@ -16,13 +16,14 @@ import { swap } from './Swap'
 import { add1 } from '../../nc/Math'
 import { range } from 'ramda'
 const curry = require('curry')
+const memoize = require('fast-memoize')
 
 /**
  * @remarks - Bubble Sort
  * @param arr - An unsorted array of numbers
  * @returns Sorted array of numbers 
  */
-export const bubbleSortImper = curry(
+export const bubbleSortImper = curry(memoize(
 
     (arr: Array<number>): Array<number> | null => {
 
@@ -40,4 +41,4 @@ export const bubbleSortImper = curry(
         })
 
         return arr
-    })
+    }))

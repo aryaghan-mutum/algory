@@ -14,14 +14,15 @@ import {
     abs
 } from '../nc/Math'
 const curry = require('curry')
+const memoize = require('fast-memoize')
 
 /**
  * @remarks 
  * @param lst - unsorted list
  * @returns The first number from a list
  */
-export const car = curry(
-    (arr: number[]): number => arr[0])
+export const car = curry(memoize(
+    (arr: number[]): number => arr[0]))
 
 /**
  * @remarks Return a boolean expression true if the list if empty, false otherwise.
@@ -29,11 +30,10 @@ export const car = curry(
  * @param arr - A list of numbers
  * @returns A boolean expression true or false
  */
-export const isEmpty = curry(
+export const isEmpty = curry(memoize(
     (arr: number[]): boolean => {
         return (arr.length === 0) ? true : false
-    }
-)
+    }))
 
 /**
  * @remarks The Sum of Average of numbers in an array
@@ -42,12 +42,12 @@ export const isEmpty = curry(
  * @param arr - A list of numbers
  * @returns The sum of average of numbers in a list
  */
-export const avgLst = curry(
+export const avgLst = curry(memoize(
     (arr: Array<number>): number => {
         const total = arr.length
         let sum = arr.reduce((a: number, b: number) => a + b)
         return sum / total
-    })
+    }))
 
 /**
  * @remarks A List of Squared numbers
@@ -56,10 +56,10 @@ export const avgLst = curry(
  * @param arr - A list of numbers
  * @returns A list of Squared numbers
  */
-export const sqrLst = curry(
+export const sqrLst = curry(memoize(
     (arr: Array<number>): Array<number> => {
         return arr.map((n: number) => sqr(n))
-    })
+    }))
 
 /**
  * @remarks A List of Cubed numbers
@@ -68,10 +68,10 @@ export const sqrLst = curry(
  * @param arr - A list of numbers
  * @returns A list of Cubed numbers
  */
-export const cubeLst = curry(
+export const cubeLst = curry(memoize(
     (arr: Array<number>): Array<number> => {
         return arr.map((n: number) => cube(n))
-    })
+    }))
 
 /**
  * @remarks A List of Doubled numbers
@@ -80,10 +80,10 @@ export const cubeLst = curry(
  * @param n - A list of numbers
  * @return A list of doubled numbers
  */
-export const doubleLst = curry(
+export const doubleLst = curry(memoize(
     (arr: Array<number>): Array<number> => {
         return arr.map((n: number) => double(n))
-    })
+    }))
 
 /**
  * @remarks A List of Reciprocal/Inverse numbers
@@ -92,10 +92,10 @@ export const doubleLst = curry(
  * @param n - A list of numbers
  * @returns A list of Reciprocal numbers
  */
-export const reciprocalLst = curry(
+export const reciprocalLst = curry(memoize(
     (arr: Array<number>): Array<number> => {
         return arr.map((n: number) => reciprocal(n))
-    })
+    }))
 
 /**
  * @remarks A List of Reciprocal/Inverse numbers
@@ -104,8 +104,7 @@ export const reciprocalLst = curry(
  * @param n - A list of numbers
  * @returns A list of absolute |x| numbers
  */
-export const absLst = curry(
+export const absLst = curry(memoize(
     (arr: Array<number>): Array<number> => {
         return arr.map((n: number) => abs(n))
-    }
-)
+    }))

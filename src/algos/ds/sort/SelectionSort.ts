@@ -17,13 +17,14 @@ import { swap } from './Swap'
 import { add1 } from '../../nc/Math'
 
 const curry = require('curry')
+const memoize = require('fast-memoize')
 
 /**
  * @remarks - Selection Sort
  * @param arr - An unsorted array of numbers
  * @returns Sorted array of numbers 
  */
-export const selectionSortImper = curry(
+export const selectionSortImper = curry(memoize(
 
     (arr: Array<number>): Array<number> | null => {
 
@@ -49,4 +50,4 @@ export const selectionSortImper = curry(
             }
         })
         return arr
-    })
+    }))

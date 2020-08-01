@@ -9,12 +9,13 @@
 import { abs, sqr, add1 } from './Math'
 import { numberTypeViolationError } from '../TypeViolation'
 const curry = require('curry')
+const memoize = require('fast-memoize')
 
 /**
  * @remarks Return true if the "n" is 0, false otherwise
  * F?(n) => (= n 0) ? true : false
  */
-export const isZero = curry(
+export const isZero = curry(memoize(
     /**
      * @param n
      * @returns 
@@ -22,13 +23,13 @@ export const isZero = curry(
     (n: number): boolean => {
         numberTypeViolationError(n)
         return (n === 0) ? true : false
-    })
+    }))
 
 /**
  * @remarks Return true if the "n" is 1, false otherwise
  * F?(n) => (= n 1) ? true : false
  */
-export const isOne = curry(
+export const isOne = curry(memoize(
     /**
      * @param n
      * @returns 
@@ -36,13 +37,13 @@ export const isOne = curry(
     (n: number): boolean => {
         numberTypeViolationError(n)
         return (n === 1) ? true : false
-    })
+    }))
 
 /**
  * @remarks Return true if the "n" is negative, false otherwise
  * F?(n) => (< n 0) ? true : false
  */
-export const isNegative = curry(
+export const isNegative = curry(memoize(
     /**
      * @param n
      * @returns 
@@ -50,13 +51,13 @@ export const isNegative = curry(
     (n: number): boolean => {
         numberTypeViolationError(n)
         return (n < 0) ? true : false
-    })
+    }))
 
 /**
  * @remarks Return true if the "n" is positive, false otherwise
  * F?(n) => (>= n 0) ? true : false
  */
-export const isPositive = curry(
+export const isPositive = curry(memoize(
     /**
      * @param n
      * @returns 
@@ -64,13 +65,13 @@ export const isPositive = curry(
     (n: number): boolean => {
         numberTypeViolationError(n)
         return (n >= 0) ? true : false
-    })
+    }))
 
 /**
  * @remarks Return true if the "n" is lesser Than and equal to zero, false otherwise
  * F?(n) => (<= n 0) ? true : false
  */
-export const isLesserThanAndEqualToZero = curry(
+export const isLesserThanAndEqualToZero = curry(memoize(
     /**
      * @param n
      * @returns 
@@ -78,7 +79,7 @@ export const isLesserThanAndEqualToZero = curry(
     (n: number): boolean => {
         numberTypeViolationError(n)
         return (n <= 0) ? true : false
-    })
+    }))
 
 /**
  * @remarks Return true if the "x" is lesser than "y", false otherwise
@@ -142,12 +143,11 @@ export const isSumGreater = curry(
         return (x + y) > z
     })
 
-
 /**
  * @remarks Return true if the "n" is an even number
  * F?(n) => (= (% (abs n) 2) 0) ? true : false
  */
-export const isEven = curry(
+export const isEven = curry(memoize(
     /**
      * @param n
      * @returns 
@@ -155,13 +155,13 @@ export const isEven = curry(
     (n: number): boolean => {
         numberTypeViolationError(n)
         return abs(n) % 2 == 0 ? true : false
-    })
+    }))
 
 /**
  * @remarks Return true if the "n" is an odd number
  * F?(n) => (!= (% (abs n) 2) 0) ? true : false
  */
-export const isOdd = curry(
+export const isOdd = curry(memoize(
     /**
      * @param n
      * @remarks
@@ -169,7 +169,7 @@ export const isOdd = curry(
     (n: number): boolean => {
         numberTypeViolationError(n)
         return abs(n) % 2 !== 0 ? true : false
-    })
+    }))
 
 /**
  * @remarks Returns a prime number if the number is prime, false otherwise
@@ -178,7 +178,7 @@ export const isOdd = curry(
  * @param n - An input number
  * @returns A boolean expression true if the number is prime
  */
-export const isPrime = curry(
+export const isPrime = curry(memoize(
     (n: number): boolean => {
         /**
          * @param num - An input number
@@ -196,18 +196,18 @@ export const isPrime = curry(
                 return primeIter(n, add1(count))
         }
         return primeIter(n, 2)
-    })
+    }))
 
 /**
  * @remarks Optimized prime checker procedure which returns a prime number if the number is prime, false otherwise
  * F?(n) => t or f
  */
-export const isPrimeOptimized = curry(
+export const isPrimeOptimized = curry(memoize(
     /**
      * @param n - An input number
      * @returns A boolean expression true if the number is prime
      */
-    (n: number): boolean => (n < 2) ? false : optimizedPrimeIter(n, 2))
+    (n: number): boolean => (n < 2) ? false : optimizedPrimeIter(n, 2)))
 
 /**
  * @param n - An input number

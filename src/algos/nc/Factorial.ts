@@ -9,6 +9,7 @@ import { isOne, isZero } from './MathPredicates'
 import { sub1 } from './Math'
 import { numberTypeViolationError } from '../TypeViolation'
 const curry = require('curry')
+const memoize = require('fast-memoize')
 
 /**
  * @remarks Factorial: Imperative Procedure with Sequential Process
@@ -16,7 +17,7 @@ const curry = require('curry')
  * @param n - A factorial index
  * @returns A Factorial number of a specific index using Iterative process
  */
-export const factImper = curry(
+export const factImper = curry(memoize(
     (n: number): number => {
         n = Math.round(n)
         numberTypeViolationError(n)
@@ -30,7 +31,7 @@ export const factImper = curry(
             n *= i
         }
         return n
-    })
+    }))
 
 /**
  * @remarks Factorial: Recursive Procedure with Iterative Process
@@ -38,7 +39,7 @@ export const factImper = curry(
  * @param n - A factorial index
  * @returns A Factorial number of a specific index using Recursive process
  */
-export const factIter = curry(
+export const factIter = curry(memoize(
     (n: number): number => {
         n = Math.round(n)
         numberTypeViolationError(n)
@@ -53,7 +54,7 @@ export const factIter = curry(
             }
         }
         return fact(1, 1)
-    })
+    }))
 
 /**
  * @remarks Factorial: Recursive Procedure with Recursive Process
@@ -62,7 +63,7 @@ export const factIter = curry(
  * @param n - A factorial index
  * @returns A Factorial number of a specific index using Recursive process
  */
-export const factRec = curry(
+export const factRec = curry(memoize(
     (n: number): number => {
         n = Math.round(n)
 
@@ -72,7 +73,7 @@ export const factRec = curry(
             throw new Error("Factorial for negative numbers do not exist")
         else
             return n * factRec(sub1(n))
-    })
+    }))
 
 
 

@@ -12,13 +12,14 @@
  */
 
 const curry = require('curry')
+const memoize = require('fast-memoize')
 
 /**
  * @remarks - Merge Sort
  * @param arr - An unsorted array of numbers
  * @returns Sorted array of numbers 
  */
-export const mergeSort = curry(
+export const mergeSort = curry(memoize(
 
     (arr: Array<number>): Array<number> => {
 
@@ -36,7 +37,7 @@ export const mergeSort = curry(
 
         // call merge recursively for left half and right half of an array
         return merge(mergeSort(leftArray), mergeSort(rightArray))
-    })
+    }))
 
 /**
  * @remarks 
