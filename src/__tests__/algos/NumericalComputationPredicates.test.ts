@@ -15,7 +15,7 @@ import {
 
 describe('Numerical Computation Predicates', () => {
 
-    specify('test isZero', () => {
+    it('test isZero', () => {
         expect(isZero(0)).to.be.true
         expect(isZero(100)).to.be.false
         expect(isZero(-100)).to.be.false
@@ -25,7 +25,7 @@ describe('Numerical Computation Predicates', () => {
         expect(z(2)).to.be.false
     })
 
-    specify('test isOne', () => {
+    it('test isOne', () => {
         expect(isOne(1)).to.be.true
         expect(isOne(100)).to.be.false
         expect(isOne(-100)).to.be.false
@@ -36,7 +36,7 @@ describe('Numerical Computation Predicates', () => {
     })
 
 
-    specify('test isNegative', () => {
+    it('test isNegative', () => {
         expect(isNegative(-1)).to.be.true
         expect(isNegative(1)).to.be.false
         expect(isNegative(0)).to.be.false
@@ -46,7 +46,7 @@ describe('Numerical Computation Predicates', () => {
         expect(n(-0.12)).to.be.true
     })
 
-    specify('test isPositive', () => {
+    it('test isPositive', () => {
         expect(isPositive(-1)).to.be.false
         expect(isPositive(1)).to.be.true
         expect(isPositive(0)).to.be.true
@@ -56,7 +56,7 @@ describe('Numerical Computation Predicates', () => {
         expect(p(-0.12)).to.be.false
     })
 
-    specify('test isLesserThanAndEqualToZero', () => {
+    it('test isLesserThanAndEqualToZero', () => {
         expect(isLesserThanAndEqualToZero(-1)).to.be.true
         expect(isLesserThanAndEqualToZero(1)).to.be.false
         expect(isLesserThanAndEqualToZero(0)).to.be.true
@@ -66,7 +66,7 @@ describe('Numerical Computation Predicates', () => {
         expect(l(-0.12)).to.be.true
     })
 
-    specify('test lesserThan', () => {
+    it('test lesserThan', () => {
         expect(lesserThan(2, 3)).to.be.true
         expect(lesserThan(3, 2)).to.be.false
         expect(lesserThan(-3, 2)).to.be.true
@@ -77,7 +77,7 @@ describe('Numerical Computation Predicates', () => {
         expect(x(-3)).to.be.false
     })
 
-    specify('test greaterThan', () => {
+    it('test greaterThan', () => {
         expect(greaterThan(2, 3)).to.be.false
         expect(greaterThan(3, 2)).to.be.true
         expect(greaterThan(-3, 2)).to.be.false
@@ -89,7 +89,7 @@ describe('Numerical Computation Predicates', () => {
         expect(x(-3)).to.be.true
     })
 
-    specify('test isSumLesser', () => {
+    it('test isSumLesser', () => {
         expect(isSumLesser(2, 3, 5)).to.be.false
         expect(isSumLesser(2, 3, 6)).to.be.true
         expect(isSumLesser(2, 3, 4)).to.be.false
@@ -104,7 +104,7 @@ describe('Numerical Computation Predicates', () => {
         expect(sl2(6)).to.be.true
     })
 
-    specify('test isSumGreater', () => {
+    it('test isSumGreater', () => {
         expect(isSumGreater(2, 3, 5)).to.be.false
         expect(isSumGreater(2, 3, 6)).to.be.false
         expect(isSumGreater(2, 3, 4)).to.be.true
@@ -119,7 +119,7 @@ describe('Numerical Computation Predicates', () => {
         expect(sg2(6)).to.be.false
     })
 
-    specify('test isEven', () => {
+    it('test isEven', () => {
         expect(isEven(4)).to.be.true
         expect(isEven(5)).to.be.false
         expect(isEven(0)).to.be.true
@@ -128,7 +128,7 @@ describe('Numerical Computation Predicates', () => {
         expect(isEven()(-5)).to.be.false
     })
 
-    specify('test isOdd', () => {
+    it('test isOdd', () => {
         expect(isOdd(4)).to.be.false
         expect(isOdd(5)).to.be.true
         expect(isOdd(0)).to.be.false

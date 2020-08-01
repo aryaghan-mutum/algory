@@ -6,6 +6,8 @@
  */
 
 import { isOne, isZero } from './NumericalComputationPredicates'
+import { sub1 } from './NumericalComputation'
+
 const curry = require('curry')
 const err = require('../TypeViolation')
 

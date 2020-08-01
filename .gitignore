@@ -1,10 +1,13 @@
 # dependencies
-node_modules
+/node_modules
 docs
-coverage
+
 
 # production
 /lib
+
+#testing 
+coverage
 
 # misc
 .DS_Store

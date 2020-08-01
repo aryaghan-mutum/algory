@@ -7,13 +7,8 @@ export * from './algos/machinelearning/LogisticRegression'
 export * from './algos/machinelearning/NaiveBayes'
 export * from './algos/machinelearning/RandomForest'
 
-
-
-// Factorial
+// Numeric Computation
 export * from './algos/Factorial'
-export * from './algos/factorial/FactorialIter'
-export * from './algos/factorial/FactorialRec'
-
 export * from './algos/Fibonacci'
 
 // Primes
