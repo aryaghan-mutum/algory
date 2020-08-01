@@ -6,9 +6,7 @@
  *
  */
 
-const curry = require('curry')
 
 /**
  * @remarks Naive Bayes
  */
-export const naiveBayes = curry()

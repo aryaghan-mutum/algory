@@ -6,9 +6,6 @@
  *
  */
 
-const curry = require('curry')
-
 /**
  * @remarks Logistic Regression
  */
-export const logisticRegression = curry()

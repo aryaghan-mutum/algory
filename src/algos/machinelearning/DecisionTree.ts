@@ -6,9 +6,6 @@
  *
  */
 
-const curry = require('curry')
-
 /**
  * @remarks Decision Tree
  */
-export const decisionTree = curry()

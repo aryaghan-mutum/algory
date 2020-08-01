@@ -11,4 +11,3 @@ const curry = require('curry')
 /**
  * @remarks K-Means
  */
-export const kMeans = curry()

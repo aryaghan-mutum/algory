@@ -1,6 +1,6 @@
 {
   "name": "algory",
-  "version": "1.7.4",
+  "version": "1.7.5",
   "description": "An Auto-Curried General purpose library composed of algorithms and data structures for JavaScript, TypeScript and Node.js",
   "main": "lib/index.js",
   "types": "lib",

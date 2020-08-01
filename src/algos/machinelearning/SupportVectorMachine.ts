@@ -6,9 +6,7 @@
  *
  */
 
-const curry = require('curry')
 
 /**
  * @remarks Support Vector Machine
  */
-export const randomForest = curry()

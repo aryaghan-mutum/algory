@@ -1,11 +1,4 @@
 // Machine Learning 
-export * from './algos/machinelearning/DecisionTree'  
-export * from './algos/machinelearning/KMeans'
-export * from './algos/machinelearning/KNearestNeighbors'
-export * from './algos/machinelearning/LinearRegression'
-export * from './algos/machinelearning/LogisticRegression'
-export * from './algos/machinelearning/NaiveBayes'
-export * from './algos/machinelearning/RandomForest'
 
 // Numeric Computation
 export * from './algos/nc/Factorial'
@@ -16,6 +9,9 @@ export * from './algos/nc/MathPredicates'
 // List Computation
 export * from './algos/lc/ListComputation'
 export * from './algos/lc/ListComputationPredicates'
+
+// String Computation
+export * from './algos/sc/Strings'
 
 // Sort
 export * from './algos/ds/sort/BubbleSort'

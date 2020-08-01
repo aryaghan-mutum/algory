@@ -7,9 +7,6 @@
  */
 
 
-const curry = require('curry')
-
 /**
  * @remarks kNN
  */
-export const kNN = curry()

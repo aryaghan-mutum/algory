@@ -6,9 +6,7 @@
  *
  */
 
-const curry = require('curry')
 
 /**
  * @remarks Random Forest
  */
-export const randomForest = curry()
