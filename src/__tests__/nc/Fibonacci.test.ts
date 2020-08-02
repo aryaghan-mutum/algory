@@ -1,3 +1,10 @@
+/**
+ * Algory
+ *
+ * Copyright (c) Anurag Muthyam <anu.drumcdoer@gmail.com>
+ * https://github.com/aryaghan-mutum
+ */
+
 import { fibImper, fibIter, fibRec, fibLogarithmic } from '../../algos/nc/Fibonacci'
 
 describe('Fibonacci Imperative Process', () => {

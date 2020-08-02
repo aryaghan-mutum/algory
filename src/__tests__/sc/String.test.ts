@@ -1,3 +1,10 @@
+/**
+ * Algory
+ *
+ * Copyright (c) Anurag Muthyam <anu.drumcdoer@gmail.com>
+ * https://github.com/aryaghan-mutum
+ */
+
 import { toUpperCaseFirstChar} from '../../algos/sc/Strings'
 
 describe('Strings', () => {

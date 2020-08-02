@@ -1,3 +1,10 @@
+/**
+ * Algory
+ *
+ * Copyright (c) Anurag Muthyam <anu.drumcdoer@gmail.com>
+ * https://github.com/aryaghan-mutum
+ */
+
 import { bubbleSortImper } from '../../algos/ds/sort/BubbleSort'
 import { insertionSortImper } from '../../algos/ds/sort/InsertionSort'
 import { mergeSort } from '../../algos/ds/sort/MergeSort'

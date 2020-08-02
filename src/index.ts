@@ -3,6 +3,8 @@
 // Numeric Computation
 export * from './algos/nc/Factorial'
 export * from './algos/nc/Fibonacci'
+export * from './algos/nc/Prime'
+
 export * from './algos/nc/Math'
 export * from './algos/nc/MathPredicates'
 

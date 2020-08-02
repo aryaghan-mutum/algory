@@ -1,5 +1,3 @@
-
-
 /**
  * Algory
  *
@@ -105,16 +103,6 @@ export const min = curry((a: number, b: number): number => a < b ? a : b)
 export const max = curry((a: number, b: number): number => a > b ? a : b)
 
 /**
- * @remarks //TODO
- * @param base
- * @param n
- */
-// export const pow = curry(
-// (base: number, n: number): number => {
-//     return isZero(n) ? 1 : base + pow(base, n - 1)
-// })
-
-/**
  * @remarks Get an Absolute/modulus a number
  * @param n - A number 
  * @returns An absolute value of a number
@@ -155,13 +143,13 @@ export const reciprocal = curry(memoize(
     }))
 
 /**
- * @remarks Remainder
- * @param a 
- * @param b 
- * @returns A remainder of two numbers 
- * @example F(a, b) => (- a (* (floor (/ a b) b))))
+ * @remarks Modulus / Remainder  
+ * @param a - A number 
+ * @param b - A number  
+ * @returns A remainder after integer division 
+ * @example F(a b) = (% x y)
  */
-export const remainder = curry((a: number, b: number): number => a - Math.floor(a / b) * b)
+export const mod = curry((a: number, b: number): number => a % b)
 
 /**
  * @remarks Greatest Common Divisor (GCD)
@@ -170,7 +158,37 @@ export const remainder = curry((a: number, b: number): number => a - Math.floor(
  * @returns A Greatest Common Divisor of two integers
  * @example F(a b) = F(b r), where r is remainder
  */
-export const gcd = curry((a: number, b: number): number => isZero(b) ? a : gcd(b, remainder(a, b)))
+export const gcd = curry((a: number, b: number): number => isZero(b) ? a : gcd(b, mod(a, b)))
+
+/**
+ * @remarks Least Common Multiple (LCM), Lowest common multiple, or Smallest Common Multiple of two integers
+ * @param a - A number 
+ * @param b - remainder 
+ * @returns A least common multiple of two integers
+ * @example F(a b) = F(b r), where r is remainder
+ */
+export const lcm = curry((a: number, b: number): number => ((isZero(a)) || (isZero(b))) ? 0 : (a * b) / gcd(a, b))
+
+
+// /**
+//  * @remarks Euclidean algorithms to find GCD for large numbers
+//  * @param a - A number 
+//  * @param b - remainder 
+//  * @returns A Euclidean Greatest Common Divisor of two integers
+//  * @example F(min max) = F(max (max - min))
+//  */
+// export const euclideanGcd = curry(
+//     (a: number, b: number): number => {
+
+//         const euclideanGcdIter = (minimum: number, maximum: number): number => {
+//             if (maximum < minimum) {
+//                 return maximum
+//             } else {
+//                 return euclideanGcdIter(maximum, (maximum - minimum))
+//             }
+//         }
+//         return euclideanGcdIter(min(a, b), max(a, b))
+//     })
 
 /**
  *
@@ -186,6 +204,15 @@ export const gcd = curry((a: number, b: number): number => isZero(b) ? a : gcd(b
 //     }
 // })
 
+/**
+ * @remarks //TODO
+ * @param base
+ * @param n
+ */
+// export const pow = curry(
+// (base: number, n: number): number => {
+//     return isZero(n) ? 1 : base + pow(base, n - 1)
+// })
 
 
 

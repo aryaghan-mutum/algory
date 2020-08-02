@@ -1,3 +1,10 @@
+/**
+ * Algory
+ *
+ * Copyright (c) Anurag Muthyam <anu.drumcdoer@gmail.com>
+ * https://github.com/aryaghan-mutum
+ */
+
 import {
     sqr,
     cube,
@@ -12,7 +19,10 @@ import {
     abs,
     half,
     avg,
-    reciprocal
+    reciprocal,
+    mod,
+    gcd,
+    lcm
 } from '../../algos/nc/Math'
 
 describe('Math', () => {
@@ -52,7 +62,7 @@ describe('Math', () => {
         expect(double()()(3.2)).toBe(6.4)
     })
 
-    it('test triple', async() => {
+    it('test triple', async () => {
         expect(triple(5)).toBe(15)
         expect(triple(0)).toBe(0)
         expect(triple(-5)).toBe(-15)
@@ -96,10 +106,6 @@ describe('Math', () => {
         expect(max(2.345)()(-3.235)).toBe(2.345)
     })
 
-    it('test pow', async () => {
-        // TODO:
-    })
-
     it('test abs', async () => {
         expect(abs(2)).toBe(2)
         expect(abs(-2)).toBe(2)
@@ -131,10 +137,48 @@ describe('Math', () => {
         expect(reciprocal(32.0)).toBe(0.03125)
         expect(reciprocal(-32.0)).toBe(-0.03125)
         expect(reciprocal(-32.0)).toBe(-0.03125)
+        expect(() => reciprocal(0)).toThrow()
     })
 
-    it('test combination', async () => {
-        // TODO:
+    it('test mod', async () => {
+        expect(mod(42, 10)).toBe(2)
+        expect(mod(42, -10)).toBe(2)
+        expect(mod(-42, 10)).toBe(-2)
+        expect(mod(-42, -10)).toBe(-2)
+        expect(mod(-40, 10)).toBe(-0)
+        expect(mod(40, 10)).toBe(0)
+        expect(mod(370.24, 450)).toBe(370.24)
     })
+
+    it('test gcd', async () => {
+        expect(gcd(0, 0)).toBe(0)
+        expect(gcd(2, 0)).toBe(2)
+        expect(gcd(0, 2)).toBe(2)   
+        expect(gcd(2, 10)).toBe(2)
+        expect(gcd(21, 81.0)).toBe(3.0)
+        expect(gcd(12, 13)).toBe(1)
+        expect(gcd(9, 3)).toBe(3)
+        expect(gcd(0, 0)).toBe(0)
+        expect(gcd(24, 60)).toBe(12)
+        expect(gcd(2.0, 10.0)).toBe(2.0)
+        expect(gcd(-2.0, -10.0)).toBe(-2.0)
+        expect(gcd(-462, -1071)).toBe(-21)      
+    })
+
+    it('test lcm', async () => {
+        expect(lcm(0, 0)).toBe(0)
+        expect(lcm(1, 0)).toBe(0)
+        expect(lcm(0, 1)).toBe(0)
+        expect(lcm(4, 6)).toBe(12)
+        expect(lcm(6, 21)).toBe(42)
+        expect(lcm(7, 2)).toBe(14)
+        expect(lcm(3, 5)).toBe(15)
+        expect(lcm(7, 3)).toBe(21)
+        expect(lcm(1000000, 2)).toBe(1000000)
+        expect(lcm(-9, -18)).toBe(-18)
+        expect(lcm(-7, -9)).toBe(-63)
+        expect(lcm(-7, 9)).toBe(63)
+    })
+
 })
 

@@ -1,3 +1,10 @@
+/**
+ * Algory
+ *
+ * Copyright (c) Anurag Muthyam <anu.drumcdoer@gmail.com>
+ * https://github.com/aryaghan-mutum
+ */
+
 import { factImper, factIter, factRec } from '../../algos/nc/Factorial'
 
 describe('Factorial Imperative Process', () => {
