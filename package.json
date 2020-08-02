@@ -11,7 +11,7 @@
     "build": "tsc",
     "watch": "tsc -w",
     "debug": "node --debug-brk --inspect ./node_modules/jest/bin/jest -i",
-    "prepare": "npm run build && npm test && npm run lint"
+    "lint": "eslintrc.json"
   },
   "repository": {
     "type": "git",

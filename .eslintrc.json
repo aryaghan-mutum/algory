@@ -1,22 +1,32 @@
 {
-    "plugins": [
-        "jest"
-    ],
-    "rules": {
-        "jest/no-disabled-tests": "warn",
-        "jest/no-focused-tests": "error",
-        "jest/no-identical-title": "error",
-        "jest/prefer-to-have-length": "warn",
-        "jest/valid-expect": "error",
-        "jest/no-if": "error",
-        "jest/no-commented-out-tests": "error",
-        "jest/valid-title": "error"
-        
-    },
     "env": {
-        "jest/globals": true
+        "browser": true,
+        "commonjs": true,
+        "es2020": true
     },
     "extends": [
-        "plugins:jest/recommended"
-    ]
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:jsdoc/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 11
+    },
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "no-unused-expressions": 0,
+        "no-irregular-whitespace": 2,
+        "no-unexpected-multiline": 2,
+        "no-trailing-spaces": 2,
+        "semi": [
+            "error"
+        ],
+        "quotes": [
+            "single",
+            "error"
+        ]
+    }
 }
