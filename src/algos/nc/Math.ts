@@ -9,157 +9,100 @@
  */
 
 import { isZero, isPositive } from './MathPredicates'
-import { numberTypeViolationError } from '../TypeViolation'
 const memoize = require('fast-memoize')
 const curry = require('curry')
 
 /**
  * @remarks Square a number
- *  F(n) => (* n n)
- *
- * @param n - An input number
+ * @param n - A number
  * @returns Squared number
+ * @example F(n) => (* n n)
  */
-export const sqr = curry(memoize(
-    (n: number): number => {
-        return n * n
-    }))
+export const sqr = curry(memoize((n: number): number => n * n))
 
 /**
  * @remarks Cube a number
- * F(n) => (* n n n)
- *
- * @param n - An input number
+ * @param n - A number
  * @returns Cubed number
+ * @example F(n) => (* n n n)
  */
-export const cube = curry(memoize(
-    (n: number): number => {
-        return sqr(n) * n
-    }))
+export const cube = curry(memoize((n: number): number => sqr(n) * n))
 
 /**
  * @remarks Square two numbers and sum the returned values
- * F(n) => (+ (square x) (square y))
+ * @param x
+ * @param y
+ * @returns Sum of Squares 
+ * @example F(n) => (+ (square x) (square y))
  */
-export const sumOfSquares = curry(
-    /**
-     * @param x
-     * @param y
-     * @returns - Sum of Squares 
-     */
-    (x: number, y: number): number => {
-        return sqr(x) + sqr(y)
-    })
+export const sumOfSquares = curry((x: number, y: number): number => sqr(x) + sqr(y))
 
 /**
  * @remarks Cube two numbers and sum the returned values
- * F(n) => (+ (cube x) (cube y))
+ * @param x - A number 
+ * @param y - A number 
+ * @returns Sum of Cubes
+ * @example F(n) => (+ (cube x) (cube y))
  */
-export const sumOfCubes = curry(
-    /**
-     * @param x
-     * @param y
-     * @returns Sum of Cubes
-     */
-    (x: number, y: number): number => {
-        return cube(x) + cube(y)
-    })
+export const sumOfCubes = curry((x: number, y: number): number => cube(x) + cube(y))
 
 /**
  * @remarks Double a number
- * F(n) => (* n 2) or F(n) => (+ n n)
- *
- * @param n - An input number
- * @returns Doubled number
+ * @param n - A number
+ * @returns A doubled number
+ * @example F(n) => (* n 2) or F(n) => (+ n n)
  */
-export const double = curry(memoize(
-    (n: number): number => {
-        return n * 2
-    }))
+export const double = curry(memoize((n: number): number => n * 2))
 
 /**
- * @remarks Triple a number.
- * F(n) => (* n 3) or F(n) => (+ n n n)
+ * @remarks Triple a number
+ * @param n - A number 
+ * @returns - A number multiplied with 3
+ * @example F(n) => (* n 3) or F(n) => (+ n n n)
  */
-export const triple = curry(memoize(
-    /**
-     * @param n
-     * @returns 
-     */
-    (n: number): number => {
-        numberTypeViolationError(n)
-        return n * 3
-    }))
+export const triple = curry(memoize((n: number): number => n * 3))
 
 /**
- * @remarks Add a number
- * F(n) => (+ n 1)
+ * @remarks Add 1 to a number
+ * @param n - A number 
+ * @returns - A number added with 1
+ * @example F(n) => (+ n 1)
  */
-export const add1 = curry(memoize(
-    /**
-     * @param n
-     * @returns 
-     */
-    (n: number): number => {
-        numberTypeViolationError(n)
-        return n + 1
-    }))
+export const add1 = curry(memoize((n: number): number => n + 1))
 
 /**
  * @remarks Subtract a number
- * F(n) => (- n 1)
+ * @param n - A number 
+ * @returns A number subtracted by 1
+ * @example F(n) => (- n 1)
  */
-export const sub1 = curry(memoize(
-    /**
-     * @param n
-     * @returns 
-     */
-    (n: number): number => {
-        numberTypeViolationError(n)
-        return n - 1
-    }))
+export const sub1 = curry(memoize((n: number): number => n - 1))
 
 /**
  * @remarks Subtract two numbers
- * F(n) => (- n 2)
+ * @param n - A number 
+ * @returns A number subtracted by 2
+ * @example F(n) => (- n 2)
  */
-export const sub2 = curry(memoize(
-    /**
-     * @param n
-     * @returns 
-     */
-    (n: number): number => {
-        numberTypeViolationError(n)
-        return n - 2
-    }))
+export const sub2 = curry(memoize((n: number): number => n - 2))
 
 /**
  * @remarks Get the minimum number between two numbers
- * F(x, y) => (< a b) ? a : b
+ * @param a - A number 
+ * @param b - A number 
+ * @returns A minimum number between two numbers 
+ * @example F(x, y) => (< a b) ? a : b
  */
-export const min = curry(
-    /**
-     * @param a
-     * @param b
-     * @returns 
-     */
-    (a: number, b: number): number => {
-        return a < b ? a : b
-    })
+export const min = curry((a: number, b: number): number => a < b ? a : b)
 
 /**
  * @remarks Get the maximum number between two numbers
- * F(x, y) => (> a b) ? a : b
+ * @param a - A number 
+ * @param b - A number 
+ * @returns - A maximum number between two numbers 
+ * @example F(x, y) => (> a b) ? a : b
  */
-export const max = curry(
-    /**
-     * @param a
-     * @param b
-     * @returns 
-     */
-    (a: number, b: number): number => {
-        return a > b ? a : b
-    })
+export const max = curry((a: number, b: number): number => a > b ? a : b)
 
 /**
  * @remarks //TODO
@@ -173,54 +116,36 @@ export const max = curry(
 
 /**
  * @remarks Get an Absolute/modulus a number
- * F(n) => |n|
+ * @param n - A number 
+ * @returns An absolute value of a number
+ * @example F(n) => |n|
  */
-export const abs = curry(memoize(
-    /**
-     * @param n
-     * @returns 
-     */
-    (n: number): number => {
-        numberTypeViolationError(n)
-        return isPositive(n) ? n : -(n)
-    }))
+export const abs = curry(memoize((n: number): number => isPositive(n) ? n : -(n)))
 
 /**
- * @remarks 
- * F(n) => (/ n 2)
+ * @remarks Half a number 
+ * @param n
+ * @returns a number divided by 2 
+ * @example F(n) => (/ n 2)
  */
-export const half = curry(memoize(
-    /**
-     * @param n
-     * @returns
-     */
-    (n: number): number => {
-        return n / 2
-    }))
+export const half = curry(memoize((n: number): number => n / 2))
 
 /**
  * @remarks An Average of two numbers
- * F(x, y) => (/ x y)
+ * @param x - An input first argument number
+ * @param y - An input second argument number
+ * @returns An average of two numbers
+ * @example F(x, y) => (/ x y)
  */
-export const avg = curry(
-    /**
-     * @param x - An input first argument number
-     * @param y - An input second argument number
-     * @return An average of two numbers
-     */
-    (x: number, y: number): number => {
-        return x + y / 2
-    })
+export const avg = curry((x: number, y: number): number => x + y / 2)
 
 /**
  * @remarks Reciprocal/Inverse a number
- * F(n) => (/ 1 n)
+ * @param n - An input number
+ * @returns A Reciprocal number
+ * @example F(n) => (/ 1 n)
  */
 export const reciprocal = curry(memoize(
-    /**
-     * @param n - An input number
-     * @returns Reciprocal number
-     */
     (n: number): number => {
         if (isZero(n)) {
             throw new Error('Reciprocal/Inverse of 0 is undefined')
@@ -228,6 +153,24 @@ export const reciprocal = curry(memoize(
             return 1 / n
         }
     }))
+
+/**
+ * @remarks Remainder
+ * @param a 
+ * @param b 
+ * @returns A remainder of two numbers 
+ * @example F(a, b) => (- a (* (floor (/ a b) b))))
+ */
+export const remainder = curry((a: number, b: number): number => a - Math.floor(a / b) * b)
+
+/**
+ * @remarks Greatest Common Divisor (GCD)
+ * @param a - A number 
+ * @param b - remainder 
+ * @returns A Greatest Common Divisor of two integers
+ * @example F(a b) = F(b r), where r is remainder
+ */
+export const gcd = curry((a: number, b: number): number => isZero(b) ? a : gcd(b, remainder(a, b)))
 
 /**
  *
@@ -242,7 +185,6 @@ export const reciprocal = curry(memoize(
 //         return combination(sub1(n), m) + combination(sub1(n), sub1(m))
 //     }
 // })
-
 
 
 
