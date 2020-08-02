@@ -1,11 +1,18 @@
 # Useful Commands for the Project
 
 ###### Tests
-```properties
-Run all tests: npm t or npm test
-Run a specific test: npm test -- SomeFile.test.ts or jest SomeFile.test.ts or npm test -t SomeFile.test.ts
-Help: npm test -- --help or jest help
-```
+- Run all tests: 
+  - npm t or npm test 
+  - jest or jest --watch
+
+- Run a specific test: 
+  - npm test -- SomeFile.test.ts 
+  - jest SomeFile.test.ts 
+  - npm test -t SomeFile.test.ts
+
+- Help: 
+ - npm test -- --help
+ - jest help
 
 ###### Debug
 ```properties
