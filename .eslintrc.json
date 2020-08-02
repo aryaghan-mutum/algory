@@ -9,7 +9,9 @@
         "jest/prefer-to-have-length": "warn",
         "jest/valid-expect": "error",
         "jest/no-if": "error",
-        "jest/no-commented-out-tests": "error"
+        "jest/no-commented-out-tests": "error",
+        "jest/valid-title": "error"
+        
     },
     "env": {
         "jest/globals": true
