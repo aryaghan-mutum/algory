@@ -1,18 +1,15 @@
 # Useful Commands for the Project
 
-###### Tests
-- Run all tests: 
-  - npm t or npm test 
-  - jest or jest --watch
+###### Eslint
+Setup Configuration file:
+```properties
+eslint --init
+```
 
-- Run a specific test: 
-  - npm test -- SomeFile.test.ts 
-  - jest SomeFile.test.ts 
-  - npm test -t SomeFile.test.ts
-
-- Help: 
- - npm test -- --help
- - jest help
+###### Build
+```properties 
+npm run build
+```
 
 ###### Debug
 ```properties
@@ -27,8 +24,16 @@
 jest --coverage
 ```
 
-###### Eslint
-Setup Configuration file:
-```properties
-eslint --init
-```
+###### Tests
+- Run all tests: 
+  - npm t or npm test 
+  - jest or jest --watch
+
+- Run a specific test: 
+  - npm test -- SomeFile.test.ts 
+  - jest SomeFile.test.ts 
+  - npm test -t SomeFile.test.ts
+
+- Help: 
+  - npm test -- --help
+  - jest help
