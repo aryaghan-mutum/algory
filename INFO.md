@@ -20,9 +20,9 @@ npm run build
 ```
 
 ###### Coverage 
-```properties
-jest --coverage
-```
+- All Coverage:
+  - jest --coverage
+  - npm test -- --coverage
 
 ###### Tests
 - Run all tests: 
@@ -34,6 +34,13 @@ jest --coverage
   - npm test -- SomeFile.test.ts 
   - jest SomeFile.test.ts 
   - npm test -t SomeFile.test.ts
+
+- Run tests related to changed files based on uncommitted files:
+  - jest -o
+
+- Run on watch mode:
+  - Runs jest -o by default: jest --watch
+  - Runs all tests: jest --watchAll
 
 - Help: 
   - npm test -- --help
