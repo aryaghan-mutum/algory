@@ -12,7 +12,7 @@
  * Space complexity: 1
  */
 
-import { swap } from './Swap'
+import { swap } from '../../lc/ListComputation'
 import { add1 } from '../../nc/Math'
 import { range } from 'ramda'
 const curry = require('curry')

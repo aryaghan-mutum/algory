@@ -20,6 +20,8 @@ describe('Bubble Sort', () => {
         expect(bubbleSortImper([0])).toEqual(expect.arrayContaining([0]))
         expect(bubbleSortImper([])).toEqual(([]))
         expect(bubbleSortImper([])).toEqual(expect.arrayContaining([]))
+        expect(bubbleSortImper(undefined)).toBeNull()
+        expect(bubbleSortImper(null)).toBeNull()
     })
 
     it('test Insertion Sort', async () => {
@@ -27,8 +29,8 @@ describe('Bubble Sort', () => {
         expect(insertionSortImper([4, 3, 2, 1, 0, -1, -2, -3, -4])).toEqual(expect.arrayContaining([-4, -3, -2, -1, 0, 1, 2, 3, 4]))
         expect(insertionSortImper([0])).toEqual(expect.arrayContaining([0]))
         expect(insertionSortImper([])).toEqual(expect.arrayContaining([]))
-        expect(insertionSortImper(null)).toBeNull
-        expect(insertionSortImper(undefined)).toBeNull
+        expect(insertionSortImper(null)).toBeNull()
+        expect(insertionSortImper(undefined)).toBeNull()
     })
 
     it('test Merge Sort', async () => {
@@ -53,7 +55,7 @@ describe('Bubble Sort', () => {
         expect(selectionSortImper([4, 3, 2, 1, 0, -1, -2, -3, -4])).toEqual(expect.arrayContaining([-4, -3, -2, -1, 0, 1, 2, 3, 4]))
         expect(selectionSortImper([0])).toEqual(expect.arrayContaining([0]))
         expect(selectionSortImper([])).toEqual(expect.arrayContaining([]))
-        expect(selectionSortImper(null)).toBeNull
+        expect(selectionSortImper(null)).toBeNull()
     })
 
 })

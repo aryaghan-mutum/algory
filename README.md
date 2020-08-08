@@ -30,6 +30,10 @@ const λ = require('algory')
 λ.sumOfCubes(2, 3))
 ```
 
+###### Code Health 
+- The project is written in TypeScript
+- Code Coverage: 100%
+
 ###### License 
 - This project is licensed under the terms of the [MIT license](/LICENSE.md).
 

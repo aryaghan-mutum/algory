@@ -17,30 +17,24 @@ const curry = require('curry')
 const memoize = require('fast-memoize')
 
 /**
- * @remarks 
+ * @remarks Get first element
  * @param lst - unsorted list
  * @returns The first number from a list
  */
-export const car = curry(memoize(
-    (arr: number[]): number => arr[0]))
+export const car = curry(memoize((arr: number[]): number => arr[0]))
 
 /**
  * @remarks Return a boolean expression true if the list if empty, false otherwise.
- *
  * @param arr - A list of numbers
  * @returns A boolean expression true or false
  */
-export const isEmpty = curry(memoize(
-    (arr: number[]): boolean => {
-        return (arr.length === 0) ? true : false
-    }))
+export const isEmpty = curry(memoize((arr: number[]): boolean => (arr.length === 0) ? true : false))
 
 /**
- * @remarks The Sum of Average of numbers in an array
- * F([a, b, c ... n]) => (/ (+ a, b, c ... n) n)
- *
+ * @remarks The Sum of Average of numbers in an array 
  * @param arr - A list of numbers
  * @returns The sum of average of numbers in a list
+ * @example F([a, b, c ... n]) => (/ (+ a, b, c ... n) n)
  */
 export const avgLst = curry(memoize(
     (arr: Array<number>): number => {
@@ -51,60 +45,58 @@ export const avgLst = curry(memoize(
 
 /**
  * @remarks A List of Squared numbers
- * F([a,b,c ... n]) = [(sqr a) (sqr b) (sqr c) ... sqr(n)]
- *
  * @param arr - A list of numbers
  * @returns A list of Squared numbers
+ * @example F([a,b,c ... n]) = [(sqr a) (sqr b) (sqr c) ... sqr(n)]
  */
-export const sqrLst = curry(memoize(
-    (arr: Array<number>): Array<number> => {
-        return arr.map((n: number) => sqr(n))
-    }))
+export const sqrLst = curry(memoize((arr: Array<number>): Array<number> =>  arr.map((n: number) => sqr(n))))
 
 /**
  * @remarks A List of Cubed numbers
- * F([a,b,c ... n]) = [(cube a) (cube b) (cube c) ... cube(n)]
- *
  * @param arr - A list of numbers
  * @returns A list of Cubed numbers
+ * @example F([a,b,c ... n]) = [(cube a) (cube b) (cube c) ... cube(n)]
  */
-export const cubeLst = curry(memoize(
-    (arr: Array<number>): Array<number> => {
-        return arr.map((n: number) => cube(n))
-    }))
+export const cubeLst = curry(memoize((arr: Array<number>): Array<number> =>  arr.map((n: number) => cube(n))))
 
 /**
  * @remarks A List of Doubled numbers
- * F([a,b,c ... n]) = [(double a) (double b) (double c) ... double(n)]
- *
  * @param n - A list of numbers
  * @return A list of doubled numbers
+ * @example F([a,b,c ... n]) = [(double a) (double b) (double c) ... double(n)]
  */
-export const doubleLst = curry(memoize(
-    (arr: Array<number>): Array<number> => {
-        return arr.map((n: number) => double(n))
-    }))
+export const doubleLst = curry(memoize((arr: Array<number>): Array<number> => arr.map((n: number) => double(n))))
 
 /**
  * @remarks A List of Reciprocal/Inverse numbers
- * F([a,b,c ... n]) = [(/ 1 a) (/ 1 b) (/ 1 c) ... (/ 1 n)]
- *
  * @param n - A list of numbers
  * @returns A list of Reciprocal numbers
+ * @example F([a,b,c ... n]) = [(/ 1 a) (/ 1 b) (/ 1 c) ... (/ 1 n)]
  */
-export const reciprocalLst = curry(memoize(
-    (arr: Array<number>): Array<number> => {
-        return arr.map((n: number) => reciprocal(n))
-    }))
+export const reciprocalLst = curry(memoize((arr: Array<number>): Array<number> =>  arr.map((n: number) => reciprocal(n))))
 
 /**
  * @remarks A List of Reciprocal/Inverse numbers
- * F([a,b,c ... n]) = [(abs a) (abs b) (abs c) ... (abs n)]
- *
  * @param n - A list of numbers
  * @returns A list of absolute |x| numbers
+ * @example F([a,b,c ... n]) = [(abs a) (abs b) (abs c) ... (abs n)]
  */
-export const absLst = curry(memoize(
-    (arr: Array<number>): Array<number> => {
-        return arr.map((n: number) => abs(n))
-    }))
+export const absLst = curry(memoize((arr: Array<number>): Array<number> => arr.map((n: number) => abs(n))))
+
+/**
+ * @remarks Swap two elements
+ * @param arr 
+ * @param first 
+ * @param second 
+ */
+export const swap =
+    (arr: Array<number>, first: number, second: number): void => {
+
+        if (arr === undefined || arr.length == 0) {
+            return
+        }
+
+        let temp: number = arr[first]
+        arr[first] = arr[second]
+        arr[second] = temp
+    }

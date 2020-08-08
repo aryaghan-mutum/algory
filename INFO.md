@@ -28,6 +28,7 @@ jest --coverage
 - Run all tests: 
   - npm t or npm test 
   - jest or jest --watch
+  - npm test -- --group=unit
 
 - Run a specific test: 
   - npm test -- SomeFile.test.ts 

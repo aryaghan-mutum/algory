@@ -20,8 +20,6 @@ const memoize = require('fast-memoize')
  */
 export const fibImper = curry(memoize(
     (n: number): number => {
-        numberTypeViolationError(n)
-
         if (isNegative(n))
             throw new Error("Fibonacci for negative numbers do not exist")
 
@@ -90,8 +88,7 @@ export const fibIter = curry(memoize(
 */
 export const fibRec = curry(memoize(
     (n: number): number => {
-        numberTypeViolationError(n)
-
+   
         if (isNegative(n))
             throw new Error("Fibonacci for negative numbers do not exist")
         else if (isZero(n))
@@ -117,7 +114,13 @@ export const fibRec = curry(memoize(
  * @returns A Fibonacci number of a specific index using Logarithmic process
  */
 export const fibLogarithmic = curry(memoize(
-    (n: number): number => fibLogHelper(1, 0, 0, 1, n)))
+    (n: number): number => {
+
+        if (isNegative(n))
+            throw new Error("Fibonacci for negative numbers do not exist")
+        
+        return fibLogHelper(1, 0, 0, 1, n)
+    }))
 
 /**
  * @remarks Helper function for fibLogarithmic(n) which returns a Fibonacci number in O(log(n)) time

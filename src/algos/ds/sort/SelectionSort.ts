@@ -13,7 +13,7 @@
  */
 
 import { range } from 'ramda'
-import { swap } from './Swap'
+import { swap } from '../../lc/ListComputation'
 import { add1 } from '../../nc/Math'
 
 const curry = require('curry')

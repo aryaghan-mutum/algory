@@ -7,7 +7,7 @@
 
 import { factImper, factIter, factRec } from '../../algos/nc/Factorial'
 
-describe('Factorial Imperative Process', () => {
+describe('Factorial', () => {
 
     it('test factImper', async () => {
         expect(factImper(0)).toBe(1)
@@ -16,21 +16,27 @@ describe('Factorial Imperative Process', () => {
         expect(factImper(50)).toBe(3.0414093201713376e+64)
         expect(factImper()(170)).toBe(7.257415615308004e+306)
         expect(factImper()(200)).toBe(Infinity)
-        expect(factImper(10.32321)).toBe(3628800)
+        expect(() => factImper(undefined)).toThrow(`Factorial for decimal numbers or undefined or negative numbers do not exist`)
+        expect(() => factImper(10.32321)).toThrow(`Factorial for decimal numbers or undefined or negative numbers do not exist`)
+        expect(() => factImper(-1)).toThrow(`Factorial for decimal numbers or undefined or negative numbers do not exist`)
     })
 
     it('test factorialIter', async () => {
-        expect(factIter(10.32321)).toBe(3628800)
         expect(factIter(50)).toBe(3.0414093201713376e+64)
         expect(factIter()(170)).toBe(7.257415615307994e+306)
         expect(factIter()(200)).toBe(Infinity)
+        expect(() => factIter(undefined)).toThrow(`Factorial for decimal numbers or undefined or negative numbers do not exist`)
+        expect(() => factIter(10.32321)).toThrow(`Factorial for decimal numbers or undefined or negative numbers do not exist`)
+        expect(() => factIter(-1)).toThrow(`Factorial for decimal numbers or undefined or negative numbers do not exist`)
     })
 
-    it('test factRec', async() => {
-        expect(factRec(10.32321)).toBe(3628800)
+    it('test factRec', async () => {
         expect(factRec(50)).toBe(3.0414093201713376e+64)
         expect(factRec()(170)).toBe(7.257415615307994e+306)
         expect(factRec()(200)).toBe(Infinity)
+        expect(() => factRec(undefined)).toThrow(`Factorial for decimal numbers or undefined or negative numbers do not exist`)
+        expect(() => factRec(10.32321)).toThrow(`Factorial for decimal numbers or undefined or negative numbers do not exist`)
+        expect(() => factRec(-1)).toThrow(`Factorial for decimal numbers or undefined or negative numbers do not exist`)
     })
 
 })
