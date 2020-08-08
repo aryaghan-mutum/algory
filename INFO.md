@@ -24,6 +24,12 @@ npm run build
   - jest --coverage
   - npm test -- --coverage
 
+###### Test Report
+```properties 
+- Run tests and type: test-report
+- The test-report.html is generated under the root and open the html file in the browser
+```
+
 ###### Tests
 - Run all tests: 
   - npm t or npm test 
