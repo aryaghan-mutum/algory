@@ -11,6 +11,14 @@ const memoize = require('fast-memoize')
 const curry = require('curry')
 
 /**
+ * @remarks Identity function returns back whatever is passed in
+ * @param x - Any type
+ * @returns Whatever is passed in 
+ * @example F(x) => x
+ */
+export const identity = curry(memoize((<T>(x: T): T => x)))
+
+/**
  * @remarks Square a number
  * @param n - A number
  * @returns Squared number

@@ -9,12 +9,12 @@ import { swap } from '../../algos/lc/ListComputation'
 import {
     car,
     isEmpty,
-    sqrLst,
-    cubeLst,
-    doubleLst,
-    avgLst,
-    reciprocalLst,
-    absLst
+    sqrMap,
+    cubeMap,
+    doubleMap,
+    avgMap,
+    reciprocalMap,
+    absMap
 } from '../../algos/lc/ListComputation'
 
 describe('List Computation', () => {
@@ -33,36 +33,35 @@ describe('List Computation', () => {
     })
 
     it('test avgLst', async () => {
-        expect(avgLst()()()([0, 1, 2, 3, 4, 5])).toEqual(2.5)
-        expect(avgLst([0, 1, 2, 3, 4, 5])).toEqual(2.5)
-        expect(avgLst([0, 1])).toEqual(0.5)
-        expect(avgLst([0])).toEqual(0)
-        expect(avgLst([0.00, 1.02, 2.333])).toEqual(1.1176666666666668)
+        expect(avgMap()()()([0, 1, 2, 3, 4, 5])).toEqual(2.5)
+        expect(avgMap([0, 1, 2, 3, 4, 5])).toEqual(2.5)
+        expect(avgMap([0, 1])).toEqual(0.5)
+        expect(avgMap([0])).toEqual(0)
+        expect(avgMap([0.00, 1.02, 2.333])).toEqual(1.1176666666666668)
     })
 
     it('test sqrLst', async () => {
-        expect(sqrLst([-3, -2, -1, 0, 1, 2, 3])).toEqual(expect.arrayContaining([9, 4, 1, 0, 1, 4, 9]))
-        expect(sqrLst([-3.3])).toEqual(expect.arrayContaining([10.889999999999999]))
+        expect(sqrMap([-3, -2, -1, 0, 1, 2, 3])).toEqual(expect.arrayContaining([9, 4, 1, 0, 1, 4, 9]))
+        expect(sqrMap([-3.3])).toEqual(expect.arrayContaining([10.889999999999999]))
     })
 
     it('test cubeLst', async () => {
-        expect(cubeLst([-3, -2, -1, 0, 1, 2, 3])).toEqual(expect.arrayContaining([-27, -8, -1, 0, 1, 8, 27]))
+        expect(cubeMap([-3, -2, -1, 0, 1, 2, 3])).toEqual(expect.arrayContaining([-27, -8, -1, 0, 1, 8, 27]))
     })
 
     it('test doubleLst', async () => {
-        expect(doubleLst([-3, -2, -1, 0, 1, 2, 3])).toEqual(expect.arrayContaining([-6, -4, -2, 0, 2, 4, 6]))
+        expect(doubleMap([-3, -2, -1, 0, 1, 2, 3])).toEqual(expect.arrayContaining([-6, -4, -2, 0, 2, 4, 6]))
     })
 
     it('test reciprocalLst', async () => {
-        expect(reciprocalLst([-2, -1, 1, 2])).toEqual(expect.arrayContaining([-0.5, -1, 1, 0.5]))
-        expect(reciprocalLst([])).toEqual(expect.arrayContaining([]))
+        expect(reciprocalMap([-2, -1, 1, 2])).toEqual(expect.arrayContaining([-0.5, -1, 1, 0.5]))
+        expect(reciprocalMap([])).toEqual(expect.arrayContaining([]))
     })
 
-
     it('test absLst', async () => {
-        expect(absLst([-2, -1, 1, 2])).toEqual(expect.arrayContaining([2, 1, 1, 2]))
-        expect(absLst([-2.32, -1.32, 1.54, 2.32])).toEqual(expect.arrayContaining([2.32, 1.32, 1.54, 2.32]))
-        expect(absLst([])).toEqual(expect.arrayContaining([]))
+        expect(absMap([-2, -1, 1, 2])).toEqual(expect.arrayContaining([2, 1, 1, 2]))
+        expect(absMap([-2.32, -1.32, 1.54, 2.32])).toEqual(expect.arrayContaining([2.32, 1.32, 1.54, 2.32]))
+        expect(absMap([])).toEqual(expect.arrayContaining([]))
     })
 
     it('test swap', async () => {

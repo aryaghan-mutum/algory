@@ -6,6 +6,7 @@
  */
 
 import {
+    identity,
     sqr,
     cube,
     sumOfSquares,
@@ -26,6 +27,28 @@ import {
 } from '../../algos/nc/Math'
 
 describe('Math', () => {
+
+    it('test identity', async () => {
+        expect(identity(-1)).toBe(-1)
+        expect(identity(0)).toBe(0)
+        expect(identity(1)).toBe(1)
+        expect(identity(-1.2)).toBe(-1.2)
+        expect(identity()(-1.2)).toBe(-1.2)
+        expect(identity('algory')).toBe('algory')
+        expect(identity(true)).toBeTruthy();
+        expect(identity(false)).not.toBeTruthy();
+        expect(identity(null)).toBeNull()
+        expect(identity(undefined)).toBeUndefined()
+        expect(identity(NaN)).toBeNaN()
+        expect(identity([-1, 0, 1, -1.2])).toEqual(expect.arrayContaining([-1, 0, 1, -1.2]))
+        expect(identity(['algory', true, false])).toEqual(expect.arrayContaining(['algory', true, false]))
+        expect(identity([[], null, undefined, NaN])).toEqual(expect.arrayContaining([[], null, undefined, NaN]))
+        expect(identity([])).toEqual(expect.arrayContaining([]))
+        expect(identity({ a: 1, b: 2 })).toMatchObject({
+            a: expect.any(Number),
+            b: expect.any(Number)
+        })
+    })
 
     it('test square', async () => {
         expect(sqr(2)).toBe(4)
@@ -153,7 +176,7 @@ describe('Math', () => {
     it('test gcd', async () => {
         expect(gcd(0, 0)).toBe(0)
         expect(gcd(2, 0)).toBe(2)
-        expect(gcd(0, 2)).toBe(2)   
+        expect(gcd(0, 2)).toBe(2)
         expect(gcd(2, 10)).toBe(2)
         expect(gcd(21, 81.0)).toBe(3.0)
         expect(gcd(12, 13)).toBe(1)
@@ -162,7 +185,7 @@ describe('Math', () => {
         expect(gcd(24, 60)).toBe(12)
         expect(gcd(2.0, 10.0)).toBe(2.0)
         expect(gcd(-2.0, -10.0)).toBe(-2.0)
-        expect(gcd(-462, -1071)).toBe(-21)      
+        expect(gcd(-462, -1071)).toBe(-21)
     })
 
     it('test lcm', async () => {
