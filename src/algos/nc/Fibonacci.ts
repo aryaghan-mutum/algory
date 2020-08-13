@@ -4,10 +4,8 @@
  * Copyright (c) 2020. Anurag Muthyam <anu.drumcoder@gmail.com>
  * https://github.com/aryaghan-mutum
  */
-
 import { sub1, sub2, sumOfSquares, sqr } from './Math'
 import { isNegative, isZero, isOne, isEven } from './MathPredicates'
-import { numberTypeViolationError } from '../TypeViolation'
 import { range } from 'ramda'
 const curry = require('curry')
 const memoize = require('fast-memoize')

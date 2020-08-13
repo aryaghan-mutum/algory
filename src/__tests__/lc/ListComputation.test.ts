@@ -14,7 +14,9 @@ import {
     doubleMap,
     avgMap,
     reciprocalMap,
-    absMap
+    absMap,
+    mulArr,
+    sumArr
 } from '../../algos/lc/ListComputation'
 
 describe('List Computation', () => {
@@ -64,9 +66,21 @@ describe('List Computation', () => {
         expect(absMap([])).toEqual(expect.arrayContaining([]))
     })
 
+    it('test mulArr', async () => {
+        expect(mulArr([-2, -1, 1, 2])).toBe(4)
+        expect(mulArr([1, 2, 33, 4])).toBe(264)
+    })
+
+    it('test sumArr', async () => {
+        expect(sumArr([-2, -1, 1, 2])).toBe(0)
+        expect(sumArr([1, 2, 33, 4])).toBe(40)
+    })
+
     it('test swap', async () => {
         expect(swap([], 1, 2)).toEqual(expect.arrayContaining([]))
     })
+
+
 
 })
 

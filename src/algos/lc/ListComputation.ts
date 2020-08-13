@@ -84,6 +84,22 @@ export const reciprocalMap = curry(memoize((arr: Array<number>): Array<number> =
 export const absMap = curry(memoize((arr: Array<number>): Array<number> => arr.map((n: number) => abs(n))))
 
 /**
+ * @remarks Multiply Numbers in a Array
+ * @param arr - A list of numbers
+ * @returns Multiplied numbers in a array
+ * @example F([a,b,c ... n]) = (* a b c ... n)
+ */
+export const mulArr = (arr: Array<number>): number => arr.reduce((a, b) => a * b, 1)
+
+/**
+ * @remarks Add Numbers in a Array
+ * @param arr - A list of numbers
+ * @returns Sum numbers in a array
+ * @example F([a,b,c ... n]) = (+ a b c ... n)
+ */
+export const sumArr = (arr: Array<number>): number => arr.reduce((a, b) => a + b, 0)
+
+/**
  * @remarks Swap two elements
  * @param arr 
  * @param first 

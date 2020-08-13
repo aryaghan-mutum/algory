@@ -23,7 +23,8 @@ import {
     reciprocal,
     mod,
     gcd,
-    lcm
+    lcm,
+    sqrt
 } from '../../algos/nc/Math'
 
 describe('Math', () => {
@@ -202,6 +203,11 @@ describe('Math', () => {
         expect(lcm(-7, -9)).toBe(-63)
         expect(lcm(-7, 9)).toBe(63)
     })
+
+    // it('test sqrt', async() => {
+    //     expect(sqrt(25)).toBe(5)
+    //     expect(sqrt(625)).toBe(25)
+    // })
 
 })
 

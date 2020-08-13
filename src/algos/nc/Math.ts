@@ -177,6 +177,26 @@ export const gcd = curry((a: number, b: number): number => isZero(b) ? a : gcd(b
  */
 export const lcm = curry((a: number, b: number): number => ((isZero(a)) || (isZero(b))) ? 0 : (a * b) / gcd(a, b))
 
+export const sqrt = curry(
+    (n: number) => {
+
+        const sqrtIter = (guess: number): number => {
+            if (isGoodEnough(guess))
+                return guess
+            else
+                return sqrtIter(improve(guess))
+        }
+
+        const isGoodEnough = (guess: number): boolean => {
+            return Math.abs(guess * guess - n) < 0.001
+        }
+
+        const improve = (guess: number): number => {
+            return (guess + (n / guess)) / 2
+        }
+
+        sqrtIter(1.0)
+    })
 
 // /**
 //  * @remarks Euclidean algorithms to find GCD for large numbers
