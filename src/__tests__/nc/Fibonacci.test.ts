@@ -5,7 +5,7 @@
  * https://github.com/aryaghan-mutum
  */
 
-import { fibImper, fibIter, fibRec, fibLogarithmic } from '../../algos/nc/Fibonacci'
+import { fibImper, fibIter, fibRec, fibLogarithmic, fibMap } from '../../algos/nc/Fibonacci'
 
 describe('Fibonacci Imperative Process', () => {
 
@@ -38,6 +38,11 @@ describe('Fibonacci Imperative Process', () => {
         expect(fibLogarithmic()(100)).toBe(354224848179261900000)
         expect(() => fibLogarithmic(-1)).toThrow()
     })
+
+    it('test fibMap', async () => {
+        expect(fibMap(10)).toEqual(expect.arrayContaining([0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55]))
+    })
+
 
 })
 

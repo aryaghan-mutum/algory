@@ -7,6 +7,7 @@
 
 import { isOne, isZero, isNegative } from './MathPredicates'
 import { sub1 } from './Math'
+import { range } from 'ramda'
 const curry = require('curry')
 const memoize = require('fast-memoize')
 
@@ -18,7 +19,7 @@ const memoize = require('fast-memoize')
 export const factImper = curry(memoize(
     (n: number): number => {
 
-        if(n === undefined || !Number.isInteger(n) || isNegative(n)) 
+        if (n === undefined || !Number.isInteger(n) || isNegative(n))
             throw new Error("Factorial for decimal numbers or undefined or negative numbers do not exist")
 
         else if (isZero(n) || isOne(n))
@@ -38,7 +39,7 @@ export const factImper = curry(memoize(
 export const factIter = curry(memoize(
     (n: number): number => {
 
-        if(n === undefined || !Number.isInteger(n) || isNegative(n)) 
+        if (n === undefined || !Number.isInteger(n) || isNegative(n))
             throw new Error("Factorial for decimal numbers or undefined or negative numbers do not exist")
 
         const fact = (product: number, counter: number): number => {
@@ -60,7 +61,7 @@ export const factIter = curry(memoize(
 export const factRec = curry(memoize(
     (n: number): number => {
 
-        if(n === undefined || !Number.isInteger(n) || isNegative(n)) 
+        if (n === undefined || !Number.isInteger(n) || isNegative(n))
             throw new Error("Factorial for decimal numbers or undefined or negative numbers do not exist")
         else if (isZero(n) || isOne(n))
             return 1
@@ -68,6 +69,15 @@ export const factRec = curry(memoize(
             return n * factRec(sub1(n))
     }))
 
+/**
+ * @remarks A List of Factorial numbers
+ * @param n - The limit
+ * @returns A list of Factorial numbers
+ * @example F(n) = (map fact lst)
+ */
+export const factMap = (curry(memoize((n: number): Array<number> => {
+    return range(1, n).map(i => factIter(i))
+})))
 
 
 

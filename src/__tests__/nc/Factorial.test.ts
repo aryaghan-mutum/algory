@@ -5,7 +5,7 @@
  * https://github.com/aryaghan-mutum
  */
 
-import { factImper, factIter, factRec } from '../../algos/nc/Factorial'
+import { factImper, factIter, factRec, factMap } from '../../algos/nc/Factorial'
 
 describe('Factorial', () => {
 
@@ -37,6 +37,11 @@ describe('Factorial', () => {
         expect(() => factRec(undefined)).toThrow(`Factorial for decimal numbers or undefined or negative numbers do not exist`)
         expect(() => factRec(10.32321)).toThrow(`Factorial for decimal numbers or undefined or negative numbers do not exist`)
         expect(() => factRec(-1)).toThrow(`Factorial for decimal numbers or undefined or negative numbers do not exist`)
+    })
+
+    it('test factMap', async () => {
+        expect(factMap(5)).toEqual(expect.arrayContaining([1, 1, 2, 6, 24]))
+        expect(factMap(10)).toEqual(expect.arrayContaining([1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880]))
     })
 
 })

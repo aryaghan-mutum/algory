@@ -4,7 +4,7 @@
  * Copyright (c) 2020. Anurag Muthyam <anu.drumcoder@gmail.com>
  * https://github.com/aryaghan-mutum
  */
-import { sub1, sub2, sumOfSquares, sqr } from './Math'
+import { add1, sub1, sub2, sumOfSquares, sqr } from './Math'
 import { isNegative, isZero, isOne, isEven } from './MathPredicates'
 import { range } from 'ramda'
 const curry = require('curry')
@@ -86,7 +86,7 @@ export const fibIter = curry(memoize(
 */
 export const fibRec = curry(memoize(
     (n: number): number => {
-   
+
         if (isNegative(n))
             throw new Error("Fibonacci for negative numbers do not exist")
         else if (isZero(n))
@@ -116,7 +116,7 @@ export const fibLogarithmic = curry(memoize(
 
         if (isNegative(n))
             throw new Error("Fibonacci for negative numbers do not exist")
-        
+
         return fibLogHelper(1, 0, 0, 1, n)
     }))
 
@@ -153,3 +153,14 @@ const fibLogHelper = (a: number,
             sub1(counter))
     }
 }
+
+/**
+ * @remarks A List of Fibonacci numbers
+ * @param n - The limit
+ * @returns A list of Fibonacci numbers
+ * @example F(n) = (map fib lst)
+ */
+export const fibMap = (curry(memoize((n: number): Array<number> => {
+    return range(0, add1(n)).map(i => fibLogarithmic(i))
+})))
+
