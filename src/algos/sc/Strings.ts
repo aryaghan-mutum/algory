@@ -20,3 +20,13 @@ export const toUpperCaseFirstChar = curry(memoize(
         if (typeof (str) !== 'string') return ''
         return str.charAt(0).toUpperCase() + str.slice(1)
     }))
+
+export const addCharStartSndEndOfStr = curry(memoize(
+    (str: string, firstChar: string, secondChar: string) => {
+        return `${firstChar}${str}${secondChar}`
+    }))
+
+export const addCurlyBracesStartAndOfStr = curry(memoize(
+    (str: string) => {
+        return addCharStartSndEndOfStr(str, "{", "}")
+    }))
